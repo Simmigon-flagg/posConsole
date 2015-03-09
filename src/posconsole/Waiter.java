@@ -10,17 +10,19 @@ public class Waiter extends Employee{
     }
 
    
-    private boolean waiterId;
+    private String waiterId;
     public Waiter(String firstName, String LastName, String empId) {
         super(firstName, LastName, empId);
     }
 
-    public boolean isWaiterId() {
+    public String getWaiterId() {
         return waiterId;
     }
 
-    public void setWaiterId(boolean waiterId) {
+    public void setWaiterId(String waiterId) {
         this.waiterId = waiterId;
     }
+
+  
     
 }
