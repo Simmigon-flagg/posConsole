@@ -7,7 +7,7 @@
 package posconsole;
 
 import java.sql.*;
-import java.util.List;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -15,35 +15,44 @@ import javax.swing.JOptionPane;
  * @author Jovy
  */
 public class Database  {
-  private String query;
-  private String openDB;
-  private String closeDB;
-  Connection connectDB = null;
-  private String readFromDB;
-  private String writeToDB;
+ Connection dbconn = null;
 
-    @Override
-    public String toString() {
-        return "Database{" + "query=" + query + ", openDB=" + openDB + ", closeDB=" + closeDB + ", connectDB=" + connectDB + ", readFromDB=" + readFromDB + ", writeToDB=" + writeToDB + '}';
+    public Database() {
     }
  
-  
-  
-  public static Connection DatabaseConnection(){
-      try{
+    public static Connection ConnecttoDB(){
+        try{
             Class.forName("org.sqlite.JDBC");
-            Connection connectDB = DriverManager.getConnection("jdbc:sqlite:POSConsoleDatabase.sqlite");
-            System.out.println("We are Connected!!!");
-            JOptionPane.showMessageDialog(null, connectDB);
+            Connection dbconn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Jovy\\Documents\\GitHub\\posConsole\\POSConsoleDatabase.sqlite");
+            System.out.println("Connected!");
             
-            return connectDB;
+            return dbconn;
         }catch(Exception e){
-           JOptionPane.showMessageDialog(null, e);
+            System.out.println("Not Connected!");
+            JOptionPane.showMessageDialog(null, e);
+            
         }
         return null;
-    
-  }
-  
-  
+    }
+  public void SearchItem(){
+      ConnecttoDB();
+     Connection conn = null;
+     ResultSet rs = null;
+     Statement dbStatement = null;
+     try{
+         dbStatement=conn.createStatement();
+         rs = dbStatement.executeQuery("SELECT * FROM Order;");
+         
+         while(rs.next()){
+            String itemNameDB = rs.getString("itemNameDB");
+             System.out.println(itemNameDB);
+         }
+         
+         
+     }catch(Exception e){
+         
+         System.out.println("No Records");
+     }
+ }
     
 }

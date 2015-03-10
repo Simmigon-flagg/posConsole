@@ -1,4 +1,5 @@
-/**Make changes to fit the project
+/**
+ * Make changes to fit the project
  */
 package posconsole;
 
@@ -6,22 +7,26 @@ import java.math.BigDecimal;
 
 public class Order {
 
-    private String itemName;
-    private BigDecimal itemPrice;
-    private String note;
-    private String orderNumber;
+    private static String orderNumber;
+    private static String itemName;
+    private static BigDecimal itemPrice;
+    private static String note;
+//    private String []itemArray;
+//    private BigDecimal [] priceArray;
+    private static BigDecimal subtotal;
 
-    public Order(String itemName, BigDecimal itemPrice, String note, String orderNumber) {
+    public Order(String orderNumber, String itemName, BigDecimal itemPrice, String note) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
-        this.note = note;
         this.orderNumber = orderNumber;
+        this.note = note;
+    
+       
     }
-    public Order() {
-        this.itemName = itemName;
-        this.itemPrice = itemPrice;
-        this.note = note;
-        this.orderNumber = orderNumber;
+
+    public static String getOrder() {
+        return  orderNumber +" "+itemName+" " + itemPrice+" "+ note+" subttotal" +  subtotal;
+        
     }
 
     public String getItemName() {
@@ -40,6 +45,14 @@ public class Order {
         this.itemPrice = itemPrice;
     }
 
+    public String getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(String order) {
+        this.orderNumber = order;
+    }
+
     public String getNote() {
         return note;
     }
@@ -48,21 +61,24 @@ public class Order {
         this.note = note;
     }
 
-    public String getOrderNumber() {
-        return orderNumber;
-    }
-
-    public void setOrderNumber(String order) {
-        this.orderNumber = order;
-    }
-    
-    public BigDecimal calculateTotal(BigDecimal itemPrice){
+    public BigDecimal calculateTotal(BigDecimal itemPrice) {
         return itemPrice;
     }
-    
-      @Override
+
+    @Override
     public String toString() {
-        return "Order{" + "itemName=" + itemName + ", itemPrice=" + itemPrice + ", note=" + note + ", order=" + orderNumber + '}';
+        return "Order number:\t" + orderNumber +"\n"
+                + itemName + "\t$"  +itemPrice 
+                + "\nnote\t" + note
+                + "\nSubtotal\t" + getSubtotal()+"\n";
+    }
+
+    public BigDecimal getSubtotal() {
+        return getItemPrice();
+    }
+
+    public void setSubtotal(BigDecimal subtotal) {
+        this.subtotal = subtotal;
     }
 
 }

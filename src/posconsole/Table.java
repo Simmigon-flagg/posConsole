@@ -1,4 +1,5 @@
-/**Make changes to fit the project
+/**
+ * Make changes to fit the project
  */
 package posconsole;
 
@@ -6,21 +7,29 @@ import java.math.BigDecimal;
 
 public class Table extends Order {
 
+    private String tableId;
+    private String partyNumber;
+    private boolean occupied;
+    //  Order order;
 
-    String tableId;
-    String partyNumber;
-    boolean occupied;
-    Order order;
-
-    public Table(String tableId, String partyNumber, boolean occupied, Order order) {
+    public Table(String tableId, String partyNumber, boolean occupied, String orderNumber, String itemName, BigDecimal itemPrice, String note) {
+        super(orderNumber, itemName, itemPrice, note);
         this.tableId = tableId;
         this.partyNumber = partyNumber;
         this.occupied = occupied;
-        this.order = order;
+    }
+
+    
+
+    @Override
+    public String toString() {
+        return "Table:\t"+
+                tableId+ "\npartyNumber:\t" + 
+                partyNumber + "\noccupied:\t" + 
+                occupied + "\norder:\t";//+ order +
     }
 
     public String getTableId() {
-        
         return tableId;
     }
 
@@ -43,38 +52,5 @@ public class Table extends Order {
     public void setOccupied(boolean occupied) {
         this.occupied = occupied;
     }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-    public String getItemName() {
-        return getItemName();
-    }
-
-    public void setItemName(String itemName) {
-        this.setItemName(itemName);
-    }
-
-    public BigDecimal getItemPrice() {
-        return getItemPrice();
-    }
-
-    public void setItemPrice(BigDecimal itemPrice) {
-        this.setItemPrice(itemPrice);
-    }
-
-    public String getNote() {
-        return getNote();
-    }
-
-    public void setNote(String note) {
-        this.setNote(note);
-    }
-        @Override
-    public String toString() {
-        return "Table{" + "tableId=" + tableId + ", partyNumber=" + partyNumber + ", occupied=" + occupied + ", order=" + order + '}';
-    }
-
 
 }

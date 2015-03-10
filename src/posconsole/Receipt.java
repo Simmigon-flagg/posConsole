@@ -6,6 +6,7 @@
 package posconsole;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 
 /**
  *
@@ -13,58 +14,34 @@ import java.math.BigDecimal;
  */
 public class Receipt extends Order {
 
-    private BigDecimal amountDue;
     private BigDecimal tax;
-    private BigDecimal tip;
+    private BigDecimal stateTax;
 
-    private  String itemName;
-    private  BigDecimal itemPrice;
+    private BigDecimal tip;
+    private BigDecimal total;
+    
+    //table number
+    //
+
+    public Receipt(BigDecimal tip, BigDecimal total, String orderNumber, String itemName, BigDecimal itemPrice, String note) {
+        super(orderNumber, itemName, itemPrice, note);
+        this.tax = tax;
+        this.tip = tip;
+        this.total = total;
+    }
 
     @Override
     public String toString() {
-
-        return "Receipt{" + super.toString() + "amountDue=" + amountDue + ", tax=" + tax + ", tip=" + tip + ", itemName=" + itemName + ", itemPrice=" + itemPrice + '}';
-    }
-
-    public Receipt(Order order, BigDecimal amountDue, BigDecimal tax, BigDecimal tip, String itemName, BigDecimal itemPrice) {
-
-        this.amountDue = amountDue;
-        this.tax = tax;
-        this.tip = tip;
-        this.itemName = itemName;
-        this.itemPrice = itemPrice;
-
-    }
-
-    
-    
-    public Receipt(Order order) {
-        super.getItemName();
-        super.getItemPrice();
-//        this.amountDue = amountDue;
-//        this.tax = tax;
-//        this.tip = tip;
-
-    }
-    
-    
-    
-    
-
-    public BigDecimal getAmountDue() {
-        return amountDue;
-    }
-
-    public void setAmountDue(BigDecimal amountDue) {
-        this.amountDue = amountDue;
+        return "Receipt\n"
+                +"\n" +super.toString()
+                + "tax\t " + getTax()
+                + "\ntip\t" + tip
+                + "\ntotal\t " + getTotal(this);
     }
 
     public BigDecimal getTax() {
-        return tax;
-    }
+        return getStateTax().multiply(getSubtotal());
 
-    public void setTax(BigDecimal tax) {
-        this.tax = tax;
     }
 
     public BigDecimal getTip() {
@@ -74,4 +51,19 @@ public class Receipt extends Order {
     public void setTip(BigDecimal tip) {
         this.tip = tip;
     }
+
+    public BigDecimal getTotal(Order o) {
+      //get tax a + get sub total 
+
+        return getTax().add(o.getSubtotal());
+    }
+
+    public BigDecimal getStateTax() {
+        return this.stateTax = BigDecimal.valueOf(0.07);
+    }
+
+    public void setStateTax(BigDecimal stateTax) {
+        this.stateTax = BigDecimal.valueOf(0.07);
+    }
+
 }

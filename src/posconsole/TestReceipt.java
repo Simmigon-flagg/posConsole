@@ -14,10 +14,11 @@ import java.math.BigDecimal;
  */
 public class TestReceipt {
     public static void main(String[] args) {
-       Order my = new Order("fhamburger", BigDecimal.valueOf(1), "no", "22");
-      ///  Order = new Order();
-        Receipt myReceipt = new Receipt(my, BigDecimal.valueOf(2), BigDecimal.valueOf(3), BigDecimal.valueOf(.50), "so", BigDecimal.valueOf(677676)); 
-        System.out.println(myReceipt);
+   //  Order mOrder = new Order("re", "fires", BigDecimal, null)
+      Receipt myReceipt = new Receipt(BigDecimal.ONE, BigDecimal.ZERO, "434343", "fries", BigDecimal.valueOf(6), "salty");
+       // System.out.println(myReceipt+"\n"+myReceipt.getTotal(mOrder));
+        
+      System.out.println(myReceipt);
     }
 }
 
