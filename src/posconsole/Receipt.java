@@ -33,10 +33,7 @@ public class Receipt extends Order {
    
 
   
-    public BigDecimal calculateTax(BigDecimal tax){
-        return amountDue() * .07;
-    }
-
+   
     public BigDecimal getAmountDue() {
         return amountDue;
     }
