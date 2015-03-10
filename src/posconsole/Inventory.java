@@ -98,6 +98,13 @@ public class Inventory {
     public void setItemPrice(BigDecimal itemPrice) {
         this.itemPrice = itemPrice;
     }
+    public void deleteCategoryName() {
+        /** 
+        *
+        *
+        */
+        
+    }
      @Override
     public String toString() {
         return "Inventory{" + "categoryName=" + categoryName + ", categoryId=" + categoryId + ", itemName=" + itemName + ", itemID=" + itemID + ", itemQty=" + itemQty + ", inStock=" + inStock + ", expiryDate=" + expiryDate + ", itemPrice=" + itemPrice + '}';
