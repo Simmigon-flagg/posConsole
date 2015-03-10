@@ -9,7 +9,20 @@ public class Order {
     private String itemName;
     private BigDecimal itemPrice;
     private String note;
-    private String order;
+    private String orderNumber;
+
+    public Order(String itemName, BigDecimal itemPrice, String note, String orderNumber) {
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.note = note;
+        this.orderNumber = orderNumber;
+    }
+    public Order() {
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.note = note;
+        this.orderNumber = orderNumber;
+    }
 
     public String getItemName() {
         return itemName;
@@ -35,16 +48,21 @@ public class Order {
         this.note = note;
     }
 
-    public String getOrder() {
-        return order;
+    public String getOrderNumber() {
+        return orderNumber;
     }
 
-    public void setOrder(String order) {
-        this.order = order;
+    public void setOrderNumber(String order) {
+        this.orderNumber = order;
     }
+    
+    public BigDecimal calculateTotal(BigDecimal itemPrice){
+        return itemPrice;
+    }
+    
       @Override
     public String toString() {
-        return "Order{" + "itemName=" + itemName + ", itemPrice=" + itemPrice + ", note=" + note + ", order=" + order + '}';
+        return "Order{" + "itemName=" + itemName + ", itemPrice=" + itemPrice + ", note=" + note + ", order=" + orderNumber + '}';
     }
 
 }
