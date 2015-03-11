@@ -63,3 +63,6 @@ nbproject/private/private.properties
 *.properties
 *.xml
 src/posconsole/TestTable.java
+*.xml
+nbproject/private/private.xml
+*.xml
