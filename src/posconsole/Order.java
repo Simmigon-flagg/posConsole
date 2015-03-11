@@ -21,9 +21,7 @@ public class Order {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.orderNumber = orderNumber;
-        this.note = note;
-    
-       
+        this.note = note;   
     }
     
     public static String getOrder() {
