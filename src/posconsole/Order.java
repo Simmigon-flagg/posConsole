@@ -15,19 +15,21 @@ public class Order {
     private  String note;
 
     private  BigDecimal subtotal;
+    private  ArrayList<BigDecimal> itemPriceList;
    
-
-    public Order(String orderNumber, String itemName, BigDecimal itemPrice, String note) {
-        this.itemName = itemName;
-        this.itemPrice = itemPrice;
+    public Order(String orderNumber, String itemName, ArrayList itemPriceList, String note) {
         this.orderNumber = orderNumber;
+        this.itemName = itemName;
+        this.itemPriceList = new ArrayList<>();
         this.note = note;   
     }
     
+    
     public  String getOrder() {
-        return  orderNumber +" "+itemName+" " + itemPrice+" "+ note+" subttotal" +  subtotal;
+        return  orderNumber +" "+itemName+" " + itemPriceList+" "+ note+" subttotal"+ getSubtotal();
         
     }
+    
 
     public String getItemName() {
         return itemName;
@@ -37,6 +39,12 @@ public class Order {
         this.itemName = itemName;
     }
 
+    public ArrayList getItemPriceList() {
+        
+    }
+    public void setItemPriceList(ArrayList itemPricelist) {
+        this.itemPriceList = itemPriceList;
+    }
     public BigDecimal getItemPrice() {
         return itemPrice;
     }
@@ -69,8 +77,8 @@ public class Order {
     public String toString() {
         return "Order number:\t" + orderNumber +"\n"
                 + itemName + "\t$"  +itemPrice 
-                + "\nnote\t" + note
-                + "\nSubtotal\t" + getSubtotal()+"\n";
+                + "\nnote\t" + note;//removed subtotal
+                
     }
 
     public BigDecimal getSubtotal() {
