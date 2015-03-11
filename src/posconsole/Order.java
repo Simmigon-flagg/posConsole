@@ -1,4 +1,5 @@
-/**Make changes to fit the project
+/**
+ * Make changes to fit the project
  */
 package posconsole;
 
@@ -6,10 +7,25 @@ import java.math.BigDecimal;
 
 public class Order {
 
-    private String itemName;
-    private BigDecimal itemPrice;
-    private String note;
-    private String order;
+    private static String orderNumber;
+    private static String itemName;
+    private static BigDecimal itemPrice;
+    private static String note;
+//    private String []itemArray;
+//    private BigDecimal [] priceArray;
+    private static BigDecimal subtotal;
+
+    public Order(String orderNumber, String itemName, BigDecimal itemPrice, String note) {
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.orderNumber = orderNumber;
+        this.note = note;   
+    }
+
+    public static String getOrder() {
+        return  orderNumber +" "+itemName+" " + itemPrice+" "+ note+" subttotal" +  subtotal;
+        
+    }
 
     public String getItemName() {
         return itemName;
@@ -27,6 +43,14 @@ public class Order {
         this.itemPrice = itemPrice;
     }
 
+    public String getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(String order) {
+        this.orderNumber = order;
+    }
+
     public String getNote() {
         return note;
     }
@@ -35,16 +59,24 @@ public class Order {
         this.note = note;
     }
 
-    public String getOrder() {
-        return order;
+    public BigDecimal calculateTotal(BigDecimal itemPrice) {
+        return itemPrice;
     }
 
-    public void setOrder(String order) {
-        this.order = order;
-    }
-      @Override
+    @Override
     public String toString() {
-        return "Order{" + "itemName=" + itemName + ", itemPrice=" + itemPrice + ", note=" + note + ", order=" + order + '}';
+        return "Order number:\t" + orderNumber +"\n"
+                + itemName + "\t$"  +itemPrice 
+                + "\nnote\t" + note
+                + "\nSubtotal\t" + getSubtotal()+"\n";
+    }
+
+    public BigDecimal getSubtotal() {
+        return getItemPrice();
+    }
+
+    public void setSubtotal(BigDecimal subtotal) {
+        this.subtotal = subtotal;
     }
 
 }
