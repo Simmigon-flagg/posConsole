@@ -39,13 +39,7 @@ public class Order {
         this.itemName = itemName;
     }
 
-    public ArrayList getItemPriceList() {
-        
-    }
-    public void setItemPriceList(ArrayList itemPricelist) {
-        this.itemPriceList = itemPriceList;
-    }
-    public BigDecimal getItemPrice() {
+       public BigDecimal getItemPrice() {
         return itemPrice;
     }
 
@@ -87,6 +81,14 @@ public class Order {
 
     public void setSubtotal(BigDecimal subtotal) {
         this.subtotal = subtotal;
+    }
+
+    public ArrayList<BigDecimal> getItemPriceList() {
+        return itemPriceList;
+    }
+
+    public void setItemPriceList(ArrayList<BigDecimal> itemPriceList) {
+        this.itemPriceList = itemPriceList;
     }
 
 }
