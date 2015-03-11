@@ -9,13 +9,14 @@ import java.util.ArrayList;
 public class Order {
 
     
-    private static String orderNumber;
-    private static String itemName;
-    private static BigDecimal itemPrice;
-    private static String note;
+    private  String orderNumber;
+    private  String itemName;
+    private  BigDecimal itemPrice;
+    private  String note;
 //    private String []itemArray;
 //    private BigDecimal [] priceArray;
-    private static BigDecimal subtotal;
+    private  BigDecimal subtotal;
+   
 
     public Order(String orderNumber, String itemName, BigDecimal itemPrice, String note) {
         this.itemName = itemName;
@@ -24,7 +25,7 @@ public class Order {
         this.note = note;   
     }
     
-    public static String getOrder() {
+    public  String getOrder() {
         return  orderNumber +" "+itemName+" " + itemPrice+" "+ note+" subttotal" +  subtotal;
         
     }

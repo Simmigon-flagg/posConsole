@@ -9,11 +9,14 @@ public class ArrayListTest {
 
     public static void main(String[] args) {
 
-        ArrayList<Receipt> receiptArr;
-        receiptArr = new ArrayList<>();
-
-        receiptArr.add(new Receipt(BigDecimal.valueOf(3.00), BigDecimal.valueOf(6),"burger", "fries", BigDecimal.ZERO, null));
-        receiptArr.add(new Receipt(BigDecimal.valueOf(2.00), BigDecimal.valueOf(6),"salad", "fries", BigDecimal.ZERO, null));
-        System.out.println(receiptArr);   
+        Object[] my = new Object[10];
+        my[0] = (new Order("212121212", null, BigDecimal.ZERO, null));
+        my[1] = (new Order("343434", null, BigDecimal.ZERO, null));
+        for (int i = 0; i < my.length; i++) {
+            System.out.println(my[i]);
+            
+        }
+        
+        
     }
 }
