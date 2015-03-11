@@ -4,9 +4,11 @@
 package posconsole;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 public class Order {
 
+    
     private static String orderNumber;
     private static String itemName;
     private static BigDecimal itemPrice;
@@ -23,7 +25,7 @@ public class Order {
     
        
     }
-
+    
     public static String getOrder() {
         return  orderNumber +" "+itemName+" " + itemPrice+" "+ note+" subttotal" +  subtotal;
         
