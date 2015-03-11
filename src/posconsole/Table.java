@@ -4,21 +4,23 @@
 package posconsole;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 public class Table extends Order {
 
     private String tableId;
     private String partyNumber;
     private boolean occupied;
-    //  Order order;
 
-    public Table(String tableId, String partyNumber, boolean occupied, String orderNumber, String itemName, BigDecimal itemPrice, String note) {
-        super(orderNumber, itemName, itemPrice, note);
+    //  Order order;
+    public Table(String tableId, String partyNumber, boolean occupied, String orderNumber, String itemName, BigDecimal itemPrice, String note, ArrayList<BigDecimal> itemPriceList) {
+        super(orderNumber, itemName, itemPrice, note, itemPriceList);
         this.tableId = tableId;
         this.partyNumber = partyNumber;
         this.occupied = occupied;
     }
 
+  
     
 
     @Override

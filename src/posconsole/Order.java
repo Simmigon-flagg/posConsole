@@ -13,16 +13,19 @@ public class Order {
     private  String itemName;
     private  BigDecimal itemPrice;
     private  String note;
-
     private  BigDecimal subtotal;
     private  ArrayList<BigDecimal> itemPriceList;
-   
-    public Order(String orderNumber, String itemName, ArrayList itemPriceList, String note) {
+
+    public Order(String orderNumber, String itemName, BigDecimal itemPrice, String note, ArrayList<BigDecimal> itemPriceList) {
         this.orderNumber = orderNumber;
         this.itemName = itemName;
-        this.itemPriceList = new ArrayList<>();
-        this.note = note;   
+        this.itemPrice = itemPrice;
+        this.note = note;
+        this.itemPriceList = itemPriceList;
     }
+   
+    
+    
     
     
     public  String getOrder() {

@@ -7,6 +7,7 @@ package posconsole;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.util.ArrayList;
 
 /**
  *
@@ -22,10 +23,10 @@ public class Receipt extends Order {
     
     //table number
     //
-
-    public Receipt(BigDecimal tip, BigDecimal total, String orderNumber, String itemName, BigDecimal itemPrice, String note) {
-        super(orderNumber, itemName, itemPrice, note);
+    public Receipt(BigDecimal tax, BigDecimal stateTax, BigDecimal tip, BigDecimal total, String orderNumber, String itemName, BigDecimal itemPrice, String note, ArrayList<BigDecimal> itemPriceList) {
+        super(orderNumber, itemName, itemPrice, note, itemPriceList);
         this.tax = tax;
+        this.stateTax = stateTax;
         this.tip = tip;
         this.total = total;
     }
