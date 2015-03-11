@@ -13,8 +13,7 @@ public class Order {
     private  String itemName;
     private  BigDecimal itemPrice;
     private  String note;
-//    private String []itemArray;
-//    private BigDecimal [] priceArray;
+
     private  BigDecimal subtotal;
    
 
