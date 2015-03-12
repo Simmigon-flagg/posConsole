@@ -17,7 +17,14 @@ public class TestReceipt {
    //  Order mOrder = new Order("re", "fires", BigDecimal, null)
       Receipt myReceipt = new Receipt(BigDecimal.ONE, BigDecimal.TEN, BigDecimal.ONE, BigDecimal.ZERO, null, null, BigDecimal.ZERO, null, null);
        // System.out.println(myReceipt+"\n"+myReceipt.getTotal(mOrder));
-        
-      System.out.println(myReceipt);
+      
+      //Just the object that gets the toString() method. This is done by java
+        System.out.println(myReceipt);
+      //This is the tostring() we made but we don't call it to string we call it
+        //getReceipt();
+        System.out.println("=========================================");
+      System.out.println(myReceipt.getReceipt());
+      
+      
     }
 }
