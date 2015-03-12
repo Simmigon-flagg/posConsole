@@ -9,10 +9,10 @@ public class ArrayListTest {
         
         ArrayList<Order> orderList;
         orderList = new ArrayList <Order>();
-        orderList.add(new Order(null, "Chocolate", BigDecimal.valueOf(5), null));
-        orderList.add(new Order(null, "Sausage", BigDecimal.valueOf(4), null));
+      //  orderList.add(new Order(null, "Chocolate", BigDecimal.valueOf(5), null));
+      //  orderList.add(new Order(null, "Sausage", BigDecimal.valueOf(4), null));
         for (Order order : orderList) {
-               System.out.println(order.); 
+      //         System.out.println(order.); 
             }
         
     }

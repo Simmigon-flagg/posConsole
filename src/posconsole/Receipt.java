@@ -34,10 +34,10 @@ public class Receipt extends Order {
     @Override
     public String toString() {
         return "Receipt\n"
-                +"\n" +super.toString()
-                + "tax\t " + getTax()
+                +"\n"+super.toString()
+                + "\ntax\t" + getTax()
                 + "\ntip\t" + tip
-                + "\ntotal\t " + getTotal(this);
+                + "\ntotal\t" + getTotal(this);
     }
 
     public BigDecimal getTax() {
