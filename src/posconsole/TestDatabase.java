@@ -16,7 +16,7 @@ public class TestDatabase {
     public static void main(String[] args) {
         Database dbconn = new Database();
      //  Connection ConnecttoDB = dbconn.ConnecttoDB();
-        dbconn.SearchItem();
+        System.out.println(dbconn.LoadMenu());
        
         
     }

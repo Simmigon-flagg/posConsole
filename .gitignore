@@ -67,3 +67,4 @@ src/posconsole/TestTable.java
 nbproject/private/private.xml
 *.xml
 POSConsoleDatabase.sqlite
+*.xml
