@@ -7,6 +7,7 @@ package posconsole;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 /**
@@ -16,63 +17,71 @@ import java.util.ArrayList;
 public class Receipt extends Order {
 
     // Declare variable
-
+    @Override
+    public String toString() {
+        return "Receipt{" + "orderNumber=" + orderNumber + ", subtotal=" + subtotal + ", tax=" + tax + ", stateTax=" + stateTax + ", total=" + total + ", orderList=" + orderList + '}';
+    }
     private String orderNumber;
     private BigDecimal subtotal;
     private BigDecimal tax;
     private BigDecimal stateTax;
     private BigDecimal total;
     private ArrayList<Order> orderList;
- //Pre:
+
+    //Pre:
     //Pro:
     public Receipt(String orderNumber, String itemName, BigDecimal itemPrice, String note) {
         super(itemName, itemPrice, note);
         this.orderNumber = orderNumber;
     }
- //Pre:
+
+    //Pre:
     //Pro:
     public Receipt() {
         super();
     }
 
     // This is the toString we made to see the tax.
-     //Pre:
+    //Pre:
     //Pro:
     public String getReceipt() {
         return "Receipt\n"
                 + "\n" + getOrderList()
                 + "\nSubtotal\t$" + getSubtotal()
-                + "\ntax\t$" + stateTax
-                + "\ntotal\t$" + total
+                + "\ntax\t" + getTax() + "%"
+                + "\ntotal\t$" + getTotal()
                 + "\n\nTIP:\t$______________"
                 + "\nTOTAL:\t$______________";
     }
- //Pre:
+
+    //Pre:
     //Pro:
     public BigDecimal getStateTax() {
         return this.stateTax;
     }
- //Pre:
+
+    //Pre:
     //Pro:
     public String getOrderNumber() {
         return orderNumber;
     }
- //Pre:
+
+    //Pre:
     //Pro:
     public void setOrderNumber(String orderNumber) {
         this.orderNumber = orderNumber;
     }
- //Pre:
+
+    //Pre:
     //Pro:
-    public BigDecimal getTotal() {
-        return total;
-    }
- //Pre:
+    //Pre:
     //Pro:
-    public void setTotal(BigDecimal total) {
-        this.total = total;
+    public void setTotal() {
+
+        this.total = getStateTax().multiply(getSubtotal());
     }
- //Pre:
+
+    //Pre:
     //Pro:
     public StringBuilder getOrderList() {
         StringBuilder listOfOrder = new StringBuilder();
@@ -83,7 +92,8 @@ public class Receipt extends Order {
         return listOfOrder;
 
     }
- //Pre:
+
+    //Pre:
     //Pro:
     public void setOrderList(ArrayList<Order> orderList) {
         this.orderList = orderList;
@@ -91,7 +101,6 @@ public class Receipt extends Order {
 
     //Pre:
     //Pro:
-
     public BigDecimal getSubtotal() {
         subtotal = BigDecimal.valueOf(0.0);
         for (int i = 0; i < orderList.size(); i++) {
@@ -102,9 +111,18 @@ public class Receipt extends Order {
 
     //Pre:
     //Pro:
-
     public void setSubtotal(BigDecimal subtotal) {
         this.subtotal = subtotal;
+    }
+
+    public BigDecimal getTax() {
+
+        return BigDecimal.valueOf(0.065).multiply(BigDecimal.valueOf(100)).stripTrailingZeros();
+    }
+
+    public BigDecimal getTotal() {
+        //return getSubtotal().add(getSubtotal().multiply(BigDecimal.valueOf(0.065)));
+        return getSubtotal().add(getSubtotal().multiply(BigDecimal.valueOf(0.065)).setScale(2, RoundingMode.FLOOR));
     }
 
 }

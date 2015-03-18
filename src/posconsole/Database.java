@@ -4,10 +4,7 @@
  * and open the template in the editor.
  */
 package posconsole;
-
 import java.sql.*;
-
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,10 +17,10 @@ public class Database {
 
     public static Connection ConnecttoDB() {
         try {
-            System.out.println("Connected!");
+            //System.out.println("Connected!");
             Class.forName("org.sqlite.JDBC");
-            Connection dbconn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Jovy\\Documents\\GitHub\\posConsole\\POSConsoleDatabase.sqlite");
-            //Connection dbconn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Flagg\\Documents\\GitHub\\posConsole\\POSConsoleDatabase.sqlite");
+           // Connection dbconn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Jovy\\Documents\\GitHub\\posConsole\\POSConsoleDatabase.sqlite");
+            Connection dbconn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Flagg\\Documents\\GitHub\\posConsole\\POSConsoleDatabase.sqlite");
             return dbconn;
         } catch (Exception e) {
             System.out.println("Not Connected!");
@@ -39,11 +36,10 @@ public class Database {
         Object[][] loadedMenu = null ;
         ResultSet rs = null;
         Statement dbStatement = null;
-
-        System.out.println("outside try");
+        
         String itemPrice = null;
         try {
-            System.out.println(" try");
+            
             dbStatement = ConnecttoDB().createStatement();
             rs = dbStatement.executeQuery("SELECT COUNT(*) FROM MenuDB; ");
             //Columns in sql starts from 1

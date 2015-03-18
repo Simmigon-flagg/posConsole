@@ -1,16 +1,17 @@
-/**Make changes to fit the project
+/**
+ * Make changes to fit the project
  */
 package posconsole;
 
-public class Waiter extends Employee{
+public class Waiter extends Employee {
 
     @Override
     public String toString() {
-        return "Waiter{" + super.toString() +  "waiterId=" + waiterId + '}';
+        return "Waiter:" + super.toString();
     }
 
-   
     private String waiterId;
+
     public Waiter(String firstName, String LastName, String empId) {
         super(firstName, LastName, empId);
     }
@@ -23,6 +24,12 @@ public class Waiter extends Employee{
         this.waiterId = waiterId;
     }
 
-  
-    
+    public Waiter() {
+        super(null, null, null);
+    }
+
+    void Waiter() {
+        
+    }
+
 }
