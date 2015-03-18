@@ -144,26 +144,30 @@ public class Database {
         ResultSet rs = null;
         Statement dbStatement = null;
 
-        System.out.println("outside try");
-        String Test = "";
-        try {
-            System.out.println(" try");
+        
+        String Test = null;
+        try {         
             dbStatement = ConnecttoDB().createStatement();
-
-            rs = dbStatement.executeQuery("SELECT * FROM myTest;");
-
+            /**
+             * We need to first finalize what the Database will look
+             * You may need to look this up online.
+             * We need a Column or row for TAX
+             * We need a Column or row for Total
+             * We need a Column or row for subTotal     
+             */
+            rs = dbStatement.executeQuery("INSERT INTO SalesReport (  );");
+            //We might not need this either.
             while (rs.next()) {
 
                 Test = rs.getString("Test");
 
             }
-            //  return itemPriceDB;
+           
         } catch (Exception e) {
 
             System.out.println(e);
         }
 
-        // return itemPriceDB;
     }
 
 }

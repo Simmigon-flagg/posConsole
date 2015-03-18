@@ -20,7 +20,6 @@ public class TestDatabase {
         for (int i = 0; i < Orders.length; i++) {
             for (int j = 0; j < Orders[i].length; j++) {
                 System.out.print(Orders[i][j]+"\t");
-
             }
             System.out.println(" ");
         }
