@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Flagg
+ * @author Jovy
  */
 public class TestWaiter {
 

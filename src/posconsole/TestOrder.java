@@ -1,4 +1,3 @@
-
 package posconsole;
 
 import java.math.BigDecimal;

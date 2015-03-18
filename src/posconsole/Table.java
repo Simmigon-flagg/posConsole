@@ -3,9 +3,11 @@
  */
 package posconsole;
 
+/**
+ *
+ * @author Jovy
+ */
 import java.math.BigDecimal;
-import java.util.ArrayList;
-
 public class Table extends Order {
 
     private String tableId;

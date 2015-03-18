@@ -2,6 +2,10 @@
  */
 package posconsole;
 
+/**
+ *
+ * @author Jovy
+ */
 public class Employee {
 
     public Employee(String firstName, String LastName, String empId) {

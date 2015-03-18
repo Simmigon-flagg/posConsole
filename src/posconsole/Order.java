@@ -3,9 +3,11 @@
  */
 package posconsole;
 
+/**
+ *
+ * @author Jovy
+ */
 import java.math.BigDecimal;
-
-
 public class Order {
 
     private String itemName;

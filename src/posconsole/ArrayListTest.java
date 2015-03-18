@@ -1,7 +1,9 @@
-
 package posconsole;
 
-import java.math.BigDecimal;
+/**
+ *
+ * @author Jovy
+ */
 import java.util.ArrayList;
 
 public class ArrayListTest {
