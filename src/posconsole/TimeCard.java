@@ -51,11 +51,14 @@ public class TimeCard {
     public void setClockIn(long clockIn) {
         
         if (!isClockedIn) {
+            //This might be a database search
             isClockedIn = true;
             this.clockIn = clockIn;
-        }else{
-        
         }
+        //Do we need an else?
+        /*else{
+           System.out.println("Already Clocked in");
+        }*/
         
     }
 

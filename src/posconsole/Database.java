@@ -61,23 +61,23 @@ public class Database {
        return loadedMenu;
     }
 
-    //This Does Not Work
-    public void Login() {
+    //This Does Not Work    
+    public String Login(int EmployeeIdNumber) {
         // ConnecttoDB();
         ResultSet rs = null;
         Statement dbStatement = null;
 
-        System.out.println("outside try");
-        String itemPriceDB = "";
+       
+        String EmployeeFirstName = null;
         try {
             System.out.println(" try");
             dbStatement = ConnecttoDB().createStatement();
 
-            rs = dbStatement.executeQuery("SELECT * FROM myTest;");
+            rs = dbStatement.executeQuery("SELECT firstName FROM employeeDB WHERE empId = "+ EmployeeIdNumber +";");
 
             while (rs.next()) {
 
-                itemPriceDB = rs.getString("Test");
+                EmployeeFirstName = rs.getString("firstName");
 
             }
 
@@ -85,6 +85,7 @@ public class Database {
 
             System.out.println(e);
         }
+        return EmployeeFirstName;
 
     }
 

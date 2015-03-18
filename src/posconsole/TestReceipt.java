@@ -34,7 +34,7 @@ public class TestReceipt {
         //getReceipt();
         
         System.out.println("=========================================");
-        System.out.println("from test: " + myReceipt.getReceipt());
+        System.out.println(myReceipt.getReceipt());
         //Transaction happens here.
         
         /**
