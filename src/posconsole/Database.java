@@ -59,9 +59,14 @@ public class Database {
         }
 
        return loadedMenu;
-    }
-
-    //This Does Not Work    
+    }       
+    /**
+     * Pre: You need to enter the employee Id. 
+     * The employeeId has to to in the database
+     * Post: This return a person's name that 
+     * matches the Id in the database
+     */
+    
     public String Login(int EmployeeIdNumber) {
         // ConnecttoDB();
         ResultSet rs = null;
@@ -89,13 +94,53 @@ public class Database {
 
     }
 
-    //This is just a few sentences
+   
     public void TimeCard(Employee empId, String Clockin, String Clockout) {
 
     }
 
-    public void InsertSales() {
+    
+    public Object[][] ViewAllOrders(){
+    
         // ConnecttoDB();
+        //Coming from an array of elements
+        Object[][] AllOrders = null ;
+        ResultSet rs = null;
+        Statement dbStatement = null;
+        
+        String itemPrice = null;
+        try {
+            
+            dbStatement = ConnecttoDB().createStatement();
+            rs = dbStatement.executeQuery("SELECT COUNT(*) FROM OrderDB; ");
+            //Columns in sql starts from 1
+            int numberOfRows = rs.getInt(1);
+           
+            AllOrders = new Object[numberOfRows][2];
+
+            rs = dbStatement.executeQuery("SELECT itemNameDB, itemPriceDB FROM OrderDB;");
+            int i = 0;
+
+            while (rs.next()) {
+ 
+                AllOrders[i][0] = rs.getString("itemNameDB");
+                AllOrders[i][1] = rs.getDouble("itemPriceDB");
+               // System.out.println(i+" "+loadedMenu[i ][0]+" "+ loadedMenu[i][1]);
+               i++;
+            }
+            return AllOrders;
+        } catch (Exception e) {
+
+            System.out.println(e);
+        }
+
+       return AllOrders;
+    }       
+    
+    
+    
+    public void InsertSales() {
+       
         ResultSet rs = null;
         Statement dbStatement = null;
 
