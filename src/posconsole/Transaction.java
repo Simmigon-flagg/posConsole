@@ -13,12 +13,13 @@ import java.math.BigDecimal;
  * @author Jovy
  */
 public class Transaction {
-    private BigDecimal change;
+     BigDecimal change;
     Receipt r = new Receipt();
     
    public BigDecimal payByCash(BigDecimal cashPaid, BigDecimal totalAmount){
        // change = Cash paid - total from the receipt
-       return change;
+       BigDecimal change;
+       return cashPaid.subtract(totalAmount);
    }
     //payByCreditCard(){
         
