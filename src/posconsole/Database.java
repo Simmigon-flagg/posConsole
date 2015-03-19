@@ -13,9 +13,8 @@ public class Database {
     public static Connection ConnecttoDB() {
         try {
             //System.out.println("Connected!");
-            Class.forName("org.sqlite.JDBC");
-           // Connection dbconn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Jovy\\Documents\\GitHub\\posConsole\\POSConsoleDatabase.sqlite");
-            Connection dbconn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Flagg\\Documents\\GitHub\\posConsole\\POSConsoleDatabase.sqlite");
+            Class.forName("org.sqlite.JDBC");           
+            Connection dbconn = DriverManager.getConnection("jdbc:sqlite:POSConsoleDatabase.sqlite");
             return dbconn;
         } catch (Exception e) {
             System.out.println("Not Connected!");
