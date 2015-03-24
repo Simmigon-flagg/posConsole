@@ -53,5 +53,6 @@ public class Table extends Order {
     public void setOccupied(boolean occupied) {
         this.occupied = occupied;
     }
+   
 
 }

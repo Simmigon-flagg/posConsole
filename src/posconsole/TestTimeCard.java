@@ -26,7 +26,7 @@ public class TestTimeCard {
         empTimeCard.setIsClockedIn(false);
         System.out.println("Is this employee clocked in now: " + empTimeCard.isClockedIn());
         empTimeCard.setClockIn(System.currentTimeMillis());
-        empTimeCard.setDate(date);
+        empTimeCard.setDate();
         System.out.println("Clocked in at: " + empTimeCard.getClockIn());
         System.out.println("Date Today's date: " + empTimeCard.getDate());
         System.out.println("These two times are the same. "

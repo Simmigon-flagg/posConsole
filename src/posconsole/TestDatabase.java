@@ -14,7 +14,7 @@ public class TestDatabase {
         Database dbconn = new Database();
         //Connection ConnecttoDB = dbconn.ConnecttoDB();  
         //This is the waiter Id which returns the waiter name
-        System.out.println("Employee id: " + dbconn.Login(2));
+        System.out.println("Employee id: " + dbconn.Login(1));
         Object[][] Orders = dbconn.ViewAllOrders();
         //This is All orders in the database.
         for (int i = 0; i < Orders.length; i++) {
@@ -23,7 +23,8 @@ public class TestDatabase {
             }
             System.out.println(" ");
         }
-
+        System.out.println(dbconn.isEmployee(1));
+        System.out.println(dbconn.isEmployee(9));
     }
 
 }

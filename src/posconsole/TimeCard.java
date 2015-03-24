@@ -1,6 +1,7 @@
 package posconsole;
 
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -53,12 +54,11 @@ public class TimeCard {
         if (!isClockedIn) {
             //This might be a database search
             isClockedIn = true;
+            //Verify from the database if userID is matched and if not clocked in
             this.clockIn = clockIn;
+        }else{
+            JOptionPane.showMessageDialog(null,"Already Clocked in");
         }
-        //Do we need an else?
-        /*else{
-           System.out.println("Already Clocked in");
-        }*/
         
     }
 
@@ -74,7 +74,7 @@ public class TimeCard {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate() {
         this.date = new Date();
     }
 
