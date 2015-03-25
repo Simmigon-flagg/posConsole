@@ -37,13 +37,11 @@ public class GUI extends javax.swing.JFrame {
 
         Panel_Background = new javax.swing.JPanel();
         Panel_TopButtons = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_POS = new javax.swing.JButton();
+        btn_Manager = new javax.swing.JButton();
         btn_TimeCard = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btn_home = new javax.swing.JButton();
         Panel_ParentCard = new javax.swing.JPanel();
-        Card_Home = new javax.swing.JPanel();
         Card_POS = new javax.swing.JPanel();
         Card_POSTable = new javax.swing.JPanel();
         Card_OrderPerTable = new javax.swing.JPanel();
@@ -91,20 +89,20 @@ public class GUI extends javax.swing.JFrame {
         btn_ClockInClockOut = new javax.swing.JButton();
         lbl_LoggedInAs = new javax.swing.JLabel();
         lbl_nameOfEmpLoggedIn = new javax.swing.JLabel();
+        Card_Home = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Panel_Background.setBackground(new java.awt.Color(234, 253, 252));
 
         Panel_TopButtons.setBackground(new java.awt.Color(234, 253, 252));
         Panel_TopButtons.setLayout(new java.awt.GridBagLayout());
 
-        jButton1.setText("POS");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_POS.setText("POS");
+        btn_POS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_POSActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -113,16 +111,21 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.ipady = 22;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 45, 25, 0);
-        Panel_TopButtons.add(jButton1, gridBagConstraints);
+        Panel_TopButtons.add(btn_POS, gridBagConstraints);
 
-        jButton2.setText("Manager");
+        btn_Manager.setText("Manager");
+        btn_Manager.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ManagerActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipady = 22;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 18, 25, 0);
-        Panel_TopButtons.add(jButton2, gridBagConstraints);
+        Panel_TopButtons.add(btn_Manager, gridBagConstraints);
 
         btn_TimeCard.setText("Time Card");
         btn_TimeCard.addActionListener(new java.awt.event.ActionListener() {
@@ -138,40 +141,21 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(16, 15, 25, 0);
         Panel_TopButtons.add(btn_TimeCard, gridBagConstraints);
 
-        jButton4.setText("Online Order");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipady = 22;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(16, 18, 25, 0);
-        Panel_TopButtons.add(jButton4, gridBagConstraints);
-
-        jButton5.setText("Home");
+        btn_home.setText("Home");
+        btn_home.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_homeActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipady = 22;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 20, 25, 15);
-        Panel_TopButtons.add(jButton5, gridBagConstraints);
+        Panel_TopButtons.add(btn_home, gridBagConstraints);
 
         Panel_ParentCard.setLayout(new java.awt.CardLayout());
-
-        Card_Home.setBackground(new java.awt.Color(234, 253, 252));
-
-        javax.swing.GroupLayout Card_HomeLayout = new javax.swing.GroupLayout(Card_Home);
-        Card_Home.setLayout(Card_HomeLayout);
-        Card_HomeLayout.setHorizontalGroup(
-            Card_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
-        );
-        Card_HomeLayout.setVerticalGroup(
-            Card_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 526, Short.MAX_VALUE)
-        );
-
-        Panel_ParentCard.add(Card_Home, "card3");
 
         Card_POS.setBackground(new java.awt.Color(234, 253, 252));
         Card_POS.setLayout(new java.awt.CardLayout());
@@ -300,7 +284,7 @@ public class GUI extends javax.swing.JFrame {
         Panel_Drinks.setLayout(Panel_DrinksLayout);
         Panel_DrinksLayout.setHorizontalGroup(
             Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_DrinksLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_DrinksLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -315,7 +299,7 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(jButton10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton11)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addGap(42, 42, 42))
         );
 
         Panel_DrinksLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton10, jButton11, jButton6, jButton7, jButton8, jButton9});
@@ -386,41 +370,35 @@ public class GUI extends javax.swing.JFrame {
         Panel_Category.setLayout(Panel_CategoryLayout);
         Panel_CategoryLayout.setHorizontalGroup(
             Panel_CategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_Drinks, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_CategoryLayout.createSequentialGroup()
-                .addComponent(btn_Desserts, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
-            .addGroup(Panel_CategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addComponent(btn_Extras, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(btn_Salads, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(btn_Appetizers, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(Panel_CategoryLayout.createSequentialGroup()
                 .addGroup(Panel_CategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_Burgers, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Wings, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btn_Extras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_Salads, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_Appetizers, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_Burgers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_Wings, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_Drinks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_Desserts, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30))
         );
-
-        Panel_CategoryLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn_Appetizers, btn_Burgers, btn_Desserts, btn_Drinks, btn_Extras, btn_Salads, btn_Wings});
-
         Panel_CategoryLayout.setVerticalGroup(
             Panel_CategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_CategoryLayout.createSequentialGroup()
-                .addComponent(btn_Drinks, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_Drinks, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(btn_Appetizers)
+                .addComponent(btn_Appetizers, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(btn_Burgers, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_Burgers, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
                 .addGap(1, 1, 1)
-                .addComponent(btn_Wings)
+                .addComponent(btn_Wings, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(btn_Salads, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_Salads, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(btn_Extras, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_Extras, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(btn_Desserts)
-                .addContainerGap())
+                .addComponent(btn_Desserts, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
-
-        Panel_CategoryLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn_Appetizers, btn_Burgers, btn_Desserts, btn_Drinks, btn_Extras, btn_Salads, btn_Wings});
 
         Card_Menu.add(Panel_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 190, 490));
 
@@ -438,7 +416,7 @@ public class GUI extends javax.swing.JFrame {
         );
         Card_ManagerLayout.setVerticalGroup(
             Card_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 526, Short.MAX_VALUE)
+            .addGap(0, 502, Short.MAX_VALUE)
         );
 
         Panel_ParentCard.add(Card_Manager, "card4");
@@ -453,7 +431,7 @@ public class GUI extends javax.swing.JFrame {
         );
         Card_OnlineOrderLayout.setVerticalGroup(
             Card_OnlineOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 526, Short.MAX_VALUE)
+            .addGap(0, 502, Short.MAX_VALUE)
         );
 
         Panel_ParentCard.add(Card_OnlineOrder, "card6");
@@ -492,7 +470,7 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(lbl_EmpLogin))
                 .addGap(30, 30, 30)
                 .addComponent(btn_Login)
-                .addContainerGap(298, Short.MAX_VALUE))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
 
         Card_TimeCard.add(Card_EmpLogin, "card2");
@@ -530,12 +508,27 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(lbl_nameOfEmpLoggedIn))
                 .addGap(47, 47, 47)
                 .addComponent(btn_ClockInClockOut)
-                .addContainerGap(269, Short.MAX_VALUE))
+                .addContainerGap(245, Short.MAX_VALUE))
         );
 
         Card_TimeCard.add(Card_ClockinClockOut, "card3");
 
         Panel_ParentCard.add(Card_TimeCard, "card5");
+
+        Card_Home.setBackground(new java.awt.Color(234, 253, 252));
+
+        javax.swing.GroupLayout Card_HomeLayout = new javax.swing.GroupLayout(Card_Home);
+        Card_Home.setLayout(Card_HomeLayout);
+        Card_HomeLayout.setHorizontalGroup(
+            Card_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 900, Short.MAX_VALUE)
+        );
+        Card_HomeLayout.setVerticalGroup(
+            Card_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 502, Short.MAX_VALUE)
+        );
+
+        Panel_ParentCard.add(Card_Home, "card3");
 
         javax.swing.GroupLayout Panel_BackgroundLayout = new javax.swing.GroupLayout(Panel_Background);
         Panel_Background.setLayout(Panel_BackgroundLayout);
@@ -543,25 +536,39 @@ public class GUI extends javax.swing.JFrame {
             Panel_BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Panel_ParentCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(Panel_BackgroundLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Panel_TopButtons, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(321, 321, 321)
+                .addComponent(Panel_TopButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Panel_BackgroundLayout.setVerticalGroup(
             Panel_BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_BackgroundLayout.createSequentialGroup()
-                .addComponent(Panel_TopButtons, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Panel_TopButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Panel_ParentCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Panel_ParentCard, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Panel_Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 600));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Panel_Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Panel_Background, javax.swing.GroupLayout.PREFERRED_SIZE, 600, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_POSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_POSActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        Panel_ParentCard.removeAll();
+            Panel_ParentCard.add(Card_Menu);
+            Panel_ParentCard.repaint();
+            Panel_ParentCard.revalidate();
+    }//GEN-LAST:event_btn_POSActionPerformed
 
     private void btn_TimeCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TimeCardActionPerformed
         // TODO add your handling code here:
@@ -611,6 +618,16 @@ public class GUI extends javax.swing.JFrame {
             Panel_ParentCard.repaint();
             Panel_ParentCard.revalidate();
     }//GEN-LAST:event_btn_ClockInClockOutActionPerformed
+
+    private void btn_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_homeActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_btn_homeActionPerformed
+
+    private void btn_ManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ManagerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ManagerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -676,6 +693,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton btn_Drinks;
     private javax.swing.JButton btn_Extras;
     private javax.swing.JButton btn_Login;
+    private javax.swing.JButton btn_Manager;
+    private javax.swing.JButton btn_POS;
     private javax.swing.JButton btn_Pay;
     private javax.swing.JButton btn_PrintBill;
     private javax.swing.JButton btn_Salads;
@@ -683,13 +702,10 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton btn_TimeCard;
     private javax.swing.JButton btn_VoidItem;
     private javax.swing.JButton btn_Wings;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_home;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
