@@ -150,32 +150,32 @@ public class GUI extends javax.swing.JFrame {
 
         tbl_order.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "ITEM", "QTY", "PRICE"
+                "ITEM", "PRICE"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
+                java.lang.String.class, java.lang.Double.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -187,7 +187,6 @@ public class GUI extends javax.swing.JFrame {
         if (tbl_order.getColumnModel().getColumnCount() > 0) {
             tbl_order.getColumnModel().getColumn(0).setPreferredWidth(190);
             tbl_order.getColumnModel().getColumn(1).setPreferredWidth(50);
-            tbl_order.getColumnModel().getColumn(2).setPreferredWidth(50);
         }
 
         Card_Menu.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 319, 374));
@@ -544,7 +543,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void btn_cokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cokeActionPerformed
         // TODO add your handling code here:
-        
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
        
     }//GEN-LAST:event_btn_cokeActionPerformed
 
