@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package posconsole;
 
 import javax.swing.JOptionPane;
@@ -22,10 +21,11 @@ public class GUI extends javax.swing.JFrame {
     Database dbconn = new Database();
     TimeCard tCard = new TimeCard();
     DefaultTableModel model = new DefaultTableModel();
+    Object[][] menu = dbconn.LoadMenu();
 
     public GUI() {
         initComponents();
-        
+
     }
 
     /**
@@ -150,24 +150,6 @@ public class GUI extends javax.swing.JFrame {
 
         tbl_order.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
                 {null, null}
             },
             new String [] {
@@ -240,10 +222,20 @@ public class GUI extends javax.swing.JFrame {
         jButton7.setText("Diet Coke");
 
         jButton8.setText("Sprite");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setText("Lemonade");
 
         jButton10.setText("Sweet Tea");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setText("Coffee");
 
@@ -520,9 +512,9 @@ public class GUI extends javax.swing.JFrame {
     private void btn_POSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_POSActionPerformed
         // TODO add your handling code here:
         Panel_ParentCard.removeAll();
-            Panel_ParentCard.add(Card_Menu);
-            Panel_ParentCard.repaint();
-            Panel_ParentCard.revalidate();
+        Panel_ParentCard.add(Card_Menu);
+        Panel_ParentCard.repaint();
+        Panel_ParentCard.revalidate();
     }//GEN-LAST:event_btn_POSActionPerformed
 
     private void btn_TimeCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TimeCardActionPerformed
@@ -543,15 +535,21 @@ public class GUI extends javax.swing.JFrame {
 
     private void btn_cokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cokeActionPerformed
         // TODO add your handling code here:
+        /**
+         * This is how you display an item and price from the
+         * database into a DefaultTableModel
+         */       
         DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
-       
+                        // Item and price
+        Object[] row = {menu[6][0], menu[6][1]};
+        model.addRow(row);
     }//GEN-LAST:event_btn_cokeActionPerformed
 
     private void btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoginActionPerformed
         // TODO add your handling code here:
-        
+
         if (dbconn.isEmployee(Integer.parseInt(txt_empId.getText()))) {
-            
+
             lbl_nameOfEmpLoggedIn.setText(dbconn.Login(Integer.parseInt(txt_empId.getText())));
             Panel_ParentCard.removeAll();
             Panel_ParentCard.add(Card_ClockinClockOut);
@@ -560,29 +558,42 @@ public class GUI extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(Card_EmpLogin, "Login Failed");
         }
-        
+
 
     }//GEN-LAST:event_btn_LoginActionPerformed
 
     private void btn_ClockInClockOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ClockInClockOutActionPerformed
         // TODO add your handling code here:
         tCard.setDate();
-        
+
         dbconn.Clockin(Integer.parseInt(txt_empId.getText()), tCard.getDate().toString());
-        System.out.println(txt_empId.getText()+"\n");
-            Panel_ParentCard.removeAll();
-            Panel_ParentCard.add(Card_Menu);
-            Panel_ParentCard.repaint();
-            Panel_ParentCard.revalidate();
+        System.out.println(txt_empId.getText() + "\n");
+        Panel_ParentCard.removeAll();
+        Panel_ParentCard.add(Card_Menu);
+        Panel_ParentCard.repaint();
+        Panel_ParentCard.revalidate();
     }//GEN-LAST:event_btn_ClockInClockOutActionPerformed
 
     private void btn_ManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ManagerActionPerformed
         // TODO add your handling code here:
         Panel_ParentCard.removeAll();
-            Panel_ParentCard.add(Card_Manager);
-            Panel_ParentCard.repaint();
-            Panel_ParentCard.revalidate();
+        Panel_ParentCard.add(Card_Manager);
+        Panel_ParentCard.repaint();
+        Panel_ParentCard.revalidate();
     }//GEN-LAST:event_btn_ManagerActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+         DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+                        // Item and price
+        Object[] row = {menu[7][0], menu[7][1]};
+        model.addRow(row);
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
