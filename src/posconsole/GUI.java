@@ -7,6 +7,8 @@
 package posconsole;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,6 +21,7 @@ public class GUI extends javax.swing.JFrame {
      */
     Database dbconn = new Database();
     TimeCard tCard = new TimeCard();
+    DefaultTableModel model = new DefaultTableModel();
 
     public GUI() {
         initComponents();
@@ -40,14 +43,11 @@ public class GUI extends javax.swing.JFrame {
         btn_POS = new javax.swing.JButton();
         btn_Manager = new javax.swing.JButton();
         btn_TimeCard = new javax.swing.JButton();
-        btn_home = new javax.swing.JButton();
         Panel_ParentCard = new javax.swing.JPanel();
         Card_POS = new javax.swing.JPanel();
-        Card_POSTable = new javax.swing.JPanel();
-        Card_OrderPerTable = new javax.swing.JPanel();
         Card_Menu = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbl_order = new javax.swing.JTable();
         Panel_PaymentButtons = new javax.swing.JPanel();
         btn_VoidItem = new javax.swing.JButton();
         btn_PrintBill = new javax.swing.JButton();
@@ -57,7 +57,7 @@ public class GUI extends javax.swing.JFrame {
         btn_ClearAllItems = new javax.swing.JButton();
         Panel_ParentMenu = new javax.swing.JPanel();
         Panel_Drinks = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
+        btn_coke = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
@@ -78,8 +78,9 @@ public class GUI extends javax.swing.JFrame {
         btn_Salads = new javax.swing.JButton();
         btn_Extras = new javax.swing.JButton();
         btn_Desserts = new javax.swing.JButton();
+        Card_POSTable = new javax.swing.JPanel();
+        Card_OrderPerTable = new javax.swing.JPanel();
         Card_Manager = new javax.swing.JPanel();
-        Card_OnlineOrder = new javax.swing.JPanel();
         Card_TimeCard = new javax.swing.JPanel();
         Card_EmpLogin = new javax.swing.JPanel();
         txt_empId = new javax.swing.JTextField();
@@ -89,7 +90,6 @@ public class GUI extends javax.swing.JFrame {
         btn_ClockInClockOut = new javax.swing.JButton();
         lbl_LoggedInAs = new javax.swing.JLabel();
         lbl_nameOfEmpLoggedIn = new javax.swing.JLabel();
-        Card_Home = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -141,46 +141,14 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(16, 15, 25, 0);
         Panel_TopButtons.add(btn_TimeCard, gridBagConstraints);
 
-        btn_home.setText("Home");
-        btn_home.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_homeActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipady = 22;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(16, 20, 25, 15);
-        Panel_TopButtons.add(btn_home, gridBagConstraints);
-
         Panel_ParentCard.setLayout(new java.awt.CardLayout());
 
         Card_POS.setBackground(new java.awt.Color(234, 253, 252));
         Card_POS.setLayout(new java.awt.CardLayout());
 
-        Card_POSTable.setBackground(new java.awt.Color(234, 253, 252));
-        Card_POSTable.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        javax.swing.GroupLayout Card_OrderPerTableLayout = new javax.swing.GroupLayout(Card_OrderPerTable);
-        Card_OrderPerTable.setLayout(Card_OrderPerTableLayout);
-        Card_OrderPerTableLayout.setHorizontalGroup(
-            Card_OrderPerTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
-        );
-        Card_OrderPerTableLayout.setVerticalGroup(
-            Card_OrderPerTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 490, Short.MAX_VALUE)
-        );
-
-        Card_POSTable.add(Card_OrderPerTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 330, 490));
-
-        Card_POS.add(Card_POSTable, "card2");
-
         Card_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_order.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -207,19 +175,19 @@ public class GUI extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Integer.class, java.lang.Double.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jTable1.setRowHeight(20);
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(190);
-            jTable1.getColumnModel().getColumn(1).setPreferredWidth(50);
-            jTable1.getColumnModel().getColumn(2).setPreferredWidth(50);
+        tbl_order.setRowHeight(20);
+        jScrollPane1.setViewportView(tbl_order);
+        if (tbl_order.getColumnModel().getColumnCount() > 0) {
+            tbl_order.getColumnModel().getColumn(0).setPreferredWidth(190);
+            tbl_order.getColumnModel().getColumn(1).setPreferredWidth(50);
+            tbl_order.getColumnModel().getColumn(2).setPreferredWidth(50);
         }
 
         Card_Menu.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 319, 374));
@@ -263,10 +231,10 @@ public class GUI extends javax.swing.JFrame {
 
         Panel_ParentMenu.setLayout(new java.awt.CardLayout());
 
-        jButton6.setText("Coke");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btn_coke.setText("Coke");
+        btn_coke.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btn_cokeActionPerformed(evt);
             }
         });
 
@@ -287,7 +255,7 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_DrinksLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_coke, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,14 +270,14 @@ public class GUI extends javax.swing.JFrame {
                 .addGap(42, 42, 42))
         );
 
-        Panel_DrinksLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton10, jButton11, jButton6, jButton7, jButton8, jButton9});
+        Panel_DrinksLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn_coke, jButton10, jButton11, jButton7, jButton8, jButton9});
 
         Panel_DrinksLayout.setVerticalGroup(
             Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_DrinksLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_coke, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7)
                     .addComponent(jButton8))
                 .addGap(18, 18, 18)
@@ -320,7 +288,7 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap(346, Short.MAX_VALUE))
         );
 
-        Panel_DrinksLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton10, jButton11, jButton6, jButton7, jButton8, jButton9});
+        Panel_DrinksLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn_coke, jButton10, jButton11, jButton7, jButton8, jButton9});
 
         Panel_ParentMenu.add(Panel_Drinks, "card9");
 
@@ -404,6 +372,24 @@ public class GUI extends javax.swing.JFrame {
 
         Card_POS.add(Card_Menu, "card3");
 
+        Card_POSTable.setBackground(new java.awt.Color(234, 253, 252));
+        Card_POSTable.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        javax.swing.GroupLayout Card_OrderPerTableLayout = new javax.swing.GroupLayout(Card_OrderPerTable);
+        Card_OrderPerTable.setLayout(Card_OrderPerTableLayout);
+        Card_OrderPerTableLayout.setHorizontalGroup(
+            Card_OrderPerTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
+        );
+        Card_OrderPerTableLayout.setVerticalGroup(
+            Card_OrderPerTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 490, Short.MAX_VALUE)
+        );
+
+        Card_POSTable.add(Card_OrderPerTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 330, 490));
+
+        Card_POS.add(Card_POSTable, "card2");
+
         Panel_ParentCard.add(Card_POS, "card2");
 
         Card_Manager.setBackground(new java.awt.Color(234, 253, 252));
@@ -420,21 +406,6 @@ public class GUI extends javax.swing.JFrame {
         );
 
         Panel_ParentCard.add(Card_Manager, "card4");
-
-        Card_OnlineOrder.setBackground(new java.awt.Color(234, 253, 252));
-
-        javax.swing.GroupLayout Card_OnlineOrderLayout = new javax.swing.GroupLayout(Card_OnlineOrder);
-        Card_OnlineOrder.setLayout(Card_OnlineOrderLayout);
-        Card_OnlineOrderLayout.setHorizontalGroup(
-            Card_OnlineOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
-        );
-        Card_OnlineOrderLayout.setVerticalGroup(
-            Card_OnlineOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 502, Short.MAX_VALUE)
-        );
-
-        Panel_ParentCard.add(Card_OnlineOrder, "card6");
 
         Card_TimeCard.setBackground(new java.awt.Color(234, 253, 252));
         Card_TimeCard.setLayout(new java.awt.CardLayout());
@@ -515,21 +486,6 @@ public class GUI extends javax.swing.JFrame {
 
         Panel_ParentCard.add(Card_TimeCard, "card5");
 
-        Card_Home.setBackground(new java.awt.Color(234, 253, 252));
-
-        javax.swing.GroupLayout Card_HomeLayout = new javax.swing.GroupLayout(Card_Home);
-        Card_Home.setLayout(Card_HomeLayout);
-        Card_HomeLayout.setHorizontalGroup(
-            Card_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
-        );
-        Card_HomeLayout.setVerticalGroup(
-            Card_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 502, Short.MAX_VALUE)
-        );
-
-        Panel_ParentCard.add(Card_Home, "card3");
-
         javax.swing.GroupLayout Panel_BackgroundLayout = new javax.swing.GroupLayout(Panel_Background);
         Panel_Background.setLayout(Panel_BackgroundLayout);
         Panel_BackgroundLayout.setHorizontalGroup(
@@ -586,9 +542,11 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_ClearAllItemsActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btn_cokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cokeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+        
+       
+    }//GEN-LAST:event_btn_cokeActionPerformed
 
     private void btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoginActionPerformed
         // TODO add your handling code here:
@@ -619,14 +577,12 @@ public class GUI extends javax.swing.JFrame {
             Panel_ParentCard.revalidate();
     }//GEN-LAST:event_btn_ClockInClockOutActionPerformed
 
-    private void btn_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_homeActionPerformed
-        // TODO add your handling code here:
-        
-        
-    }//GEN-LAST:event_btn_homeActionPerformed
-
     private void btn_ManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ManagerActionPerformed
         // TODO add your handling code here:
+        Panel_ParentCard.removeAll();
+            Panel_ParentCard.add(Card_Manager);
+            Panel_ParentCard.repaint();
+            Panel_ParentCard.revalidate();
     }//GEN-LAST:event_btn_ManagerActionPerformed
 
     /**
@@ -668,10 +624,8 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Card_ClockinClockOut;
     private javax.swing.JPanel Card_EmpLogin;
-    private javax.swing.JPanel Card_Home;
     private javax.swing.JPanel Card_Manager;
     private javax.swing.JPanel Card_Menu;
-    private javax.swing.JPanel Card_OnlineOrder;
     private javax.swing.JPanel Card_OrderPerTable;
     private javax.swing.JPanel Card_POS;
     private javax.swing.JPanel Card_POSTable;
@@ -702,16 +656,14 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton btn_TimeCard;
     private javax.swing.JButton btn_VoidItem;
     private javax.swing.JButton btn_Wings;
-    private javax.swing.JButton btn_home;
+    private javax.swing.JButton btn_coke;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbl_EmpLogin;
     private javax.swing.JLabel lbl_LoggedInAs;
     private javax.swing.JLabel lbl_nameOfEmpLoggedIn;
@@ -720,6 +672,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane scr_Extras;
     private javax.swing.JScrollPane scr_Salad;
     private javax.swing.JScrollPane scr_Wings;
+    private javax.swing.JTable tbl_order;
     private javax.swing.JTextField txt_empId;
     // End of variables declaration//GEN-END:variables
 }
