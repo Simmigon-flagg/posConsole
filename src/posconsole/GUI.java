@@ -80,19 +80,54 @@ public class GUI extends javax.swing.JFrame {
         btn_ClearAllItems = new javax.swing.JButton();
         Panel_ParentMenu = new javax.swing.JPanel();
         Panel_Drinks = new javax.swing.JPanel();
-        btn_coke = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        btn_Coke = new javax.swing.JButton();
+        btn_DietCoke = new javax.swing.JButton();
+        btn_Sprite = new javax.swing.JButton();
+        btn_Lemonade = new javax.swing.JButton();
+        btn_SweetTea = new javax.swing.JButton();
+        btn_Coffee = new javax.swing.JButton();
         Panel_Appetizers = new javax.swing.JPanel();
-        jButton12 = new javax.swing.JButton();
-        scr_Burgers = new javax.swing.JScrollPane();
-        scr_Wings = new javax.swing.JScrollPane();
-        scr_Salad = new javax.swing.JScrollPane();
-        scr_Extras = new javax.swing.JScrollPane();
-        scr_Desserts = new javax.swing.JScrollPane();
+        btn_ChipsSalsa = new javax.swing.JButton();
+        btn_Calamari = new javax.swing.JButton();
+        btn_MozarellaSticks = new javax.swing.JButton();
+        btn_FourWaySampler = new javax.swing.JButton();
+        btn_SpinachArtiDip = new javax.swing.JButton();
+        btn_SantaFeChkQue = new javax.swing.JButton();
+        Panel_Burgers = new javax.swing.JPanel();
+        btn_SouthWest = new javax.swing.JButton();
+        btn_TheWorks = new javax.swing.JButton();
+        btn_ThreeCheese = new javax.swing.JButton();
+        btn_SwissMelt = new javax.swing.JButton();
+        btn_BaconCheddar = new javax.swing.JButton();
+        btn_CATCHBurger = new javax.swing.JButton();
+        Panel_Wings = new javax.swing.JPanel();
+        btn_OriginalWings = new javax.swing.JButton();
+        btn_HotWingsNaked = new javax.swing.JButton();
+        btn_LemonPepperWings = new javax.swing.JButton();
+        btn_TeriyakiWings = new javax.swing.JButton();
+        btn_HoneyBarbecueWings = new javax.swing.JButton();
+        btn_CATCHWings = new javax.swing.JButton();
+        Panel_Salad = new javax.swing.JPanel();
+        btn_CeasarSalad = new javax.swing.JButton();
+        btn_AsianSalad = new javax.swing.JButton();
+        btn_GrilledSalmonSalad = new javax.swing.JButton();
+        btn_ChickenAvocadoSalad = new javax.swing.JButton();
+        btn_ChipotleSalad = new javax.swing.JButton();
+        btn_RefreshingCATCHSalad = new javax.swing.JButton();
+        Panel_Extras = new javax.swing.JPanel();
+        btn_Fries = new javax.swing.JButton();
+        btn_Coleslaw = new javax.swing.JButton();
+        btn_MashedPotato = new javax.swing.JButton();
+        btn_Corn = new javax.swing.JButton();
+        btn_QuesoDip = new javax.swing.JButton();
+        btn_PotatoWedges = new javax.swing.JButton();
+        Panel_Dessert = new javax.swing.JPanel();
+        btn_Chocolate_Mousse_Cheescake = new javax.swing.JButton();
+        btn_RedVelvetCake = new javax.swing.JButton();
+        btn_Cannoli = new javax.swing.JButton();
+        btn_TiramisuCake = new javax.swing.JButton();
+        btn_MilkShake = new javax.swing.JButton();
+        btn_CATCHIceCreamSurprise = new javax.swing.JButton();
         Panel_Category = new javax.swing.JPanel();
         btn_Drinks = new javax.swing.JButton();
         btn_Appetizers = new javax.swing.JButton();
@@ -236,118 +271,395 @@ public class GUI extends javax.swing.JFrame {
 
         Panel_ParentMenu.setLayout(new java.awt.CardLayout());
 
-        btn_coke.setText("Coke");
-        btn_coke.addActionListener(new java.awt.event.ActionListener() {
+        btn_Coke.setText("Coke");
+        btn_Coke.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cokeActionPerformed(evt);
+                btn_CokeActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Diet Coke");
+        btn_DietCoke.setText("Diet Coke");
 
-        jButton8.setText("Sprite");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btn_Sprite.setText("Sprite");
+        btn_Sprite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btn_SpriteActionPerformed(evt);
             }
         });
 
-        jButton9.setText("Lemonade");
+        btn_Lemonade.setText("Lemonade");
 
-        jButton10.setText("Sweet Tea");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        btn_SweetTea.setText("Sweet Tea");
+        btn_SweetTea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                btn_SweetTeaActionPerformed(evt);
             }
         });
 
-        jButton11.setText("Coffee");
+        btn_Coffee.setText("Coffee");
 
         javax.swing.GroupLayout Panel_DrinksLayout = new javax.swing.GroupLayout(Panel_Drinks);
         Panel_Drinks.setLayout(Panel_DrinksLayout);
         Panel_DrinksLayout.setHorizontalGroup(
             Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_DrinksLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_coke, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(Panel_DrinksLayout.createSequentialGroup()
                 .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel_DrinksLayout.createSequentialGroup()
-                        .addComponent(jButton7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8))
+                        .addGap(12, 12, 12)
+                        .addComponent(btn_SweetTea)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Coffee))
                     .addGroup(Panel_DrinksLayout.createSequentialGroup()
-                        .addComponent(jButton10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton11)))
-                .addGap(42, 42, 42))
+                        .addGap(5, 5, 5)
+                        .addComponent(btn_Coke)
+                        .addGap(5, 5, 5)
+                        .addComponent(btn_DietCoke))
+                    .addGroup(Panel_DrinksLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btn_Sprite)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_Lemonade)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        Panel_DrinksLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn_coke, jButton10, jButton11, jButton7, jButton8, jButton9});
-
         Panel_DrinksLayout.setVerticalGroup(
             Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_DrinksLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(5, 5, 5)
+                .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_Coke)
+                    .addComponent(btn_DietCoke))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_coke, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8))
-                .addGap(18, 18, 18)
-                .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9)
-                    .addComponent(jButton10)
-                    .addComponent(jButton11))
-                .addContainerGap(346, Short.MAX_VALUE))
+                    .addComponent(btn_Sprite)
+                    .addComponent(btn_Lemonade))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(Panel_DrinksLayout.createSequentialGroup()
+                        .addComponent(btn_Coffee)
+                        .addContainerGap())
+                    .addComponent(btn_SweetTea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-
-        Panel_DrinksLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn_coke, jButton10, jButton11, jButton7, jButton8, jButton9});
 
         Panel_ParentMenu.add(Panel_Drinks, "card9");
 
-        jButton12.setText("Chicken Tenders");
+        btn_ChipsSalsa.setText("Chips & Salsa");
+
+        btn_Calamari.setText("Calamari");
+
+        btn_MozarellaSticks.setText("Mozarella Sticks");
+
+        btn_FourWaySampler.setText("Four-Way Sampler");
+
+        btn_SpinachArtiDip.setText("Spinach Artichoke Dip");
+
+        btn_SantaFeChkQue.setText("Santa Fe Artichoke Dip");
 
         javax.swing.GroupLayout Panel_AppetizersLayout = new javax.swing.GroupLayout(Panel_Appetizers);
         Panel_Appetizers.setLayout(Panel_AppetizersLayout);
         Panel_AppetizersLayout.setHorizontalGroup(
             Panel_AppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_AppetizersLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jButton12)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addGap(5, 5, 5)
+                .addComponent(btn_ChipsSalsa)
+                .addGap(5, 5, 5)
+                .addComponent(btn_Calamari)
+                .addGap(5, 5, 5)
+                .addComponent(btn_MozarellaSticks)
+                .addGap(5, 5, 5)
+                .addComponent(btn_FourWaySampler)
+                .addGap(5, 5, 5)
+                .addComponent(btn_SpinachArtiDip)
+                .addGap(5, 5, 5)
+                .addComponent(btn_SantaFeChkQue))
         );
         Panel_AppetizersLayout.setVerticalGroup(
             Panel_AppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_AppetizersLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jButton12)
-                .addContainerGap(412, Short.MAX_VALUE))
+                .addGap(5, 5, 5)
+                .addGroup(Panel_AppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_ChipsSalsa)
+                    .addComponent(btn_Calamari)
+                    .addComponent(btn_MozarellaSticks)
+                    .addComponent(btn_FourWaySampler)
+                    .addComponent(btn_SpinachArtiDip)
+                    .addComponent(btn_SantaFeChkQue)))
         );
 
         Panel_ParentMenu.add(Panel_Appetizers, "card9");
-        Panel_ParentMenu.add(scr_Burgers, "card4");
-        Panel_ParentMenu.add(scr_Wings, "card5");
-        Panel_ParentMenu.add(scr_Salad, "card6");
-        Panel_ParentMenu.add(scr_Extras, "card7");
-        Panel_ParentMenu.add(scr_Desserts, "card8");
+
+        btn_SouthWest.setText("SouthWest");
+
+        btn_TheWorks.setText("The Works");
+
+        btn_ThreeCheese.setText("Three Cheese");
+
+        btn_SwissMelt.setText("Swiss Melt");
+
+        btn_BaconCheddar.setText("Bacon Cheddar");
+        btn_BaconCheddar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_BaconCheddarActionPerformed(evt);
+            }
+        });
+
+        btn_CATCHBurger.setText("C.A.T.C.H. Burger");
+
+        javax.swing.GroupLayout Panel_BurgersLayout = new javax.swing.GroupLayout(Panel_Burgers);
+        Panel_Burgers.setLayout(Panel_BurgersLayout);
+        Panel_BurgersLayout.setHorizontalGroup(
+            Panel_BurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_BurgersLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Panel_BurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_BurgersLayout.createSequentialGroup()
+                        .addComponent(btn_SouthWest)
+                        .addGap(2, 2, 2)
+                        .addComponent(btn_TheWorks))
+                    .addGroup(Panel_BurgersLayout.createSequentialGroup()
+                        .addComponent(btn_SwissMelt)
+                        .addGap(0, 0, 0)
+                        .addComponent(btn_ThreeCheese))
+                    .addGroup(Panel_BurgersLayout.createSequentialGroup()
+                        .addComponent(btn_BaconCheddar)
+                        .addGap(0, 0, 0)
+                        .addComponent(btn_CATCHBurger)))
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+
+        Panel_BurgersLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn_BaconCheddar, btn_CATCHBurger, btn_SouthWest, btn_SwissMelt, btn_TheWorks, btn_ThreeCheese});
+
+        Panel_BurgersLayout.setVerticalGroup(
+            Panel_BurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_BurgersLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(Panel_BurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_SouthWest)
+                    .addComponent(btn_TheWorks))
+                .addGap(1, 1, 1)
+                .addGroup(Panel_BurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_SwissMelt)
+                    .addComponent(btn_ThreeCheese))
+                .addGap(0, 0, 0)
+                .addGroup(Panel_BurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_CATCHBurger, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(btn_BaconCheddar, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        Panel_BurgersLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn_BaconCheddar, btn_CATCHBurger, btn_SouthWest, btn_SwissMelt, btn_TheWorks, btn_ThreeCheese});
+
+        Panel_ParentMenu.add(Panel_Burgers, "card9");
+
+        btn_OriginalWings.setText("Original");
+
+        btn_HotWingsNaked.setText("Hot Wings Naked");
+
+        btn_LemonPepperWings.setText("Lemon Pepper");
+
+        btn_TeriyakiWings.setText("Teriyaki");
+
+        btn_HoneyBarbecueWings.setText("Honey Barbecue");
+
+        btn_CATCHWings.setText("C.A.T.C.H Wings");
+
+        javax.swing.GroupLayout Panel_WingsLayout = new javax.swing.GroupLayout(Panel_Wings);
+        Panel_Wings.setLayout(Panel_WingsLayout);
+        Panel_WingsLayout.setHorizontalGroup(
+            Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_WingsLayout.createSequentialGroup()
+                .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_WingsLayout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_OriginalWings)
+                            .addComponent(btn_LemonPepperWings)))
+                    .addGroup(Panel_WingsLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(btn_HoneyBarbecueWings)))
+                .addGap(4, 4, 4)
+                .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_WingsLayout.createSequentialGroup()
+                        .addComponent(btn_CATCHWings)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Panel_WingsLayout.createSequentialGroup()
+                        .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_TeriyakiWings)
+                            .addComponent(btn_HotWingsNaked))
+                        .addContainerGap(167, Short.MAX_VALUE))))
+        );
+
+        Panel_WingsLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn_CATCHWings, btn_HoneyBarbecueWings, btn_HotWingsNaked, btn_LemonPepperWings, btn_OriginalWings, btn_TeriyakiWings});
+
+        Panel_WingsLayout.setVerticalGroup(
+            Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_WingsLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_OriginalWings, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_HotWingsNaked))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_LemonPepperWings)
+                    .addComponent(btn_TeriyakiWings))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_HoneyBarbecueWings)
+                    .addComponent(btn_CATCHWings, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+
+        Panel_WingsLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn_CATCHWings, btn_HoneyBarbecueWings, btn_HotWingsNaked, btn_LemonPepperWings, btn_OriginalWings, btn_TeriyakiWings});
+
+        Panel_ParentMenu.add(Panel_Wings, "card10");
+
+        btn_CeasarSalad.setText("Ceasar Salad");
+
+        btn_AsianSalad.setText("Asian Salad");
+
+        btn_GrilledSalmonSalad.setText("Grilled Salmon");
+
+        btn_ChickenAvocadoSalad.setText("Chicken Avocado Salad");
+
+        btn_ChipotleSalad.setText("Chipotle Salad");
+
+        btn_RefreshingCATCHSalad.setText("Refreshing C.A.T.C.H. Salad");
+
+        javax.swing.GroupLayout Panel_SaladLayout = new javax.swing.GroupLayout(Panel_Salad);
+        Panel_Salad.setLayout(Panel_SaladLayout);
+        Panel_SaladLayout.setHorizontalGroup(
+            Panel_SaladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_SaladLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Panel_SaladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addGroup(Panel_SaladLayout.createSequentialGroup()
+                        .addComponent(btn_ChickenAvocadoSalad)
+                        .addGap(0, 0, 0)
+                        .addComponent(btn_RefreshingCATCHSalad))
+                    .addGroup(Panel_SaladLayout.createSequentialGroup()
+                        .addComponent(btn_GrilledSalmonSalad)
+                        .addGap(1, 1, 1)
+                        .addComponent(btn_ChipotleSalad))
+                    .addGroup(Panel_SaladLayout.createSequentialGroup()
+                        .addComponent(btn_CeasarSalad)
+                        .addGap(0, 0, 0)
+                        .addComponent(btn_AsianSalad)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        Panel_SaladLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn_AsianSalad, btn_CeasarSalad, btn_ChickenAvocadoSalad, btn_ChipotleSalad, btn_GrilledSalmonSalad, btn_RefreshingCATCHSalad});
+
+        Panel_SaladLayout.setVerticalGroup(
+            Panel_SaladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_SaladLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Panel_SaladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_CeasarSalad)
+                    .addComponent(btn_AsianSalad))
+                .addGap(0, 0, 0)
+                .addGroup(Panel_SaladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_GrilledSalmonSalad)
+                    .addComponent(btn_ChipotleSalad))
+                .addGap(1, 1, 1)
+                .addGroup(Panel_SaladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_RefreshingCATCHSalad, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_ChickenAvocadoSalad))
+                .addContainerGap())
+        );
+
+        Panel_SaladLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn_AsianSalad, btn_CeasarSalad, btn_ChickenAvocadoSalad, btn_ChipotleSalad, btn_GrilledSalmonSalad, btn_RefreshingCATCHSalad});
+
+        Panel_ParentMenu.add(Panel_Salad, "card11");
+
+        btn_Fries.setText("Fries");
+        Panel_Extras.add(btn_Fries);
+
+        btn_Coleslaw.setText("Coleslaw");
+        Panel_Extras.add(btn_Coleslaw);
+
+        btn_MashedPotato.setText("Mashed Potato");
+        Panel_Extras.add(btn_MashedPotato);
+
+        btn_Corn.setText("Corn");
+        Panel_Extras.add(btn_Corn);
+
+        btn_QuesoDip.setText("Queso Dip");
+        Panel_Extras.add(btn_QuesoDip);
+
+        btn_PotatoWedges.setText("Potato Wedges");
+        Panel_Extras.add(btn_PotatoWedges);
+
+        Panel_ParentMenu.add(Panel_Extras, "card12");
+
+        btn_Chocolate_Mousse_Cheescake.setText("Chocolate Mousse Cheesecake");
+        Panel_Dessert.add(btn_Chocolate_Mousse_Cheescake);
+
+        btn_RedVelvetCake.setText("Red Velvet Cake");
+        Panel_Dessert.add(btn_RedVelvetCake);
+
+        btn_Cannoli.setText("Cannoli");
+        Panel_Dessert.add(btn_Cannoli);
+
+        btn_TiramisuCake.setText("Tiramisu Cake");
+        Panel_Dessert.add(btn_TiramisuCake);
+
+        btn_MilkShake.setText("Milkshake");
+        Panel_Dessert.add(btn_MilkShake);
+
+        btn_CATCHIceCreamSurprise.setText("C.A.T.C.H Ice Cream Surprise");
+        Panel_Dessert.add(btn_CATCHIceCreamSurprise);
+
+        Panel_ParentMenu.add(Panel_Dessert, "card13");
 
         Card_Menu.add(Panel_ParentMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 390, 490));
 
         btn_Drinks.setText("DRINKS");
+        btn_Drinks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_DrinksActionPerformed(evt);
+            }
+        });
 
         btn_Appetizers.setText("APPETIZERS");
+        btn_Appetizers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AppetizersActionPerformed(evt);
+            }
+        });
 
         btn_Burgers.setText("BURGERS");
+        btn_Burgers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_BurgersActionPerformed(evt);
+            }
+        });
 
         btn_Wings.setText("WINGS");
+        btn_Wings.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_WingsActionPerformed(evt);
+            }
+        });
 
         btn_Salads.setText("SALADS");
+        btn_Salads.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SaladsActionPerformed(evt);
+            }
+        });
 
         btn_Extras.setText("EXTRAS");
+        btn_Extras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ExtrasActionPerformed(evt);
+            }
+        });
 
         btn_Desserts.setText("DESSERT");
+        btn_Desserts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_DessertsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Panel_CategoryLayout = new javax.swing.GroupLayout(Panel_Category);
         Panel_Category.setLayout(Panel_CategoryLayout);
@@ -537,7 +849,7 @@ public class GUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel_Background, javax.swing.GroupLayout.PREFERRED_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(Panel_Background, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         pack();
@@ -567,7 +879,7 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_ClearAllItemsActionPerformed
 
-    private void btn_cokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cokeActionPerformed
+    private void btn_CokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CokeActionPerformed
         // TODO add your handling code here:
         /**
          * This is how you display an item and price from the database into a
@@ -577,7 +889,7 @@ public class GUI extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[6][0], menu[6][1]};
         model.addRow(row);
-    }//GEN-LAST:event_btn_cokeActionPerformed
+    }//GEN-LAST:event_btn_CokeActionPerformed
 
     private void btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoginActionPerformed
         // TODO add your handling code here:
@@ -616,18 +928,78 @@ public class GUI extends javax.swing.JFrame {
         Panel_ParentCard.revalidate();
     }//GEN-LAST:event_btn_ManagerActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btn_SpriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SpriteActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btn_SpriteActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void btn_SweetTeaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SweetTeaActionPerformed
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[7][0], menu[7][1]};
         model.addRow(row);
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_btn_SweetTeaActionPerformed
+
+    private void btn_AppetizersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AppetizersActionPerformed
+        // TODO add your handling code here:
+        Panel_ParentMenu.removeAll();
+        Panel_ParentMenu.add(Panel_Appetizers);
+        Panel_ParentMenu.repaint();
+        Panel_ParentMenu.revalidate();
+    }//GEN-LAST:event_btn_AppetizersActionPerformed
+
+    private void btn_DrinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DrinksActionPerformed
+        // TODO add your handling code here:
+        Panel_ParentMenu.removeAll();
+        Panel_ParentMenu.add(Panel_Drinks);
+        Panel_ParentMenu.repaint();
+        Panel_ParentMenu.revalidate();
+    }//GEN-LAST:event_btn_DrinksActionPerformed
+
+    private void btn_BurgersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BurgersActionPerformed
+        // TODO add your handling code here:
+        Panel_ParentMenu.removeAll();
+        Panel_ParentMenu.add(Panel_Burgers);
+        Panel_ParentMenu.repaint();
+        Panel_ParentMenu.revalidate();
+    }//GEN-LAST:event_btn_BurgersActionPerformed
+
+    private void btn_WingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_WingsActionPerformed
+        // TODO add your handling code here:
+        Panel_ParentMenu.removeAll();
+        Panel_ParentMenu.add(Panel_Wings);
+        Panel_ParentMenu.repaint();
+        Panel_ParentMenu.revalidate();
+    }//GEN-LAST:event_btn_WingsActionPerformed
+
+    private void btn_SaladsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SaladsActionPerformed
+        // TODO add your handling code here:
+        Panel_ParentMenu.removeAll();
+        Panel_ParentMenu.add(Panel_Salad);
+        Panel_ParentMenu.repaint();
+        Panel_ParentMenu.revalidate();
+    }//GEN-LAST:event_btn_SaladsActionPerformed
+
+    private void btn_ExtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExtrasActionPerformed
+        // TODO add your handling code here:
+        Panel_ParentMenu.removeAll();
+        Panel_ParentMenu.add(Panel_Extras);
+        Panel_ParentMenu.repaint();
+        Panel_ParentMenu.revalidate();
+    }//GEN-LAST:event_btn_ExtrasActionPerformed
+
+    private void btn_DessertsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DessertsActionPerformed
+        // TODO add your handling code here:
+         Panel_ParentMenu.removeAll();
+        Panel_ParentMenu.add(Panel_Dessert);
+        Panel_ParentMenu.repaint();
+        Panel_ParentMenu.revalidate();
+    }//GEN-LAST:event_btn_DessertsActionPerformed
+
+    private void btn_BaconCheddarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BaconCheddarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_BaconCheddarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -676,47 +1048,82 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel Card_TimeCard;
     private javax.swing.JPanel Panel_Appetizers;
     private javax.swing.JPanel Panel_Background;
+    private javax.swing.JPanel Panel_Burgers;
     private javax.swing.JPanel Panel_Category;
+    private javax.swing.JPanel Panel_Dessert;
     private javax.swing.JPanel Panel_Drinks;
+    private javax.swing.JPanel Panel_Extras;
     private javax.swing.JPanel Panel_ParentCard;
     private javax.swing.JPanel Panel_ParentMenu;
     private javax.swing.JPanel Panel_PaymentButtons;
+    private javax.swing.JPanel Panel_Salad;
     private javax.swing.JPanel Panel_TopButtons;
+    private javax.swing.JPanel Panel_Wings;
     private javax.swing.JButton btn_Appetizers;
+    private javax.swing.JButton btn_AsianSalad;
+    private javax.swing.JButton btn_BaconCheddar;
     private javax.swing.JButton btn_Burgers;
+    private javax.swing.JButton btn_CATCHBurger;
+    private javax.swing.JButton btn_CATCHIceCreamSurprise;
+    private javax.swing.JButton btn_CATCHWings;
+    private javax.swing.JButton btn_Calamari;
     private javax.swing.JButton btn_Cancel;
+    private javax.swing.JButton btn_Cannoli;
+    private javax.swing.JButton btn_CeasarSalad;
+    private javax.swing.JButton btn_ChickenAvocadoSalad;
+    private javax.swing.JButton btn_ChipotleSalad;
+    private javax.swing.JButton btn_ChipsSalsa;
+    private javax.swing.JButton btn_Chocolate_Mousse_Cheescake;
     private javax.swing.JButton btn_ClearAllItems;
     private javax.swing.JButton btn_ClockInClockOut;
+    private javax.swing.JButton btn_Coffee;
+    private javax.swing.JButton btn_Coke;
+    private javax.swing.JButton btn_Coleslaw;
+    private javax.swing.JButton btn_Corn;
     private javax.swing.JButton btn_Desserts;
+    private javax.swing.JButton btn_DietCoke;
     private javax.swing.JButton btn_Drinks;
     private javax.swing.JButton btn_Extras;
+    private javax.swing.JButton btn_FourWaySampler;
+    private javax.swing.JButton btn_Fries;
+    private javax.swing.JButton btn_GrilledSalmonSalad;
+    private javax.swing.JButton btn_HoneyBarbecueWings;
+    private javax.swing.JButton btn_HotWingsNaked;
+    private javax.swing.JButton btn_LemonPepperWings;
+    private javax.swing.JButton btn_Lemonade;
     private javax.swing.JButton btn_Login;
     private javax.swing.JButton btn_Manager;
+    private javax.swing.JButton btn_MashedPotato;
+    private javax.swing.JButton btn_MilkShake;
+    private javax.swing.JButton btn_MozarellaSticks;
+    private javax.swing.JButton btn_OriginalWings;
     private javax.swing.JButton btn_POS;
     private javax.swing.JButton btn_Pay;
+    private javax.swing.JButton btn_PotatoWedges;
     private javax.swing.JButton btn_PrintBill;
+    private javax.swing.JButton btn_QuesoDip;
+    private javax.swing.JButton btn_RedVelvetCake;
+    private javax.swing.JButton btn_RefreshingCATCHSalad;
     private javax.swing.JButton btn_Salads;
+    private javax.swing.JButton btn_SantaFeChkQue;
     private javax.swing.JButton btn_SaveBill;
+    private javax.swing.JButton btn_SouthWest;
+    private javax.swing.JButton btn_SpinachArtiDip;
+    private javax.swing.JButton btn_Sprite;
+    private javax.swing.JButton btn_SweetTea;
+    private javax.swing.JButton btn_SwissMelt;
+    private javax.swing.JButton btn_TeriyakiWings;
+    private javax.swing.JButton btn_TheWorks;
+    private javax.swing.JButton btn_ThreeCheese;
     private javax.swing.JButton btn_TimeCard;
+    private javax.swing.JButton btn_TiramisuCake;
     private javax.swing.JButton btn_VoidItem;
     private javax.swing.JButton btn_Wings;
-    private javax.swing.JButton btn_coke;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblRunningClock;
     private javax.swing.JLabel lbl_EmpLogin;
     private javax.swing.JLabel lbl_LoggedInAs;
     private javax.swing.JLabel lbl_nameOfEmpLoggedIn;
-    private javax.swing.JScrollPane scr_Burgers;
-    private javax.swing.JScrollPane scr_Desserts;
-    private javax.swing.JScrollPane scr_Extras;
-    private javax.swing.JScrollPane scr_Salad;
-    private javax.swing.JScrollPane scr_Wings;
     private javax.swing.JTable tbl_order;
     private javax.swing.JTextField txt_empId;
     // End of variables declaration//GEN-END:variables
