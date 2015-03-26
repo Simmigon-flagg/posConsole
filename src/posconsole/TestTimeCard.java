@@ -35,6 +35,9 @@ public class TestTimeCard {
         System.out.println("How about now?");
         System.out.println("Is this employee clocked in now: " + empTimeCard.isClockedIn());
 
+        
+                    
+        
         /**
          * Use A SELECT Statement to get the empID INSERT INTO Clockin Then
          * INSERT Clockout HoursOfWork At the Same Time.

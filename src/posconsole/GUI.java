@@ -7,7 +7,10 @@ package posconsole;
 
 import java.awt.Event;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.PieChart.Data;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -30,39 +33,17 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
         new Thread() {
             public void run() {
-                while (true) {
-                    Calendar LoginRunningClock = new GregorianCalendar();
-                    int hour = LoginRunningClock.get(Calendar.HOUR);
-                    int minutes = LoginRunningClock.get(Calendar.MINUTE);
-                    int seconds = LoginRunningClock.get(Calendar.SECOND);
-                    int AM_PM = LoginRunningClock.get(Calendar.AM_PM);
-
-                    StringBuilder TimeStringBuilder = new StringBuilder();
-                    String time = null;
-                    String clockSymbol = ":";
-                    //for Clock formatting
-                    String Day_Or_Night;
-                    if (AM_PM == 1) {
-                        Day_Or_Night = "PM";
-                    } else {
-                        Day_Or_Night = "AM";
-                    }
-                    if (hour < 10 || minutes < 10 || seconds < 10) {
-                        //This will run to allow the 0 to be placed in frint of single digit numbers
-                         //This could six different if statements
-                        if (hour < 10) {
-                            time = "0" + hour + clockSymbol + minutes + clockSymbol + seconds + Day_Or_Night;
-                        }
-                        if (minutes < 10) {
-                            time = hour + clockSymbol + "0" + minutes + clockSymbol + seconds + Day_Or_Night;
-                        }
-                        if (seconds < 10) {
-                            time = hour + clockSymbol + minutes + clockSymbol + "0" + seconds + Day_Or_Night;
-                        }
-                       
-                        lblRunningClock.setText(TimeStringBuilder.append(time).toString());
-                    }
-
+                while (true) {                    
+                    Date date = new Date();
+                    /**
+                     * Look at the console to see how to split the 
+                     * date into pieces
+                     */
+                    
+                    System.out.println(date);
+                    String[] time = date.toString().split(" ");                                        
+                    lblRunningClock.setText(time[3] + " " + time[2]);
+                    
                 }
 
             }
