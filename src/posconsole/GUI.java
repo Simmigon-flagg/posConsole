@@ -296,10 +296,8 @@ public class GUI extends javax.swing.JFrame {
                 btn_CokeActionPerformed(evt);
             }
         });
-        Panel_Drinks.add(btn_Coke);
 
         btn_DietCoke.setText("Diet Coke");
-        Panel_Drinks.add(btn_DietCoke);
 
         btn_Sprite.setText("Sprite");
         btn_Sprite.addActionListener(new java.awt.event.ActionListener() {
@@ -307,10 +305,8 @@ public class GUI extends javax.swing.JFrame {
                 btn_SpriteActionPerformed(evt);
             }
         });
-        Panel_Drinks.add(btn_Sprite);
 
         btn_Lemonade.setText("Lemonade");
-        Panel_Drinks.add(btn_Lemonade);
 
         btn_SweetTea.setText("Sweet Tea");
         btn_SweetTea.addActionListener(new java.awt.event.ActionListener() {
@@ -318,30 +314,95 @@ public class GUI extends javax.swing.JFrame {
                 btn_SweetTeaActionPerformed(evt);
             }
         });
-        Panel_Drinks.add(btn_SweetTea);
 
         btn_Coffee.setText("Coffee");
-        Panel_Drinks.add(btn_Coffee);
+
+        javax.swing.GroupLayout Panel_DrinksLayout = new javax.swing.GroupLayout(Panel_Drinks);
+        Panel_Drinks.setLayout(Panel_DrinksLayout);
+        Panel_DrinksLayout.setHorizontalGroup(
+            Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_DrinksLayout.createSequentialGroup()
+                .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_DrinksLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(btn_SweetTea)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Coffee))
+                    .addGroup(Panel_DrinksLayout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(btn_Coke)
+                        .addGap(5, 5, 5)
+                        .addComponent(btn_DietCoke))
+                    .addGroup(Panel_DrinksLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btn_Sprite)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_Lemonade)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Panel_DrinksLayout.setVerticalGroup(
+            Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_DrinksLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_Coke)
+                    .addComponent(btn_DietCoke))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Sprite)
+                    .addComponent(btn_Lemonade))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(Panel_DrinksLayout.createSequentialGroup()
+                        .addComponent(btn_Coffee)
+                        .addContainerGap())
+                    .addComponent(btn_SweetTea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
 
         Panel_ParentMenu.add(Panel_Drinks, "card9");
 
         btn_ChipsSalsa.setText("Chips & Salsa");
-        Panel_Appetizers.add(btn_ChipsSalsa);
 
         btn_Calamari.setText("Calamari");
-        Panel_Appetizers.add(btn_Calamari);
 
         btn_MozarellaSticks.setText("Mozarella Sticks");
-        Panel_Appetizers.add(btn_MozarellaSticks);
 
         btn_FourWaySampler.setText("Four-Way Sampler");
-        Panel_Appetizers.add(btn_FourWaySampler);
 
         btn_SpinachArtiDip.setText("Spinach Artichoke Dip");
-        Panel_Appetizers.add(btn_SpinachArtiDip);
 
         btn_SantaFeChkQue.setText("Santa Fe Artichoke Dip");
-        Panel_Appetizers.add(btn_SantaFeChkQue);
+
+        javax.swing.GroupLayout Panel_AppetizersLayout = new javax.swing.GroupLayout(Panel_Appetizers);
+        Panel_Appetizers.setLayout(Panel_AppetizersLayout);
+        Panel_AppetizersLayout.setHorizontalGroup(
+            Panel_AppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_AppetizersLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(btn_ChipsSalsa)
+                .addGap(5, 5, 5)
+                .addComponent(btn_Calamari)
+                .addGap(5, 5, 5)
+                .addComponent(btn_MozarellaSticks)
+                .addGap(5, 5, 5)
+                .addComponent(btn_FourWaySampler)
+                .addGap(5, 5, 5)
+                .addComponent(btn_SpinachArtiDip)
+                .addGap(5, 5, 5)
+                .addComponent(btn_SantaFeChkQue))
+        );
+        Panel_AppetizersLayout.setVerticalGroup(
+            Panel_AppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_AppetizersLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(Panel_AppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_ChipsSalsa)
+                    .addComponent(btn_Calamari)
+                    .addComponent(btn_MozarellaSticks)
+                    .addComponent(btn_FourWaySampler)
+                    .addComponent(btn_SpinachArtiDip)
+                    .addComponent(btn_SantaFeChkQue)))
+        );
 
         Panel_ParentMenu.add(Panel_Appetizers, "card9");
 
@@ -354,6 +415,11 @@ public class GUI extends javax.swing.JFrame {
         btn_SwissMelt.setText("Swiss Melt");
 
         btn_BaconCheddar.setText("Bacon Cheddar");
+        btn_BaconCheddar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_BaconCheddarActionPerformed(evt);
+            }
+        });
 
         btn_CATCHBurger.setText("C.A.T.C.H. Burger");
 
@@ -362,19 +428,17 @@ public class GUI extends javax.swing.JFrame {
         Panel_BurgersLayout.setHorizontalGroup(
             Panel_BurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_BurgersLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(Panel_BurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel_BurgersLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
                         .addComponent(btn_SouthWest)
-                        .addGap(0, 0, 0)
+                        .addGap(2, 2, 2)
                         .addComponent(btn_TheWorks))
                     .addGroup(Panel_BurgersLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(btn_SwissMelt)
                         .addGap(0, 0, 0)
                         .addComponent(btn_ThreeCheese))
                     .addGroup(Panel_BurgersLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(btn_BaconCheddar)
                         .addGap(0, 0, 0)
                         .addComponent(btn_CATCHBurger)))
@@ -395,9 +459,9 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(btn_SwissMelt)
                     .addComponent(btn_ThreeCheese))
                 .addGap(0, 0, 0)
-                .addGroup(Panel_BurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_BaconCheddar, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_CATCHBurger, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Panel_BurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_CATCHBurger, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(btn_BaconCheddar, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -406,42 +470,122 @@ public class GUI extends javax.swing.JFrame {
         Panel_ParentMenu.add(Panel_Burgers, "card9");
 
         btn_OriginalWings.setText("Original");
-        Panel_Wings.add(btn_OriginalWings);
 
         btn_HotWingsNaked.setText("Hot Wings Naked");
-        Panel_Wings.add(btn_HotWingsNaked);
 
         btn_LemonPepperWings.setText("Lemon Pepper");
-        Panel_Wings.add(btn_LemonPepperWings);
 
         btn_TeriyakiWings.setText("Teriyaki");
-        Panel_Wings.add(btn_TeriyakiWings);
 
         btn_HoneyBarbecueWings.setText("Honey Barbecue");
-        Panel_Wings.add(btn_HoneyBarbecueWings);
 
         btn_CATCHWings.setText("C.A.T.C.H Wings");
-        Panel_Wings.add(btn_CATCHWings);
+
+        javax.swing.GroupLayout Panel_WingsLayout = new javax.swing.GroupLayout(Panel_Wings);
+        Panel_Wings.setLayout(Panel_WingsLayout);
+        Panel_WingsLayout.setHorizontalGroup(
+            Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_WingsLayout.createSequentialGroup()
+                .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_WingsLayout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_OriginalWings)
+                            .addComponent(btn_LemonPepperWings)))
+                    .addGroup(Panel_WingsLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(btn_HoneyBarbecueWings)))
+                .addGap(4, 4, 4)
+                .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_WingsLayout.createSequentialGroup()
+                        .addComponent(btn_CATCHWings)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Panel_WingsLayout.createSequentialGroup()
+                        .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_TeriyakiWings)
+                            .addComponent(btn_HotWingsNaked))
+                        .addContainerGap(167, Short.MAX_VALUE))))
+        );
+
+        Panel_WingsLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn_CATCHWings, btn_HoneyBarbecueWings, btn_HotWingsNaked, btn_LemonPepperWings, btn_OriginalWings, btn_TeriyakiWings});
+
+        Panel_WingsLayout.setVerticalGroup(
+            Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_WingsLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_OriginalWings, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_HotWingsNaked))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_LemonPepperWings)
+                    .addComponent(btn_TeriyakiWings))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Panel_WingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_HoneyBarbecueWings)
+                    .addComponent(btn_CATCHWings, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+
+        Panel_WingsLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn_CATCHWings, btn_HoneyBarbecueWings, btn_HotWingsNaked, btn_LemonPepperWings, btn_OriginalWings, btn_TeriyakiWings});
 
         Panel_ParentMenu.add(Panel_Wings, "card10");
 
         btn_CeasarSalad.setText("Ceasar Salad");
-        Panel_Salad.add(btn_CeasarSalad);
 
         btn_AsianSalad.setText("Asian Salad");
-        Panel_Salad.add(btn_AsianSalad);
 
         btn_GrilledSalmonSalad.setText("Grilled Salmon");
-        Panel_Salad.add(btn_GrilledSalmonSalad);
 
         btn_ChickenAvocadoSalad.setText("Chicken Avocado Salad");
-        Panel_Salad.add(btn_ChickenAvocadoSalad);
 
         btn_ChipotleSalad.setText("Chipotle Salad");
-        Panel_Salad.add(btn_ChipotleSalad);
 
-        btn_RefreshingCATCHSalad.setText("jButton4");
-        Panel_Salad.add(btn_RefreshingCATCHSalad);
+        btn_RefreshingCATCHSalad.setText("Refreshing C.A.T.C.H. Salad");
+
+        javax.swing.GroupLayout Panel_SaladLayout = new javax.swing.GroupLayout(Panel_Salad);
+        Panel_Salad.setLayout(Panel_SaladLayout);
+        Panel_SaladLayout.setHorizontalGroup(
+            Panel_SaladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_SaladLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Panel_SaladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addGroup(Panel_SaladLayout.createSequentialGroup()
+                        .addComponent(btn_ChickenAvocadoSalad)
+                        .addGap(0, 0, 0)
+                        .addComponent(btn_RefreshingCATCHSalad))
+                    .addGroup(Panel_SaladLayout.createSequentialGroup()
+                        .addComponent(btn_GrilledSalmonSalad)
+                        .addGap(1, 1, 1)
+                        .addComponent(btn_ChipotleSalad))
+                    .addGroup(Panel_SaladLayout.createSequentialGroup()
+                        .addComponent(btn_CeasarSalad)
+                        .addGap(0, 0, 0)
+                        .addComponent(btn_AsianSalad)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        Panel_SaladLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn_AsianSalad, btn_CeasarSalad, btn_ChickenAvocadoSalad, btn_ChipotleSalad, btn_GrilledSalmonSalad, btn_RefreshingCATCHSalad});
+
+        Panel_SaladLayout.setVerticalGroup(
+            Panel_SaladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_SaladLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Panel_SaladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_CeasarSalad)
+                    .addComponent(btn_AsianSalad))
+                .addGap(0, 0, 0)
+                .addGroup(Panel_SaladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_GrilledSalmonSalad)
+                    .addComponent(btn_ChipotleSalad))
+                .addGap(1, 1, 1)
+                .addGroup(Panel_SaladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_RefreshingCATCHSalad, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_ChickenAvocadoSalad))
+                .addContainerGap())
+        );
+
+        Panel_SaladLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn_AsianSalad, btn_CeasarSalad, btn_ChickenAvocadoSalad, btn_ChipotleSalad, btn_GrilledSalmonSalad, btn_RefreshingCATCHSalad});
 
         Panel_ParentMenu.add(Panel_Salad, "card11");
 
@@ -724,7 +868,7 @@ public class GUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel_Background, javax.swing.GroupLayout.PREFERRED_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(Panel_Background, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         pack();
@@ -871,6 +1015,10 @@ public class GUI extends javax.swing.JFrame {
         Panel_ParentMenu.repaint();
         Panel_ParentMenu.revalidate();
     }//GEN-LAST:event_btn_DessertsActionPerformed
+
+    private void btn_BaconCheddarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BaconCheddarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_BaconCheddarActionPerformed
 
     /**
      * @param args the command line arguments
