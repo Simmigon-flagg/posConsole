@@ -5,6 +5,9 @@
  */
 package posconsole;
 
+import java.awt.Event;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -25,6 +28,45 @@ public class GUI extends javax.swing.JFrame {
 
     public GUI() {
         initComponents();
+        new Thread() {
+            public void run() {
+                while (true) {
+                    Calendar LoginRunningClock = new GregorianCalendar();
+                    int hour = LoginRunningClock.get(Calendar.HOUR);
+                    int minutes = LoginRunningClock.get(Calendar.MINUTE);
+                    int seconds = LoginRunningClock.get(Calendar.SECOND);
+                    int AM_PM = LoginRunningClock.get(Calendar.AM_PM);
+
+                    StringBuilder TimeStringBuilder = new StringBuilder();
+                    String time = null;
+                    String clockSymbol = ":";
+                    //for Clock formatting
+                    String Day_Or_Night;
+                    if (AM_PM == 1) {
+                        Day_Or_Night = "PM";
+                    } else {
+                        Day_Or_Night = "AM";
+                    }
+                    if (hour < 10 || minutes < 10 || seconds < 10) {
+                        //This will run to allow the 0 to be placed in frint of single digit numbers
+                         //This could six different if statements
+                        if (hour < 10) {
+                            time = "0" + hour + clockSymbol + minutes + clockSymbol + seconds + Day_Or_Night;
+                        }
+                        if (minutes < 10) {
+                            time = hour + clockSymbol + "0" + minutes + clockSymbol + seconds + Day_Or_Night;
+                        }
+                        if (seconds < 10) {
+                            time = hour + clockSymbol + minutes + clockSymbol + "0" + seconds + Day_Or_Night;
+                        }
+                       
+                        lblRunningClock.setText(TimeStringBuilder.append(time).toString());
+                    }
+
+                }
+
+            }
+        }.start();
 
     }
 
@@ -90,6 +132,7 @@ public class GUI extends javax.swing.JFrame {
         btn_ClockInClockOut = new javax.swing.JButton();
         lbl_LoggedInAs = new javax.swing.JLabel();
         lbl_nameOfEmpLoggedIn = new javax.swing.JLabel();
+        lblRunningClock = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -446,31 +489,41 @@ public class GUI extends javax.swing.JFrame {
 
         lbl_LoggedInAs.setText("Logged in as:");
 
+        lblRunningClock.setFont(new java.awt.Font("Angsana New", 0, 36)); // NOI18N
+        lblRunningClock.setForeground(new java.awt.Color(255, 255, 255));
+        lblRunningClock.setText("jLabel1");
+
         javax.swing.GroupLayout Card_ClockinClockOutLayout = new javax.swing.GroupLayout(Card_ClockinClockOut);
         Card_ClockinClockOut.setLayout(Card_ClockinClockOutLayout);
         Card_ClockinClockOutLayout.setHorizontalGroup(
             Card_ClockinClockOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_ClockinClockOutLayout.createSequentialGroup()
-                .addContainerGap(349, Short.MAX_VALUE)
+                .addContainerGap(390, Short.MAX_VALUE)
                 .addComponent(btn_ClockInClockOut)
                 .addGap(376, 376, 376))
             .addGroup(Card_ClockinClockOutLayout.createSequentialGroup()
                 .addGap(212, 212, 212)
-                .addComponent(lbl_LoggedInAs)
-                .addGap(18, 18, 18)
-                .addComponent(lbl_nameOfEmpLoggedIn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(Card_ClockinClockOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblRunningClock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(Card_ClockinClockOutLayout.createSequentialGroup()
+                        .addComponent(lbl_LoggedInAs)
+                        .addGap(18, 18, 18)
+                        .addComponent(lbl_nameOfEmpLoggedIn)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         Card_ClockinClockOutLayout.setVerticalGroup(
             Card_ClockinClockOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_ClockinClockOutLayout.createSequentialGroup()
-                .addGap(161, 161, 161)
+                .addContainerGap()
+                .addComponent(lblRunningClock)
+                .addGap(139, 139, 139)
                 .addGroup(Card_ClockinClockOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_LoggedInAs)
                     .addComponent(lbl_nameOfEmpLoggedIn))
                 .addGap(47, 47, 47)
                 .addComponent(btn_ClockInClockOut)
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
 
         Card_TimeCard.add(Card_ClockinClockOut, "card3");
@@ -536,11 +589,11 @@ public class GUI extends javax.swing.JFrame {
     private void btn_cokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cokeActionPerformed
         // TODO add your handling code here:
         /**
-         * This is how you display an item and price from the
-         * database into a DefaultTableModel
-         */       
+         * This is how you display an item and price from the database into a
+         * DefaultTableModel
+         */
         DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
-                        // Item and price
+        // Item and price
         Object[] row = {menu[6][0], menu[6][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_cokeActionPerformed
@@ -589,8 +642,8 @@ public class GUI extends javax.swing.JFrame {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
-                        // Item and price
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
         Object[] row = {menu[7][0], menu[7][1]};
         model.addRow(row);
     }//GEN-LAST:event_jButton10ActionPerformed
@@ -674,6 +727,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblRunningClock;
     private javax.swing.JLabel lbl_EmpLogin;
     private javax.swing.JLabel lbl_LoggedInAs;
     private javax.swing.JLabel lbl_nameOfEmpLoggedIn;
