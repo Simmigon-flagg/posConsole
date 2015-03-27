@@ -40,9 +40,9 @@ public class GUI extends javax.swing.JFrame {
                      * pieces System.out.println(date);
                      */
                     String[] time = date.toString().split(" ");
-                    lblRunningClock.setText(time[3] + " " + time[2]);
+                    lblApplicationTime.setText(time[0] + " " + time[1] + " " + time[2] + " " + time[5] + " " + time[3]);
+                    //lblRunningClock.setText(time[3] + " " + time[2]);
                 }
-
             }
         }.start();
 
@@ -146,6 +146,8 @@ public class GUI extends javax.swing.JFrame {
         lbl_LoggedInAs = new javax.swing.JLabel();
         lbl_nameOfEmpLoggedIn = new javax.swing.JLabel();
         lblRunningClock = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblApplicationTime = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -206,7 +208,7 @@ public class GUI extends javax.swing.JFrame {
 
         tbl_order.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null}
+
             },
             new String [] {
                 "ITEM", "PRICE"
@@ -215,21 +217,28 @@ public class GUI extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.Double.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
+        tbl_order.setColumnSelectionAllowed(true);
         tbl_order.setRowHeight(20);
         jScrollPane1.setViewportView(tbl_order);
+        tbl_order.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (tbl_order.getColumnModel().getColumnCount() > 0) {
             tbl_order.getColumnModel().getColumn(0).setPreferredWidth(190);
             tbl_order.getColumnModel().getColumn(1).setPreferredWidth(50);
         }
 
         Card_Menu.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 319, 374));
-
-        Panel_PaymentButtons.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_VoidItem.setBackground(new java.awt.Color(245, 41, 49));
         btn_VoidItem.setText("VOID ITEM");
@@ -238,22 +247,22 @@ public class GUI extends javax.swing.JFrame {
                 btn_VoidItemActionPerformed(evt);
             }
         });
-        Panel_PaymentButtons.add(btn_VoidItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 57));
 
         btn_PrintBill.setBackground(new java.awt.Color(204, 204, 255));
         btn_PrintBill.setText("PRINT");
-        Panel_PaymentButtons.add(btn_PrintBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 0, 91, 57));
+        btn_PrintBill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_PrintBillActionPerformed(evt);
+            }
+        });
 
         btn_SaveBill.setBackground(new java.awt.Color(255, 204, 204));
         btn_SaveBill.setText("SAVE");
-        Panel_PaymentButtons.add(btn_SaveBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 0, 120, 57));
 
         btn_Pay.setText("PAY");
-        Panel_PaymentButtons.add(btn_Pay, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 120, 57));
 
         btn_Cancel.setBackground(new java.awt.Color(204, 255, 204));
         btn_Cancel.setText("CANCEL");
-        Panel_PaymentButtons.add(btn_Cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 110, 57));
 
         btn_ClearAllItems.setBackground(new java.awt.Color(153, 255, 153));
         btn_ClearAllItems.setText("CLEAR");
@@ -262,9 +271,49 @@ public class GUI extends javax.swing.JFrame {
                 btn_ClearAllItemsActionPerformed(evt);
             }
         });
-        Panel_PaymentButtons.add(btn_ClearAllItems, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 60, 90, 57));
 
-        Card_Menu.add(Panel_PaymentButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 320, 120));
+        javax.swing.GroupLayout Panel_PaymentButtonsLayout = new javax.swing.GroupLayout(Panel_PaymentButtons);
+        Panel_PaymentButtons.setLayout(Panel_PaymentButtonsLayout);
+        Panel_PaymentButtonsLayout.setHorizontalGroup(
+            Panel_PaymentButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_PaymentButtonsLayout.createSequentialGroup()
+                .addGroup(Panel_PaymentButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_VoidItem)
+                    .addComponent(btn_Pay, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addGroup(Panel_PaymentButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_PaymentButtonsLayout.createSequentialGroup()
+                        .addComponent(btn_Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_ClearAllItems, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                    .addGroup(Panel_PaymentButtonsLayout.createSequentialGroup()
+                        .addComponent(btn_PrintBill, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_SaveBill, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
+        Panel_PaymentButtonsLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn_Cancel, btn_ClearAllItems, btn_Pay, btn_PrintBill, btn_SaveBill, btn_VoidItem});
+
+        Panel_PaymentButtonsLayout.setVerticalGroup(
+            Panel_PaymentButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_PaymentButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Panel_PaymentButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_VoidItem, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_PrintBill, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_SaveBill, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Panel_PaymentButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Pay, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_ClearAllItems, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        Panel_PaymentButtonsLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn_Cancel, btn_ClearAllItems, btn_Pay, btn_PrintBill, btn_SaveBill, btn_VoidItem});
+
+        Card_Menu.add(Panel_PaymentButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 320, 130));
 
         Panel_ParentMenu.setLayout(new java.awt.CardLayout());
 
@@ -1020,22 +1069,47 @@ public class GUI extends javax.swing.JFrame {
 
         Panel_ParentCard.add(Card_TimeCard, "card5");
 
+        lblApplicationTime.setFont(new java.awt.Font("sansserif", 0, 20)); // NOI18N
+        lblApplicationTime.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblApplicationTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblApplicationTime)
+                .addContainerGap(59, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout Panel_BackgroundLayout = new javax.swing.GroupLayout(Panel_Background);
         Panel_Background.setLayout(Panel_BackgroundLayout);
         Panel_BackgroundLayout.setHorizontalGroup(
             Panel_BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Panel_ParentCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(Panel_BackgroundLayout.createSequentialGroup()
-                .addGap(321, 321, 321)
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Panel_TopButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Panel_BackgroundLayout.setVerticalGroup(
             Panel_BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_BackgroundLayout.createSequentialGroup()
-                .addComponent(Panel_TopButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addGroup(Panel_BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Panel_TopButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Panel_ParentCard, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1046,7 +1120,9 @@ public class GUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel_Background, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Panel_Background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -1310,165 +1386,174 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_OriginalWingsActionPerformed
 
     private void btn_HotWingsNakedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_HotWingsNakedActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[19][0], menu[19][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_HotWingsNakedActionPerformed
 
     private void btn_LemonPepperWingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LemonPepperWingsActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[20][0], menu[20][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_LemonPepperWingsActionPerformed
 
     private void btn_TeriyakiWingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TeriyakiWingsActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[21][0], menu[21][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_TeriyakiWingsActionPerformed
 
     private void btn_HoneyBarbecueWingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_HoneyBarbecueWingsActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[22][0], menu[22][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_HoneyBarbecueWingsActionPerformed
 
     private void btn_CATCHWingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CATCHWingsActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[23][0], menu[23][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_CATCHWingsActionPerformed
 
     private void btn_CeasarSaladActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CeasarSaladActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[24][0], menu[24][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_CeasarSaladActionPerformed
 
     private void btn_AsianSaladActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AsianSaladActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[25][0], menu[25][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_AsianSaladActionPerformed
 
     private void btn_GrilledSalmonSaladActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GrilledSalmonSaladActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[26][0], menu[26][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_GrilledSalmonSaladActionPerformed
 
     private void btn_ChipotleSaladActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ChipotleSaladActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[28][0], menu[28][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_ChipotleSaladActionPerformed
 
     private void btn_ChickenAvocadoSaladActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ChickenAvocadoSaladActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[27][0], menu[27][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_ChickenAvocadoSaladActionPerformed
 
     private void btn_RefreshingCATCHSaladActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RefreshingCATCHSaladActionPerformed
-      DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[29][0], menu[29][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_RefreshingCATCHSaladActionPerformed
 
     private void btn_FriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_FriesActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[30][0], menu[30][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_FriesActionPerformed
 
     private void btn_ColeslawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ColeslawActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[31][0], menu[31][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_ColeslawActionPerformed
 
     private void btn_MashedPotatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MashedPotatoActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[32][0], menu[32][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_MashedPotatoActionPerformed
 
     private void btn_CornActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CornActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[33][0], menu[33][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_CornActionPerformed
 
     private void btn_QuesoDipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_QuesoDipActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[34][0], menu[34][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_QuesoDipActionPerformed
 
     private void btn_PotatoWedgesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PotatoWedgesActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[35][0], menu[35][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_PotatoWedgesActionPerformed
 
     private void btn_Chocolate_Mousse_CheescakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Chocolate_Mousse_CheescakeActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[36][0], menu[36][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_Chocolate_Mousse_CheescakeActionPerformed
 
     private void btn_RedVelvetCakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RedVelvetCakeActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[37][0], menu[37][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_RedVelvetCakeActionPerformed
 
     private void btn_CannoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CannoliActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[38][0], menu[38][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_CannoliActionPerformed
 
     private void btn_TiramisuCakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TiramisuCakeActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[39][0], menu[39][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_TiramisuCakeActionPerformed
 
     private void btn_MilkShakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MilkShakeActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[40][0], menu[40][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_MilkShakeActionPerformed
 
     private void btn_CATCHIceCreamSurpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CATCHIceCreamSurpriseActionPerformed
- DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
         Object[] row = {menu[41][0], menu[41][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_CATCHIceCreamSurpriseActionPerformed
+
+    private void btn_PrintBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PrintBillActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        //Object[][] saveOrder = model.getDataVector();
+        for (int i = 0; i < model.getDataVector().size(); i++) {
+            System.out.println(model.getDataVector().elementAt(i));
+        }
+
+    }//GEN-LAST:event_btn_PrintBillActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1588,7 +1673,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton btn_TiramisuCake;
     private javax.swing.JButton btn_VoidItem;
     private javax.swing.JButton btn_Wings;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblApplicationTime;
     private javax.swing.JLabel lblRunningClock;
     private javax.swing.JLabel lbl_EmpLogin;
     private javax.swing.JLabel lbl_LoggedInAs;
