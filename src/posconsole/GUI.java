@@ -6,6 +6,7 @@
 package posconsole;
 
 import java.awt.Event;
+import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -28,6 +29,7 @@ public class GUI extends javax.swing.JFrame {
     TimeCard tCard = new TimeCard();
     DefaultTableModel model = new DefaultTableModel();
     Object[][] menu = dbconn.LoadMenu();
+    Order saveOrder;
 
     public GUI() {
         initComponents();
@@ -258,6 +260,11 @@ public class GUI extends javax.swing.JFrame {
 
         btn_SaveBill.setBackground(new java.awt.Color(255, 204, 204));
         btn_SaveBill.setText("SAVE");
+        btn_SaveBill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SaveBillActionPerformed(evt);
+            }
+        });
 
         btn_Pay.setText("PAY");
 
@@ -1547,13 +1554,20 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_CATCHIceCreamSurpriseActionPerformed
 
     private void btn_PrintBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PrintBillActionPerformed
-        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
-        //Object[][] saveOrder = model.getDataVector();
-        for (int i = 0; i < model.getDataVector().size(); i++) {
-            System.out.println(model.getDataVector().elementAt(i));
-        }
+      
 
     }//GEN-LAST:event_btn_PrintBillActionPerformed
+
+    private void btn_SaveBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SaveBillActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        //Object[][] saveOrder = model.getDataVector();
+        for (int i = 0; i < model.getRowCount(); i++) {
+          //  System.out.println(model.getDataVector().elementAt(i));
+             saveOrder = new Order(model.getValueAt(i, i).toString(), BigDecimal.valueOf(Double.parseDouble(model.getValueAt(i, ++i).toString())), null);           
+             --i;
+        }
+        System.out.println(saveOrder.toString().trim());
+    }//GEN-LAST:event_btn_SaveBillActionPerformed
 
     /**
      * @param args the command line arguments
