@@ -9,8 +9,6 @@ import java.awt.Event;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import javafx.scene.chart.PieChart;
-import javafx.scene.chart.PieChart.Data;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -315,42 +313,44 @@ public class GUI extends javax.swing.JFrame {
         Panel_DrinksLayout.setHorizontalGroup(
             Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_DrinksLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
                 .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel_DrinksLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
                         .addComponent(btn_SweetTea)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_Coffee))
+                        .addGap(0, 0, 0)
+                        .addComponent(btn_Coffee, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Panel_DrinksLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(btn_Coke)
-                        .addGap(5, 5, 5)
-                        .addComponent(btn_DietCoke))
-                    .addGroup(Panel_DrinksLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(btn_Sprite)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_Lemonade)))
+                        .addGap(0, 0, 0)
+                        .addComponent(btn_Lemonade))
+                    .addGroup(Panel_DrinksLayout.createSequentialGroup()
+                        .addComponent(btn_Coke)
+                        .addGap(0, 0, 0)
+                        .addComponent(btn_DietCoke, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        Panel_DrinksLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn_Coffee, btn_Coke, btn_DietCoke, btn_Lemonade, btn_Sprite, btn_SweetTea});
+
         Panel_DrinksLayout.setVerticalGroup(
             Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_DrinksLayout.createSequentialGroup()
                 .addGap(5, 5, 5)
                 .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_Coke)
-                    .addComponent(btn_DietCoke))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                    .addComponent(btn_Coke, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_DietCoke, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
                 .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Sprite)
                     .addComponent(btn_Lemonade))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(Panel_DrinksLayout.createSequentialGroup()
-                        .addComponent(btn_Coffee)
-                        .addContainerGap())
-                    .addComponent(btn_SweetTea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(0, 0, 0)
+                .addGroup(Panel_DrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_SweetTea, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Coffee, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(266, Short.MAX_VALUE))
         );
+
+        Panel_DrinksLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn_Coffee, btn_Coke, btn_DietCoke, btn_Lemonade, btn_Sprite, btn_SweetTea});
 
         Panel_ParentMenu.add(Panel_Drinks, "card9");
 
@@ -401,24 +401,25 @@ public class GUI extends javax.swing.JFrame {
         Panel_AppetizersLayout.setHorizontalGroup(
             Panel_AppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_AppetizersLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
                 .addGroup(Panel_AppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel_AppetizersLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
                         .addComponent(btn_ChipsSalsa)
-                        .addGap(5, 5, 5)
+                        .addGap(0, 0, 0)
                         .addComponent(btn_Calamari))
                     .addGroup(Panel_AppetizersLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(btn_MozarellaSticks)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(0, 0, 0)
                         .addComponent(btn_FourWaySampler))
                     .addGroup(Panel_AppetizersLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(btn_SpinachArtiDip)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(0, 0, 0)
                         .addComponent(btn_SantaFeChkQue)))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        Panel_AppetizersLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn_Calamari, btn_ChipsSalsa, btn_FourWaySampler, btn_MozarellaSticks, btn_SantaFeChkQue, btn_SpinachArtiDip});
+
         Panel_AppetizersLayout.setVerticalGroup(
             Panel_AppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_AppetizersLayout.createSequentialGroup()
@@ -426,16 +427,18 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(Panel_AppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_ChipsSalsa)
                     .addComponent(btn_Calamari))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addGroup(Panel_AppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_MozarellaSticks)
                     .addComponent(btn_FourWaySampler))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addGroup(Panel_AppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_SpinachArtiDip)
-                    .addComponent(btn_SantaFeChkQue))
-                .addContainerGap())
+                    .addComponent(btn_SantaFeChkQue, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
+
+        Panel_AppetizersLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn_Calamari, btn_ChipsSalsa, btn_FourWaySampler, btn_MozarellaSticks, btn_SantaFeChkQue, btn_SpinachArtiDip});
 
         Panel_ParentMenu.add(Panel_Appetizers, "card9");
 
@@ -491,7 +494,7 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(Panel_BurgersLayout.createSequentialGroup()
                         .addComponent(btn_SouthWest)
                         .addGap(2, 2, 2)
-                        .addComponent(btn_TheWorks))
+                        .addComponent(btn_TheWorks, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Panel_BurgersLayout.createSequentialGroup()
                         .addComponent(btn_SwissMelt)
                         .addGap(0, 0, 0)
@@ -500,7 +503,7 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(btn_BaconCheddar)
                         .addGap(0, 0, 0)
                         .addComponent(btn_CATCHBurger)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         Panel_BurgersLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn_BaconCheddar, btn_CATCHBurger, btn_SouthWest, btn_SwissMelt, btn_TheWorks, btn_ThreeCheese});
@@ -713,7 +716,6 @@ public class GUI extends javax.swing.JFrame {
                 btn_FriesActionPerformed(evt);
             }
         });
-        Panel_Extras.add(btn_Fries);
 
         btn_Coleslaw.setText("Coleslaw");
         btn_Coleslaw.addActionListener(new java.awt.event.ActionListener() {
@@ -721,7 +723,6 @@ public class GUI extends javax.swing.JFrame {
                 btn_ColeslawActionPerformed(evt);
             }
         });
-        Panel_Extras.add(btn_Coleslaw);
 
         btn_MashedPotato.setText("Mashed Potato");
         btn_MashedPotato.addActionListener(new java.awt.event.ActionListener() {
@@ -729,7 +730,6 @@ public class GUI extends javax.swing.JFrame {
                 btn_MashedPotatoActionPerformed(evt);
             }
         });
-        Panel_Extras.add(btn_MashedPotato);
 
         btn_Corn.setText("Corn");
         btn_Corn.addActionListener(new java.awt.event.ActionListener() {
@@ -737,7 +737,6 @@ public class GUI extends javax.swing.JFrame {
                 btn_CornActionPerformed(evt);
             }
         });
-        Panel_Extras.add(btn_Corn);
 
         btn_QuesoDip.setText("Queso Dip");
         btn_QuesoDip.addActionListener(new java.awt.event.ActionListener() {
@@ -745,7 +744,6 @@ public class GUI extends javax.swing.JFrame {
                 btn_QuesoDipActionPerformed(evt);
             }
         });
-        Panel_Extras.add(btn_QuesoDip);
 
         btn_PotatoWedges.setText("Potato Wedges");
         btn_PotatoWedges.addActionListener(new java.awt.event.ActionListener() {
@@ -753,7 +751,50 @@ public class GUI extends javax.swing.JFrame {
                 btn_PotatoWedgesActionPerformed(evt);
             }
         });
-        Panel_Extras.add(btn_PotatoWedges);
+
+        javax.swing.GroupLayout Panel_ExtrasLayout = new javax.swing.GroupLayout(Panel_Extras);
+        Panel_Extras.setLayout(Panel_ExtrasLayout);
+        Panel_ExtrasLayout.setHorizontalGroup(
+            Panel_ExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_ExtrasLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(Panel_ExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_ExtrasLayout.createSequentialGroup()
+                        .addComponent(btn_QuesoDip)
+                        .addGap(0, 0, 0)
+                        .addComponent(btn_PotatoWedges, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Panel_ExtrasLayout.createSequentialGroup()
+                        .addComponent(btn_Fries)
+                        .addGap(0, 0, 0)
+                        .addComponent(btn_Coleslaw))
+                    .addGroup(Panel_ExtrasLayout.createSequentialGroup()
+                        .addComponent(btn_MashedPotato)
+                        .addGap(0, 0, 0)
+                        .addComponent(btn_Corn)))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+
+        Panel_ExtrasLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn_Coleslaw, btn_Corn, btn_Fries, btn_MashedPotato, btn_PotatoWedges, btn_QuesoDip});
+
+        Panel_ExtrasLayout.setVerticalGroup(
+            Panel_ExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_ExtrasLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(Panel_ExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_Fries)
+                    .addComponent(btn_Coleslaw))
+                .addGap(0, 0, 0)
+                .addGroup(Panel_ExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_MashedPotato)
+                    .addComponent(btn_Corn))
+                .addGap(1, 1, 1)
+                .addGroup(Panel_ExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_QuesoDip)
+                    .addComponent(btn_PotatoWedges, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(188, Short.MAX_VALUE))
+        );
+
+        Panel_ExtrasLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn_Coleslaw, btn_Corn, btn_Fries, btn_MashedPotato, btn_PotatoWedges, btn_QuesoDip});
 
         Panel_ParentMenu.add(Panel_Extras, "card12");
 
@@ -1076,18 +1117,6 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_ClearAllItemsActionPerformed
 
-    private void btn_CokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CokeActionPerformed
-        // TODO add your handling code here:
-        /**
-         * This is how you display an item and price from the database into a
-         * DefaultTableModel
-         */
-        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
-        // Item and price
-        Object[] row = {menu[0][0], menu[0][1]};
-        model.addRow(row);
-    }//GEN-LAST:event_btn_CokeActionPerformed
-
     private void btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoginActionPerformed
         // TODO add your handling code here:
 
@@ -1124,22 +1153,6 @@ public class GUI extends javax.swing.JFrame {
         Panel_ParentCard.repaint();
         Panel_ParentCard.revalidate();
     }//GEN-LAST:event_btn_ManagerActionPerformed
-
-    private void btn_SpriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SpriteActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
-        // Item and price
-        Object[] row = {menu[2][0], menu[2][1]};
-        model.addRow(row);
-
-    }//GEN-LAST:event_btn_SpriteActionPerformed
-
-    private void btn_SweetTeaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SweetTeaActionPerformed
-        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
-        // Item and price
-        Object[] row = {menu[4][0], menu[4][1]};
-        model.addRow(row);
-    }//GEN-LAST:event_btn_SweetTeaActionPerformed
 
     private void btn_AppetizersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AppetizersActionPerformed
         // TODO add your handling code here:
@@ -1203,27 +1216,6 @@ public class GUI extends javax.swing.JFrame {
         Object[] row = {menu[16][0], menu[16][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_BaconCheddarActionPerformed
-
-    private void btn_DietCokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DietCokeActionPerformed
-        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
-        // Item and price
-        Object[] row = {menu[1][0], menu[1][1]};
-        model.addRow(row);        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_DietCokeActionPerformed
-
-    private void btn_LemonadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LemonadeActionPerformed
-        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
-        // Item and price
-        Object[] row = {menu[3][0], menu[3][1]};
-        model.addRow(row);
-    }//GEN-LAST:event_btn_LemonadeActionPerformed
-
-    private void btn_CoffeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CoffeeActionPerformed
-        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
-        // Item and price
-        Object[] row = {menu[5][0], menu[5][1]};
-        model.addRow(row);
-    }//GEN-LAST:event_btn_CoffeeActionPerformed
 
     private void btn_SouthWestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SouthWestActionPerformed
         DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
@@ -1469,6 +1461,54 @@ public class GUI extends javax.swing.JFrame {
         Object[] row = {menu[41][0], menu[41][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_CATCHIceCreamSurpriseActionPerformed
+
+    private void btn_CoffeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CoffeeActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[5][0], menu[5][1]};
+        model.addRow(row);
+    }//GEN-LAST:event_btn_CoffeeActionPerformed
+
+    private void btn_SweetTeaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SweetTeaActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[4][0], menu[4][1]};
+        model.addRow(row);
+    }//GEN-LAST:event_btn_SweetTeaActionPerformed
+
+    private void btn_LemonadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LemonadeActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[3][0], menu[3][1]};
+        model.addRow(row);
+    }//GEN-LAST:event_btn_LemonadeActionPerformed
+
+    private void btn_SpriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SpriteActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[2][0], menu[2][1]};
+        model.addRow(row);
+    }//GEN-LAST:event_btn_SpriteActionPerformed
+
+    private void btn_DietCokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DietCokeActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[1][0], menu[1][1]};
+        model.addRow(row);        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_DietCokeActionPerformed
+
+    private void btn_CokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CokeActionPerformed
+        // TODO add your handling code here:
+        /**
+        * This is how you display an item and price from the database into a
+        * DefaultTableModel
+        */
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[0][0], menu[0][1]};
+        model.addRow(row);
+    }//GEN-LAST:event_btn_CokeActionPerformed
 
     /**
      * @param args the command line arguments
