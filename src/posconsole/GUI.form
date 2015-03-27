@@ -297,22 +297,24 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="btn_SweetTea" linkSize="20" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                              <Component id="btn_Coffee" linkSize="20" min="-2" pref="164" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                              <Component id="btn_SweetTea" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="btn_Coffee" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="btn_Sprite" linkSize="20" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                              <Component id="btn_Lemonade" linkSize="20" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                              <Component id="btn_Coke" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                              <Component id="btn_DietCoke" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="btn_Coke" linkSize="20" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                              <Component id="btn_DietCoke" linkSize="20" min="-2" pref="193" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="btn_Sprite" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="btn_Lemonade" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
@@ -324,20 +326,22 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btn_Coke" linkSize="19" max="32767" attributes="0"/>
-                                          <Component id="btn_DietCoke" linkSize="19" min="-2" pref="66" max="-2" attributes="0"/>
+                                          <Component id="btn_Coke" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btn_DietCoke" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                      <EmptySpace pref="41" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="btn_Sprite" linkSize="19" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btn_Lemonade" linkSize="19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btn_Sprite" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btn_Lemonade" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btn_SweetTea" linkSize="19" min="-2" pref="45" max="-2" attributes="0"/>
-                                          <Component id="btn_Coffee" linkSize="19" min="-2" pref="73" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="btn_Coffee" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="btn_SweetTea" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="266" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -404,25 +408,27 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="btn_ChipsSalsa" linkSize="22" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                              <Component id="btn_Calamari" linkSize="22" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                              <Component id="btn_ChipsSalsa" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                              <Component id="btn_Calamari" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="btn_MozarellaSticks" linkSize="22" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                              <Component id="btn_FourWaySampler" linkSize="22" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="btn_MozarellaSticks" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="btn_FourWaySampler" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="btn_SpinachArtiDip" linkSize="22" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                              <Component id="btn_SantaFeChkQue" linkSize="22" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="btn_SpinachArtiDip" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="btn_SantaFeChkQue" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="78" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -431,20 +437,20 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btn_ChipsSalsa" linkSize="21" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btn_Calamari" linkSize="21" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btn_ChipsSalsa" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btn_Calamari" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="btn_MozarellaSticks" linkSize="21" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btn_FourWaySampler" linkSize="21" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btn_MozarellaSticks" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btn_FourWaySampler" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="btn_SpinachArtiDip" linkSize="21" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btn_SantaFeChkQue" linkSize="21" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                                          <Component id="btn_SpinachArtiDip" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btn_SantaFeChkQue" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="169" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -516,7 +522,7 @@
                                           <Group type="102" attributes="0">
                                               <Component id="btn_SouthWest" linkSize="14" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                              <Component id="btn_TheWorks" linkSize="14" min="-2" pref="172" max="-2" attributes="0"/>
+                                              <Component id="btn_TheWorks" linkSize="14" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="btn_SwissMelt" linkSize="14" min="-2" max="-2" attributes="0"/>
@@ -529,7 +535,7 @@
                                               <Component id="btn_CATCHBurger" linkSize="14" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="29" max="32767" attributes="0"/>
+                                      <EmptySpace pref="51" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -836,55 +842,7 @@
                             </Constraint>
                           </Constraints>
 
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="btn_QuesoDip" linkSize="24" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                              <Component id="btn_PotatoWedges" linkSize="24" min="-2" pref="180" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="btn_Fries" linkSize="24" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                              <Component id="btn_Coleslaw" linkSize="24" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="btn_MashedPotato" linkSize="24" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                              <Component id="btn_Corn" linkSize="24" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace pref="26" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btn_Fries" linkSize="23" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btn_Coleslaw" linkSize="23" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="btn_MashedPotato" linkSize="23" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btn_Corn" linkSize="23" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="btn_QuesoDip" linkSize="23" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btn_PotatoWedges" linkSize="23" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace pref="188" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
                           <SubComponents>
                             <Component class="javax.swing.JButton" name="btn_Fries">
                               <Properties>
