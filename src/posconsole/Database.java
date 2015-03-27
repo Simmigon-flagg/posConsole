@@ -37,7 +37,7 @@ public class Database {
         try {
 
             dbStatement = ConnecttoDB().createStatement();
-            rs = dbStatement.executeQuery("SELECT COUNT(*) FROM MenuDB; ");
+            rs = dbStatement.executeQuery("SELECT COUNT(*) FROM Menu; ");
             //Columns in sql starts from 1
             int numberOfRows = rs.getInt(1);
 
