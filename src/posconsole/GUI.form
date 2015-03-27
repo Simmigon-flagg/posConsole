@@ -359,6 +359,9 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Diet Coke"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_DietCokeActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btn_Sprite">
                               <Properties>
@@ -372,6 +375,9 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Lemonade"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_LemonadeActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btn_SweetTea">
                               <Properties>
@@ -385,6 +391,9 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Coffee"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_CoffeeActionPerformed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -435,31 +444,49 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Chips &amp; Salsa"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ChipsSalsaActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btn_Calamari">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Calamari"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_CalamariActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btn_MozarellaSticks">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Mozarella Sticks"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_MozarellaSticksActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btn_FourWaySampler">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Four-Way Sampler"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_FourWaySamplerActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btn_SpinachArtiDip">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Spinach Artichoke Dip"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_SpinachArtiDipActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btn_SantaFeChkQue">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Santa Fe Artichoke Dip"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_SantaFeChkQueActionPerformed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -524,21 +551,33 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="SouthWest"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_SouthWestActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btn_TheWorks">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="The Works"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_TheWorksActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btn_ThreeCheese">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Three Cheese"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ThreeCheeseActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btn_SwissMelt">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Swiss Melt"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_SwissMeltActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btn_BaconCheddar">
                               <Properties>
@@ -552,6 +591,9 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="C.A.T.C.H. Burger"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_CATCHBurgerActionPerformed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>

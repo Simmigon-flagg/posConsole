@@ -43,7 +43,7 @@ public class Database {
 
             loadedMenu = new Object[numberOfRows][2];
 
-            rs = dbStatement.executeQuery("SELECT itemNameDB, itemPriceDB FROM MenuDB;");
+            rs = dbStatement.executeQuery("SELECT itemNameDB, itemPriceDB FROM Menu;");
             int i = 0;
 
             while (rs.next()) {

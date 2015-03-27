@@ -37,13 +37,10 @@ public class GUI extends javax.swing.JFrame {
                     Date date = new Date();
                     /**
                      * Look at the console to see how to split the 
-                     * date into pieces
-                     */
-                    
-                    System.out.println(date);
+                     * date into pieces System.out.println(date);
+                     */                                       
                     String[] time = date.toString().split(" ");                                        
-                    lblRunningClock.setText(time[3] + " " + time[2]);
-                    
+                    lblRunningClock.setText(time[3] + " " + time[2]);                    
                 }
 
             }
@@ -279,6 +276,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         btn_DietCoke.setText("Diet Coke");
+        btn_DietCoke.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_DietCokeActionPerformed(evt);
+            }
+        });
 
         btn_Sprite.setText("Sprite");
         btn_Sprite.addActionListener(new java.awt.event.ActionListener() {
@@ -288,6 +290,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         btn_Lemonade.setText("Lemonade");
+        btn_Lemonade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_LemonadeActionPerformed(evt);
+            }
+        });
 
         btn_SweetTea.setText("Sweet Tea");
         btn_SweetTea.addActionListener(new java.awt.event.ActionListener() {
@@ -297,6 +304,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         btn_Coffee.setText("Coffee");
+        btn_Coffee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CoffeeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Panel_DrinksLayout = new javax.swing.GroupLayout(Panel_Drinks);
         Panel_Drinks.setLayout(Panel_DrinksLayout);
@@ -343,16 +355,46 @@ public class GUI extends javax.swing.JFrame {
         Panel_ParentMenu.add(Panel_Drinks, "card9");
 
         btn_ChipsSalsa.setText("Chips & Salsa");
+        btn_ChipsSalsa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ChipsSalsaActionPerformed(evt);
+            }
+        });
 
         btn_Calamari.setText("Calamari");
+        btn_Calamari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CalamariActionPerformed(evt);
+            }
+        });
 
         btn_MozarellaSticks.setText("Mozarella Sticks");
+        btn_MozarellaSticks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_MozarellaSticksActionPerformed(evt);
+            }
+        });
 
         btn_FourWaySampler.setText("Four-Way Sampler");
+        btn_FourWaySampler.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_FourWaySamplerActionPerformed(evt);
+            }
+        });
 
         btn_SpinachArtiDip.setText("Spinach Artichoke Dip");
+        btn_SpinachArtiDip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SpinachArtiDipActionPerformed(evt);
+            }
+        });
 
         btn_SantaFeChkQue.setText("Santa Fe Artichoke Dip");
+        btn_SantaFeChkQue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SantaFeChkQueActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Panel_AppetizersLayout = new javax.swing.GroupLayout(Panel_Appetizers);
         Panel_Appetizers.setLayout(Panel_AppetizersLayout);
@@ -388,12 +430,32 @@ public class GUI extends javax.swing.JFrame {
         Panel_ParentMenu.add(Panel_Appetizers, "card9");
 
         btn_SouthWest.setText("SouthWest");
+        btn_SouthWest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SouthWestActionPerformed(evt);
+            }
+        });
 
         btn_TheWorks.setText("The Works");
+        btn_TheWorks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_TheWorksActionPerformed(evt);
+            }
+        });
 
         btn_ThreeCheese.setText("Three Cheese");
+        btn_ThreeCheese.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ThreeCheeseActionPerformed(evt);
+            }
+        });
 
         btn_SwissMelt.setText("Swiss Melt");
+        btn_SwissMelt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SwissMeltActionPerformed(evt);
+            }
+        });
 
         btn_BaconCheddar.setText("Bacon Cheddar");
         btn_BaconCheddar.addActionListener(new java.awt.event.ActionListener() {
@@ -403,6 +465,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         btn_CATCHBurger.setText("C.A.T.C.H. Burger");
+        btn_CATCHBurger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CATCHBurgerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Panel_BurgersLayout = new javax.swing.GroupLayout(Panel_Burgers);
         Panel_Burgers.setLayout(Panel_BurgersLayout);
@@ -887,7 +954,7 @@ public class GUI extends javax.swing.JFrame {
          */
         DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
-        Object[] row = {menu[6][0], menu[6][1]};
+        Object[] row = {menu[0][0], menu[0][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_CokeActionPerformed
 
@@ -930,14 +997,17 @@ public class GUI extends javax.swing.JFrame {
 
     private void btn_SpriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SpriteActionPerformed
         // TODO add your handling code here:
+            DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[2][0], menu[2][1]};
+        model.addRow(row);
 
     }//GEN-LAST:event_btn_SpriteActionPerformed
 
     private void btn_SweetTeaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SweetTeaActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+          DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
         // Item and price
-        Object[] row = {menu[7][0], menu[7][1]};
+        Object[] row = {menu[4][0], menu[4][1]};
         model.addRow(row);
     }//GEN-LAST:event_btn_SweetTeaActionPerformed
 
@@ -998,8 +1068,94 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_DessertsActionPerformed
 
     private void btn_BaconCheddarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BaconCheddarActionPerformed
-        // TODO add your handling code here:
+DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[10][0], menu[10][1]};
+        model.addRow(row);
     }//GEN-LAST:event_btn_BaconCheddarActionPerformed
+
+    private void btn_DietCokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DietCokeActionPerformed
+    DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[1][0], menu[1][1]};
+        model.addRow(row);        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_DietCokeActionPerformed
+
+    private void btn_LemonadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LemonadeActionPerformed
+           DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[3][0], menu[3][1]};
+        model.addRow(row);
+    }//GEN-LAST:event_btn_LemonadeActionPerformed
+
+    private void btn_CoffeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CoffeeActionPerformed
+           DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[5][0], menu[5][1]};
+        model.addRow(row);
+    }//GEN-LAST:event_btn_CoffeeActionPerformed
+
+    private void btn_SouthWestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SouthWestActionPerformed
+     
+    }//GEN-LAST:event_btn_SouthWestActionPerformed
+
+    private void btn_TheWorksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TheWorksActionPerformed
+     
+    }//GEN-LAST:event_btn_TheWorksActionPerformed
+
+    private void btn_SwissMeltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SwissMeltActionPerformed
+
+    }//GEN-LAST:event_btn_SwissMeltActionPerformed
+
+    private void btn_ThreeCheeseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThreeCheeseActionPerformed
+     
+    }//GEN-LAST:event_btn_ThreeCheeseActionPerformed
+
+    private void btn_CATCHBurgerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CATCHBurgerActionPerformed
+
+    }//GEN-LAST:event_btn_CATCHBurgerActionPerformed
+
+    private void btn_ChipsSalsaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ChipsSalsaActionPerformed
+ DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[6][0], menu[6][1]};
+        model.addRow(row);
+    }//GEN-LAST:event_btn_ChipsSalsaActionPerformed
+
+    private void btn_CalamariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CalamariActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[7][0], menu[7][1]};
+        model.addRow(row);
+    }//GEN-LAST:event_btn_CalamariActionPerformed
+
+    private void btn_MozarellaSticksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MozarellaSticksActionPerformed
+DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[8][0], menu[8][1]};
+        model.addRow(row);
+    }//GEN-LAST:event_btn_MozarellaSticksActionPerformed
+
+    private void btn_FourWaySamplerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_FourWaySamplerActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[9][0], menu[9][1]};
+        model.addRow(row);   // TODO add your handling code here:
+    }//GEN-LAST:event_btn_FourWaySamplerActionPerformed
+
+    private void btn_SpinachArtiDipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SpinachArtiDipActionPerformed
+     DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[11][0], menu[11][1]};
+        model.addRow(row);
+    }//GEN-LAST:event_btn_SpinachArtiDipActionPerformed
+
+    private void btn_SantaFeChkQueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SantaFeChkQueActionPerformed
+DefaultTableModel model = (DefaultTableModel) tbl_order.getModel();
+        // Item and price
+        Object[] row = {menu[12][0], menu[12][1]};
+        model.addRow(row);
+    }//GEN-LAST:event_btn_SantaFeChkQueActionPerformed
 
     /**
      * @param args the command line arguments
