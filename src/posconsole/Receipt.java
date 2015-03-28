@@ -24,8 +24,8 @@ public class Receipt extends Order {
 
     //Pre:
     //Pro:
-    public Receipt(String orderNumber, String itemName, BigDecimal itemPrice, String note) {
-        super(itemName, itemPrice, note);
+    public Receipt(String orderNumber, String itemName, BigDecimal itemPrice) {
+        super(itemName, itemPrice);
         this.orderNumber = orderNumber;
     }
 
@@ -43,6 +43,7 @@ public class Receipt extends Order {
                 + "\n" + getOrderList()
                 + "\nSubtotal\t$" + getSubtotal()
                 + "\ntax\t" + getTax() + "%"
+                +"\nTax Amount\t$" + getTaxAmount()
                 + "\ntotal\t$" + getTotal()
                 + "\n\nTIP:\t$______________"
                 + "\nTOTAL:\t$______________";
@@ -111,12 +112,16 @@ public class Receipt extends Order {
 
     public BigDecimal getTax() {
 
-        return BigDecimal.valueOf(0.065).multiply(BigDecimal.valueOf(100)).stripTrailingZeros();
+        return BigDecimal.valueOf(0.070).multiply(BigDecimal.valueOf(100).stripTrailingZeros());
     }
 
     public BigDecimal getTotal() {
-        //return getSubtotal().add(getSubtotal().multiply(BigDecimal.valueOf(0.065)));
-        return getSubtotal().add(getSubtotal().multiply(BigDecimal.valueOf(0.065)).setScale(2, RoundingMode.FLOOR));
+        //return getSubtotal().add(getSubtotal().multiply(BigDecimal.valueOf(0.070)));
+        return getSubtotal().add(getSubtotal().multiply(BigDecimal.valueOf(0.070)).setScale(2, RoundingMode.FLOOR));
+    }
+    
+    public BigDecimal getTaxAmount(){
+       return getSubtotal().multiply(BigDecimal.valueOf(0.070)).setScale(2, RoundingMode.FLOOR);
     }
 
 }

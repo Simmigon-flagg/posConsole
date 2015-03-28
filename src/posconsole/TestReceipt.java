@@ -13,9 +13,9 @@ public class TestReceipt {
         ArrayList<Order> orderList = new ArrayList<>();
            Database dbMenuLoad = new Database();
           Object[][] menu = dbMenuLoad.LoadMenu();
-          orderList.add(new Order(menu[0][0].toString(), BigDecimal.valueOf((double) menu[0][1]), ""));
-          orderList.add(new Order(menu[4][0].toString(), BigDecimal.valueOf((double) menu[4][1]), ""));
-          orderList.add(new Order(menu[9][0].toString(), BigDecimal.valueOf((double) menu[9][1]), ""));       
+          orderList.add(new Order(menu[0][0].toString(), BigDecimal.valueOf((double) menu[0][1])));
+          orderList.add(new Order(menu[4][0].toString(), BigDecimal.valueOf((double) menu[4][1])));
+          orderList.add(new Order(menu[9][0].toString(), BigDecimal.valueOf((double) menu[9][1])));       
         //orderList.add(new Order("Kids Meal", BigDecimal.valueOf(4.99), "**no onions**"));
         //Order mOrder;
         //mOrder = new Order();

@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 public class Database {
 
     Connection dbconn = null;
+    java.util.Date date = new java.util.Date();
+    String[] time = date.toString().split(" ");
 
     public static Connection ConnecttoDB() {
         try {
@@ -123,7 +125,7 @@ public class Database {
     //Select ID From EmpId
     //save validated empID input to a global variable
 
-    public void Clockin(int empId, String time) {
+    public void Clockin(int empId) {
         ResultSet rs = null;
         Statement dbStatement = null;
 
@@ -132,15 +134,15 @@ public class Database {
             dbStatement = ConnecttoDB().createStatement();
             if (!isClockedIn(empId)) {
                 dbStatement.executeUpdate("INSERT INTO TimeCard (empId, ClockIn)\n"
-                        + "VALUES (" + empId + ",\"" + time + "\");");
-                System.out.println("True");
+                        + "VALUES (" + empId + ",\"" + time[3] + "\");");
+              
 
             } else {
-                System.out.println("false");
+                
                 dbStatement.executeUpdate("UPDATE TimeCard "
-                        + "SET ClockOut =\"" + time + "\" WHERE empId in (" + empId +")");
+                        + "SET ClockOut =\"" + time[3] + "\" WHERE empId in (" + empId + ")");
             }
-            
+
 
             /* while (rs.next()) {
 
@@ -273,6 +275,64 @@ public class Database {
             System.out.println(e);
         }
 
+    }
+
+    public void saveRevenue(double Subtotal, double TaxAmount, double Total) {
+        ResultSet rs = null;
+        Statement dbStatement = null;
+
+        try {
+
+            dbStatement = ConnecttoDB().createStatement();
+
+            dbStatement.executeUpdate("INSERT INTO Revenue (Subtotal, TaxAmount, Total)\n"
+                    + "VALUES (" + Subtotal + "," + TaxAmount + "," + Total + ");");
+
+        } catch (Exception e) {
+
+            System.out.println(e);
+        }
+    }
+
+    public void salesLog(String itemName, double itemPrice) {
+        ResultSet rs = null;
+        Statement dbStatement = null;
+        int itemIdFKfromMenu = -1;
+        try {
+
+            dbStatement = ConnecttoDB().createStatement();
+            rs = dbStatement.executeQuery("SELECT itemId FROM Menu WHERE itemNameDB = \"" + itemName + "\";");
+
+            while (rs.next()) {
+
+                itemIdFKfromMenu = rs.getInt("itemId");
+            }
+            dbStatement.executeUpdate("INSERT INTO SalesLog (itemId,itemNameSold, itemPriceSold)\n"
+                    + "VALUES (" + itemIdFKfromMenu + ",\"" + itemName + "\"," + itemPrice + ");");
+
+        } catch (Exception e) {
+
+            System.out.println(e);
+        }
+    }
+    public void typeOfPayment(Object paymentMethod){
+        try {
+
+//            dbStatement = ConnecttoDB().createStatement();
+//            rs = dbStatement.executeQuery("SELECT itemId FROM Menu WHERE itemNameDB = \"" + itemName + "\";");
+//
+//            while (rs.next()) {
+//
+//                itemIdFKfromMenu = rs.getInt("itemId");
+//            }
+//            dbStatement.executeUpdate("INSERT INTO SalesLog (itemId,itemNameSold, itemPriceSold)\n"
+//                    + "VALUES (" + itemIdFKfromMenu + ",\"" + itemName + "\"," + itemPrice + ");");
+
+        } catch (Exception e) {
+
+            System.out.println(e);
+        }
+        
     }
 
 }

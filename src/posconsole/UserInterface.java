@@ -7,6 +7,7 @@ package posconsole;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -21,7 +22,6 @@ public class UserInterface extends javax.swing.JFrame {
     /**
      * Creates new form UserInterface
      */
-    
     Database dbconn = new Database();
     TimeCard tCard = new TimeCard();
     DefaultTableModel model = new DefaultTableModel();
@@ -30,10 +30,10 @@ public class UserInterface extends javax.swing.JFrame {
     StringBuilder keypadLogin = new StringBuilder(" ");
     ArrayList<Order> orderLst = new ArrayList<>();
     Receipt receipt = new Receipt();
-    
-    //receipt.setOrderList(r);
-  
+     Transaction transaction = new Transaction();
+     StringBuilder paymentType =  new StringBuilder();
 
+    //receipt.setOrderList(r);
     public UserInterface() {
         initComponents();
 
@@ -179,9 +179,9 @@ public class UserInterface extends javax.swing.JFrame {
         btnClear = new javax.swing.JButton();
         btn3 = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
-        btnEnter = new javax.swing.JButton();
+        btnDecimalPoint = new javax.swing.JButton();
         btnCreditDebit = new javax.swing.JButton();
-        btnDiscount = new javax.swing.JButton();
+        btnGiftCard = new javax.swing.JButton();
         btnCash = new javax.swing.JButton();
         PanelAmount = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -299,7 +299,7 @@ public class UserInterface extends javax.swing.JFrame {
         PanelMenu.setBackground(new java.awt.Color(153, 255, 255));
         PanelMenu.setLayout(new java.awt.CardLayout());
 
-        CardDrinks.setBackground(new java.awt.Color(255, 0, 153));
+        CardDrinks.setBackground(new java.awt.Color(255, 255, 204));
 
         btnCoke.setText("Coke");
         btnCoke.addActionListener(new java.awt.event.ActionListener() {
@@ -1478,14 +1478,34 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        btnEnter.setBackground(new java.awt.Color(0, 204, 51));
-        btnEnter.setText("Enter");
+        btnDecimalPoint.setBackground(new java.awt.Color(0, 204, 51));
+        btnDecimalPoint.setText(".");
+        btnDecimalPoint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDecimalPointActionPerformed(evt);
+            }
+        });
 
         btnCreditDebit.setText("Credit/Debit");
+        btnCreditDebit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreditDebitActionPerformed(evt);
+            }
+        });
 
-        btnDiscount.setText("Discount");
+        btnGiftCard.setText("Gift Card");
+        btnGiftCard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGiftCardActionPerformed(evt);
+            }
+        });
 
         btnCash.setText("Cash");
+        btnCash.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCashActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelKeypadLayout = new javax.swing.GroupLayout(PanelKeypad);
         PanelKeypad.setLayout(PanelKeypadLayout);
@@ -1504,19 +1524,19 @@ public class UserInterface extends javax.swing.JFrame {
                     .addComponent(btn5)
                     .addComponent(btn8)
                     .addComponent(btn0)
-                    .addComponent(btnDiscount))
+                    .addComponent(btnGiftCard))
                 .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btn6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btn9, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnEnter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDecimalPoint, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCash, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn0, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnClear, btnEnter});
+        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn0, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnClear, btnDecimalPoint});
 
-        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCash, btnCreditDebit, btnDiscount});
+        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCash, btnCreditDebit, btnGiftCard});
 
         PanelKeypadLayout.setVerticalGroup(
             PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1537,21 +1557,23 @@ public class UserInterface extends javax.swing.JFrame {
                     .addComponent(btn9)
                     .addComponent(btn7))
                 .addGap(0, 0, 0)
-                .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn0, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnClear)
-                    .addComponent(btnEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnClear)
+                        .addComponent(btnDecimalPoint, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, 0)
-                .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDiscount, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCreditDebit)
-                    .addComponent(btnCash, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnGiftCard, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnCreditDebit)
+                        .addComponent(btnCash, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnClear, btnEnter});
+        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnClear, btnDecimalPoint});
 
-        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCash, btnCreditDebit, btnDiscount});
+        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCash, btnCreditDebit, btnGiftCard});
 
         txtAmount.setColumns(20);
         txtAmount.setRows(5);
@@ -1706,7 +1728,8 @@ public class UserInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDessertsActionPerformed
 
     private void btnTimeCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimeCardActionPerformed
-
+ txtEmpId.setText(null);
+        keypadLogin.delete(0, keypadLogin.length());
         PanelCardView.removeAll();
         PanelCardView.add(ViewTimeCard);
         PanelCardView.repaint();
@@ -1716,11 +1739,11 @@ public class UserInterface extends javax.swing.JFrame {
          *This remove the cash, credit/debit card, and the discount button 
          *from the transaction panel so that the employee do not see these buttons when clocking in
          */
-        btnEnter.setEnabled(false);
+        btnDecimalPoint.setEnabled(false);
         txtKeypad.setVisible(false);
         txtAmount.setVisible(false);
         btnCreditDebit.setVisible(false);
-        btnDiscount.setVisible(false);
+        btnGiftCard.setVisible(false);
         btnCash.setVisible(false);
     }//GEN-LAST:event_btnTimeCardActionPerformed
 
@@ -1750,29 +1773,29 @@ public class UserInterface extends javax.swing.JFrame {
          *This remove the cash, credit/debit card, and the discount button 
          *from the transaction panel so that the employee do not see these buttons when clocking in
          */
-        btnEnter.setEnabled(true);
+        btnDecimalPoint.setEnabled(true);
         txtKeypad.setVisible(true);
         txtAmount.setVisible(true);
         btnCreditDebit.setVisible(true);
-        btnDiscount.setVisible(true);
+        btnGiftCard.setVisible(true);
         btnCash.setVisible(true);
     }//GEN-LAST:event_btnPOSActionPerformed
 
     private void btnClockInClockOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClockInClockOutActionPerformed
         // TODO add your handling code here:
-        tCard.setDate();
-        dbconn.Clockin(Integer.parseInt(txtEmpId.getText()), tCard.getDate().toString());
-        System.out.println(txtEmpId.getText() + "\n");
+       
+        dbconn.Clockin(Integer.parseInt(txtEmpId.getText()));
+   
         PanelCardView.removeAll();
         PanelCardView.add(ViewPOS);
         PanelCardView.repaint();
         PanelCardView.revalidate();
         // Resets the Transaction Panel to normal state
-        btnEnter.setEnabled(true);
+        btnDecimalPoint.setEnabled(true);
         txtKeypad.setVisible(true);
         txtAmount.setVisible(true);
         btnCreditDebit.setVisible(true);
-        btnDiscount.setVisible(true);
+        btnGiftCard.setVisible(true);
         btnCash.setVisible(true);
     }//GEN-LAST:event_btnClockInClockOutActionPerformed
 
@@ -2213,16 +2236,54 @@ public class UserInterface extends javax.swing.JFrame {
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
         txtKeypad.setText(null);
-        keypadTransaction.append(" ");
+        keypadTransaction.delete(0, keypadTransaction.length());
         txtEmpId.setText(null);
-        keypadLogin.append(" ");
+        keypadLogin.delete(0, keypadLogin.length());
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnPrintCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintCheckActionPerformed
         // TODO add your handling code here:
-        receipt.setOrderList(orderLst);
-        txtAmount.setText(receipt.getSubtotal()+"\n" + receipt.getTax()+"\n"+receipt.getTotal());
+        DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
+        for (int i = 0; i < model.getDataVector().size(); i++) {
+
+            orderLst.add(new Order(model.getValueAt(i, 0).toString(), BigDecimal.valueOf(Double.parseDouble(model.getValueAt(i, 1).toString()))));
+
+        }
+        for (int i = 0; i < orderLst.size(); i++) {
+            Order order = orderLst.get(i);
+            dbconn.salesLog(orderLst.get(i).getItemName(), Double.parseDouble(orderLst.get(i).getItemPrice().toString()));
+            System.out.println(orderLst.get(i).getItemName()+" "+Double.parseDouble(orderLst.get(i).getItemPrice().toString()));
+        }
+        if (model.getRowCount() != 0) {
+            receipt.setOrderList(orderLst);
+            txtAmount.setText(receipt.getReceipt());
+            dbconn.saveRevenue(Double.parseDouble(receipt.getSubtotal().toString()),
+                    Double.parseDouble(receipt.getTaxAmount().toString()),
+                    Double.parseDouble(receipt.getTotal().toString()));
+        }
+
     }//GEN-LAST:event_btnPrintCheckActionPerformed
+
+    private void btnCreditDebitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreditDebitActionPerformed
+       
+        paymentType.append(transaction.payByCreditCard(BigDecimal.valueOf(Double.parseDouble(txtKeypad.getText()))));
+    }//GEN-LAST:event_btnCreditDebitActionPerformed
+
+    private void btnGiftCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGiftCardActionPerformed
+        // TODO add your handling code here:
+         paymentType.append(transaction.payByGiftCard(BigDecimal.valueOf(Double.parseDouble(txtKeypad.getText())),receipt.getTotal()));
+    }//GEN-LAST:event_btnGiftCardActionPerformed
+
+    private void btnCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCashActionPerformed
+        // TODO add your handling code here:
+          paymentType.append(transaction.payByCash(BigDecimal.valueOf(Double.parseDouble(txtKeypad.getText())),receipt.getTotal()));
+    }//GEN-LAST:event_btnCashActionPerformed
+
+    private void btnDecimalPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDecimalPointActionPerformed
+        // TODO add your handling code here:
+        txtKeypad.setText(keypadTransaction.append(btnDecimalPoint.getText()).toString());
+        txtEmpId.setText(keypadLogin.append(btnDecimalPoint.getText()).toString());
+    }//GEN-LAST:event_btnDecimalPointActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2327,14 +2388,14 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JButton btnColeslaw;
     private javax.swing.JButton btnCorn;
     private javax.swing.JButton btnCreditDebit;
+    private javax.swing.JButton btnDecimalPoint;
     private javax.swing.JButton btnDesserts;
     private javax.swing.JButton btnDietCoke;
-    private javax.swing.JButton btnDiscount;
     private javax.swing.JButton btnDrinks;
-    private javax.swing.JButton btnEnter;
     private javax.swing.JButton btnExtras;
     private javax.swing.JButton btnFourWay;
     private javax.swing.JButton btnFries;
+    private javax.swing.JButton btnGiftCard;
     private javax.swing.JButton btnGrilledSalmon;
     private javax.swing.JButton btnHoneyBBQ;
     private javax.swing.JButton btnHotWingsNaked;

@@ -15,8 +15,8 @@ public class Table extends Order {
     private boolean occupied;
 
     //  Order order;
-    public Table(String tableId, String partyNumber, boolean occupied, String itemName, BigDecimal itemPrice, String note) {
-        super(itemName, itemPrice, note);
+    public Table(String tableId, String partyNumber, boolean occupied, String itemName, BigDecimal itemPrice) {
+        super(itemName, itemPrice);
         this.tableId = tableId;
         this.partyNumber = partyNumber;
         this.occupied = occupied;

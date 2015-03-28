@@ -12,18 +12,18 @@ public class Order {
 
     private String itemName;
     private BigDecimal itemPrice;
-    private String note;
+    
 
-    public Order(String itemName, BigDecimal itemPrice, String note) {
+    public Order(String itemName, BigDecimal itemPrice) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
-        this.note = note;
+        
     }
  public Order() {
      
  }
     public String getOrder() {
-        return itemName + " " + itemPrice + " " + note;
+        return itemName + " " + itemPrice;
 
     }
 
@@ -43,18 +43,11 @@ public class Order {
         this.itemPrice = itemPrice;
     }
 
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
+    
 
     @Override
     public String toString() {
-        return itemName + "\t$" + itemPrice
-                + "\nnote\t" + note;//subtotal and order number moved to receipt class
+        return itemName + "\t$" + itemPrice;//subtotal and order number moved to receipt class
 
     }
 
