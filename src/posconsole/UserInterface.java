@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package posconsole;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
 
 /**
  *
@@ -21,32 +21,40 @@ public class UserInterface extends javax.swing.JFrame {
     /**
      * Creates new form UserInterface
      */
+    
     Database dbconn = new Database();
     TimeCard tCard = new TimeCard();
     DefaultTableModel model = new DefaultTableModel();
     Object[][] menu = dbconn.LoadMenu();
+    StringBuilder keypadTransaction = new StringBuilder(" ");
+    StringBuilder keypadLogin = new StringBuilder(" ");
+    ArrayList<Order> orderLst = new ArrayList<>();
+    Receipt receipt = new Receipt();
+    
+    //receipt.setOrderList(r);
+  
 
     public UserInterface() {
         initComponents();
-        
+
         Toolkit fillScreenSize = Toolkit.getDefaultToolkit();
         Dimension dim = new Dimension(fillScreenSize.getScreenSize());
-        int h =(int) dim.getHeight();
+        int h = (int) dim.getHeight();
         int w = (int) dim.getWidth();
         setSize(w, h);
-        
-        new Thread(){
-            public void run(){
-                while (true){
-                   Date date = new Date();
-                 String[] time = date.toString().split(" ");
-                 lblSystemClock.setText(time[3]);
-                 lblSystemDate.setText(time[0] + " " +time[1]+" "+ time[2]+" "+time[5]);
-                 
+
+        new Thread() {
+            public void run() {
+                while (true) {
+                    Date date = new Date();
+                    String[] time = date.toString().split(" ");
+                    lblSystemClock.setText(time[3]);
+                    lblSystemDate.setText(time[0] + " " + time[1] + " " + time[2] + " " + time[5]);
+
                 }
             }
         }.start();
-       
+
     }
 
     /**
@@ -67,6 +75,7 @@ public class UserInterface extends javax.swing.JFrame {
         btnReceipts = new javax.swing.JButton();
         lblSystemClock = new javax.swing.JLabel();
         lblSystemDate = new javax.swing.JLabel();
+        lblWaiter = new javax.swing.JLabel();
         PanelCardView = new javax.swing.JPanel();
         ViewPOS = new javax.swing.JPanel();
         PanelMenu = new javax.swing.JPanel();
@@ -176,9 +185,9 @@ public class UserInterface extends javax.swing.JFrame {
         btnCash = new javax.swing.JButton();
         PanelAmount = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtAmount = new javax.swing.JTextArea();
         PanelTextEntry = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        txtKeypad = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -220,6 +229,8 @@ public class UserInterface extends javax.swing.JFrame {
         lblSystemDate.setFont(new java.awt.Font("Arial Unicode MS", 1, 48)); // NOI18N
         lblSystemDate.setText("date");
 
+        lblWaiter.setText("jLabel1");
+
         javax.swing.GroupLayout PanelHeaderLayout = new javax.swing.GroupLayout(PanelHeader);
         PanelHeader.setLayout(PanelHeaderLayout);
         PanelHeaderLayout.setHorizontalGroup(
@@ -230,13 +241,16 @@ public class UserInterface extends javax.swing.JFrame {
                     .addComponent(lblSystemClock)
                     .addComponent(lblSystemDate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnPOS, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnTimeCard)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnManager)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnReceipts)
+                .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(PanelHeaderLayout.createSequentialGroup()
+                        .addComponent(btnPOS, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnTimeCard)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnManager)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnReceipts))
+                    .addComponent(lblWaiter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -255,7 +269,9 @@ public class UserInterface extends javax.swing.JFrame {
                         .addComponent(btnManager)
                         .addComponent(btnReceipts)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblSystemClock)
+                .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblSystemClock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblWaiter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1092,8 +1108,18 @@ public class UserInterface extends javax.swing.JFrame {
         PanelOrderAction.setBackground(new java.awt.Color(255, 51, 255));
 
         btnRemove.setText("Remove");
+        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveActionPerformed(evt);
+            }
+        });
 
         btnPrintCheck.setText("Print Check");
+        btnPrintCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrintCheckActionPerformed(evt);
+            }
+        });
 
         btnSave.setText("Save");
 
@@ -1375,27 +1401,82 @@ public class UserInterface extends javax.swing.JFrame {
         PanelTransaction.setBackground(new java.awt.Color(255, 204, 204));
 
         btn1.setText("1");
+        btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn1ActionPerformed(evt);
+            }
+        });
 
         btn5.setText("5");
+        btn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn5ActionPerformed(evt);
+            }
+        });
 
         btn6.setText("6");
+        btn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn6ActionPerformed(evt);
+            }
+        });
 
         btn4.setText("4");
+        btn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn4ActionPerformed(evt);
+            }
+        });
 
         btn8.setText("8");
+        btn8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn8ActionPerformed(evt);
+            }
+        });
 
         btn9.setText("9");
+        btn9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn9ActionPerformed(evt);
+            }
+        });
 
         btn0.setText("0");
+        btn0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn0ActionPerformed(evt);
+            }
+        });
 
         btn7.setText("7");
+        btn7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn7ActionPerformed(evt);
+            }
+        });
 
         btnClear.setBackground(new java.awt.Color(255, 51, 51));
         btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
 
         btn3.setText("3");
+        btn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn3ActionPerformed(evt);
+            }
+        });
 
         btn2.setText("2");
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
 
         btnEnter.setBackground(new java.awt.Color(0, 204, 51));
         btnEnter.setText("Enter");
@@ -1411,31 +1492,29 @@ public class UserInterface extends javax.swing.JFrame {
         PanelKeypadLayout.setHorizontalGroup(
             PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelKeypadLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn1)
+                    .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn4)
                     .addComponent(btn7)
                     .addComponent(btnClear)
                     .addComponent(btnCreditDebit))
-                .addGap(0, 0, 0)
                 .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(btn2)
                     .addComponent(btn5)
                     .addComponent(btn8)
                     .addComponent(btn0)
                     .addComponent(btnDiscount))
-                .addGap(0, 0, 0)
                 .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btn6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btn9, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnEnter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCash, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnClear, btnEnter});
+        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn0, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnClear, btnEnter});
 
         PanelKeypadLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCash, btnCreditDebit, btnDiscount});
 
@@ -1474,9 +1553,9 @@ public class UserInterface extends javax.swing.JFrame {
 
         PanelKeypadLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCash, btnCreditDebit, btnDiscount});
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtAmount.setColumns(20);
+        txtAmount.setRows(5);
+        jScrollPane1.setViewportView(txtAmount);
 
         javax.swing.GroupLayout PanelAmountLayout = new javax.swing.GroupLayout(PanelAmount);
         PanelAmount.setLayout(PanelAmountLayout);
@@ -1498,12 +1577,12 @@ public class UserInterface extends javax.swing.JFrame {
             PanelTextEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTextEntryLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField1)
+                .addComponent(txtKeypad)
                 .addContainerGap())
         );
         PanelTextEntryLayout.setVerticalGroup(
             PanelTextEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(txtKeypad, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout PanelTransactionLayout = new javax.swing.GroupLayout(PanelTransaction);
@@ -1627,16 +1706,19 @@ public class UserInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDessertsActionPerformed
 
     private void btnTimeCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimeCardActionPerformed
-        
-         PanelCardView.removeAll();
+
+        PanelCardView.removeAll();
         PanelCardView.add(ViewTimeCard);
         PanelCardView.repaint();
         PanelCardView.revalidate();
-        
+
         /*TODO add your handling code here:
-        *This remove the cash, credit/debit card, and the discount button 
-        *from the transaction panel so that the employee do not see these buttons when clocking in
-        */
+         *This remove the cash, credit/debit card, and the discount button 
+         *from the transaction panel so that the employee do not see these buttons when clocking in
+         */
+        btnEnter.setEnabled(false);
+        txtKeypad.setVisible(false);
+        txtAmount.setVisible(false);
         btnCreditDebit.setVisible(false);
         btnDiscount.setVisible(false);
         btnCash.setVisible(false);
@@ -1644,23 +1726,33 @@ public class UserInterface extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-         PanelCardView.removeAll();
-        PanelCardView.add(CardClockInClockOut);
-        PanelCardView.repaint();
-        PanelCardView.revalidate();
-        
+        if (dbconn.isEmployee(Integer.parseInt(txtEmpId.getText()))) {
+
+            lblEmpName.setText(dbconn.Login(Integer.parseInt(txtEmpId.getText())));
+            PanelCardView.removeAll();
+            PanelCardView.add(CardClockInClockOut);
+            PanelCardView.repaint();
+            PanelCardView.revalidate();
+        } else {
+            JOptionPane.showMessageDialog(null, "Login Failed");
+        }
+
+
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnPOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPOSActionPerformed
         // TODO add your handling code here:
-         PanelCardView.removeAll();
+        PanelCardView.removeAll();
         PanelCardView.add(ViewPOS);
         PanelCardView.repaint();
         PanelCardView.revalidate();
         /*TODO add your handling code here:
-        *This remove the cash, credit/debit card, and the discount button 
-        *from the transaction panel so that the employee do not see these buttons when clocking in
-        */
+         *This remove the cash, credit/debit card, and the discount button 
+         *from the transaction panel so that the employee do not see these buttons when clocking in
+         */
+        btnEnter.setEnabled(true);
+        txtKeypad.setVisible(true);
+        txtAmount.setVisible(true);
         btnCreditDebit.setVisible(true);
         btnDiscount.setVisible(true);
         btnCash.setVisible(true);
@@ -1668,15 +1760,25 @@ public class UserInterface extends javax.swing.JFrame {
 
     private void btnClockInClockOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClockInClockOutActionPerformed
         // TODO add your handling code here:
-         PanelCardView.removeAll();
+        tCard.setDate();
+        dbconn.Clockin(Integer.parseInt(txtEmpId.getText()), tCard.getDate().toString());
+        System.out.println(txtEmpId.getText() + "\n");
+        PanelCardView.removeAll();
         PanelCardView.add(ViewPOS);
         PanelCardView.repaint();
         PanelCardView.revalidate();
+        // Resets the Transaction Panel to normal state
+        btnEnter.setEnabled(true);
+        txtKeypad.setVisible(true);
+        txtAmount.setVisible(true);
+        btnCreditDebit.setVisible(true);
+        btnDiscount.setVisible(true);
+        btnCash.setVisible(true);
     }//GEN-LAST:event_btnClockInClockOutActionPerformed
 
     private void btnManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagerActionPerformed
         // TODO add your handling code here:
-         PanelCardView.removeAll();
+        PanelCardView.removeAll();
         PanelCardView.add(ViewManager);
         PanelCardView.repaint();
         PanelCardView.revalidate();
@@ -1684,7 +1786,7 @@ public class UserInterface extends javax.swing.JFrame {
 
     private void btnReceiptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReceiptsActionPerformed
         // TODO add your handling code here:
-         PanelCardView.removeAll();
+        PanelCardView.removeAll();
         PanelCardView.add(ViewReceipts);
         PanelCardView.repaint();
         PanelCardView.revalidate();
@@ -1704,10 +1806,10 @@ public class UserInterface extends javax.swing.JFrame {
 
     private void btnDietCokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDietCokeActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
         // Item and price
         Object[] row = {menu[1][0], menu[1][1]};
-        model.addRow(row);     
+        model.addRow(row);
     }//GEN-LAST:event_btnDietCokeActionPerformed
 
     private void btnSpriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSpriteActionPerformed
@@ -1720,7 +1822,7 @@ public class UserInterface extends javax.swing.JFrame {
 
     private void btnLemonadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLemonadeActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
         // Item and price
         Object[] row = {menu[3][0], menu[3][1]};
         model.addRow(row);
@@ -1736,7 +1838,7 @@ public class UserInterface extends javax.swing.JFrame {
 
     private void btnCoffeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCoffeeActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
         // Item and price
         Object[] row = {menu[5][0], menu[5][1]};
         model.addRow(row);
@@ -1748,12 +1850,12 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[6][0], menu[6][1]};
         model.addRow(row);
-                                              
+
     }//GEN-LAST:event_btnChipsSalsaActionPerformed
 
     private void btnCalamariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalamariActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
         // Item and price
         Object[] row = {menu[7][0], menu[7][1]};
         model.addRow(row);
@@ -1762,7 +1864,7 @@ public class UserInterface extends javax.swing.JFrame {
 
     private void btnMozarellaSticksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMozarellaSticksActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
         // Item and price
         Object[] row = {menu[8][0], menu[8][1]};
         model.addRow(row);
@@ -1770,7 +1872,7 @@ public class UserInterface extends javax.swing.JFrame {
 
     private void btnFourWayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFourWayActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
         // Item and price
         Object[] row = {menu[9][0], menu[9][1]};
         model.addRow(row);
@@ -2036,12 +2138,91 @@ public class UserInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
         // Item and price
-         
-         for (int i = 0; i < model.getDataVector().size(); i++) {
-           
-            }
-        
+
+        model.setRowCount(0);
+
     }//GEN-LAST:event_btnClearTableActionPerformed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
+        model.removeRow(tblOrder.getSelectedRow());
+    }//GEN-LAST:event_btnRemoveActionPerformed
+
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+        // TODO add your handling code here:
+        txtKeypad.setText(keypadTransaction.append(btn1.getText()).toString());
+        txtEmpId.setText(keypadLogin.append(btn1.getText()).toString());
+    }//GEN-LAST:event_btn1ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        // TODO add your handling code here:
+        txtKeypad.setText(keypadTransaction.append(btn2.getText()).toString());
+        txtEmpId.setText(keypadLogin.append(btn2.getText()).toString());
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+        // TODO add your handling code here:
+        txtKeypad.setText(keypadTransaction.append(btn3.getText()).toString());
+        txtEmpId.setText(keypadLogin.append(btn3.getText()).toString());
+    }//GEN-LAST:event_btn3ActionPerformed
+
+    private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
+        // TODO add your handling code here:
+        txtKeypad.setText(keypadTransaction.append(btn4.getText()).toString());
+        txtEmpId.setText(keypadLogin.append(btn4.getText()).toString());
+    }//GEN-LAST:event_btn4ActionPerformed
+
+    private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
+        // TODO add your handling code here:
+        txtKeypad.setText(keypadTransaction.append(btn5.getText()).toString());
+        txtEmpId.setText(keypadLogin.append(btn5.getText()).toString());
+    }//GEN-LAST:event_btn5ActionPerformed
+
+    private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
+        // TODO add your handling code here:
+        txtKeypad.setText(keypadTransaction.append(btn6.getText()).toString());
+        txtEmpId.setText(keypadLogin.append(btn6.getText()).toString());
+    }//GEN-LAST:event_btn6ActionPerformed
+
+    private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
+        // TODO add your handling code here:
+        txtKeypad.setText(keypadTransaction.append(btn7.getText()).toString());
+        txtEmpId.setText(keypadLogin.append(btn7.getText()).toString());
+    }//GEN-LAST:event_btn7ActionPerformed
+
+    private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
+        // TODO add your handling code here:
+        txtKeypad.setText(keypadTransaction.append(btn8.getText()).toString());
+        txtEmpId.setText(keypadLogin.append(btn8.getText()).toString());
+    }//GEN-LAST:event_btn8ActionPerformed
+
+    private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
+        // TODO add your handling code here:
+        txtKeypad.setText(keypadTransaction.append(btn9.getText()).toString());
+        txtEmpId.setText(keypadLogin.append(btn9.getText()).toString());
+    }//GEN-LAST:event_btn9ActionPerformed
+
+    private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
+        // TODO add your handling code here:
+
+        txtKeypad.setText(keypadTransaction.append(btn0.getText()).toString());
+        txtEmpId.setText(keypadLogin.append(btn0.getText()).toString());
+    }//GEN-LAST:event_btn0ActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        // TODO add your handling code here:
+        txtKeypad.setText(null);
+        keypadTransaction.append(" ");
+        txtEmpId.setText(null);
+        keypadLogin.append(" ");
+    }//GEN-LAST:event_btnClearActionPerformed
+
+    private void btnPrintCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintCheckActionPerformed
+        // TODO add your handling code here:
+        receipt.setOrderList(orderLst);
+        txtAmount.setText(receipt.getSubtotal()+"\n" + receipt.getTax()+"\n"+receipt.getTotal());
+    }//GEN-LAST:event_btnPrintCheckActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2191,14 +2372,15 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JButton btnWings;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblEmpId;
     private javax.swing.JLabel lblEmpName;
     private javax.swing.JLabel lblLoggedInAs;
     private javax.swing.JLabel lblSystemClock;
     private javax.swing.JLabel lblSystemDate;
+    private javax.swing.JLabel lblWaiter;
     private javax.swing.JTable tblOrder;
+    private javax.swing.JTextArea txtAmount;
     private javax.swing.JTextField txtEmpId;
+    private javax.swing.JTextField txtKeypad;
     // End of variables declaration//GEN-END:variables
 }
