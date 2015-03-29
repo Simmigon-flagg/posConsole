@@ -12,11 +12,13 @@ public class Order {
 
     private String itemName;
     private BigDecimal itemPrice;
+    private int OrderNumber;
     
 
-    public Order(String itemName, BigDecimal itemPrice) {
+    public Order(String itemName, BigDecimal itemPrice, int OrderNumber) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
+        this.OrderNumber = OrderNumber;
         
     }
  public Order() {
@@ -41,6 +43,14 @@ public class Order {
 
     public void setItemPrice(BigDecimal itemPrice) {
         this.itemPrice = itemPrice;
+    }
+    
+    public int getOrderNumber(){
+        return OrderNumber;
+    }
+    
+    public void setOrderNumber(int OrderNumber){
+        this.OrderNumber = OrderNumber;
     }
 
     

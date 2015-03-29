@@ -1,5 +1,6 @@
 package posconsole;
 
+import java.awt.event.ActionEvent;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -13,20 +14,22 @@ public class Receipt extends Order {
     // Declare variable
     @Override
     public String toString() {
-        return "Receipt{" + "orderNumber=" + orderNumber + ", subtotal=" + subtotal + ", tax=" + tax + ", stateTax=" + stateTax + ", total=" + total + ", orderList=" + orderList + '}';
+        return "Receipt{" + "OrderNumber=" + OrderNumber + ", subtotal=" + subtotal + ", tax=" + tax + ", stateTax=" + stateTax + ", total=" + total + ", orderList=" + orderList + '}';
     }
-    private String orderNumber;
+    private int OrderNumber;
     private BigDecimal subtotal;
     private BigDecimal tax;
     private BigDecimal stateTax;
     private BigDecimal total;
     private ArrayList<Order> orderList;
+    private String PaymentMethod;
 
     //Pre:
     //Pro:
-    public Receipt(String orderNumber, String itemName, BigDecimal itemPrice) {
-        super(itemName, itemPrice);
-        this.orderNumber = orderNumber;
+    public Receipt(String itemName, BigDecimal itemPrice, String PaymentMethod, int OrderNumber) {
+        super(itemName, itemPrice, OrderNumber);
+        this.PaymentMethod = PaymentMethod;
+        
     }
 
     //Pre:
@@ -43,7 +46,7 @@ public class Receipt extends Order {
                 + "\n" + getOrderList()
                 + "\nSubtotal\t$" + getSubtotal()
                 + "\ntax\t" + getTax() + "%"
-                +"\nTax Amount\t$" + getTaxAmount()
+                + "\nTax Amount\t$" + getTaxAmount()
                 + "\ntotal\t$" + getTotal()
                 + "\n\nTIP:\t$______________"
                 + "\nTOTAL:\t$______________";
@@ -57,14 +60,15 @@ public class Receipt extends Order {
 
     //Pre:
     //Pro:
-    public String getOrderNumber() {
-        return orderNumber;
+    public int getOrderNumber() {
+        int OrderNumber = 86154;
+        return OrderNumber;
     }
 
     //Pre:
     //Pro:
-    public void setOrderNumber(String orderNumber) {
-        this.orderNumber = orderNumber;
+    public void setOrderNumber(int OrderNumber) {
+        this.OrderNumber = OrderNumber;
     }
 
     //Pre:
@@ -119,9 +123,18 @@ public class Receipt extends Order {
         //return getSubtotal().add(getSubtotal().multiply(BigDecimal.valueOf(0.070)));
         return getSubtotal().add(getSubtotal().multiply(BigDecimal.valueOf(0.070)).setScale(2, RoundingMode.FLOOR));
     }
-    
-    public BigDecimal getTaxAmount(){
-       return getSubtotal().multiply(BigDecimal.valueOf(0.070)).setScale(2, RoundingMode.FLOOR);
+
+    public BigDecimal getTaxAmount() {
+        return getSubtotal().multiply(BigDecimal.valueOf(0.070)).setScale(2, RoundingMode.FLOOR);
+    }
+
+    public void setPaymentMethod(String PaymentMethod) {
+        this.PaymentMethod = PaymentMethod;
+    }
+
+    public String getPaymentMethod() {
+
+        return PaymentMethod;
     }
 
 }

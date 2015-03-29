@@ -27,4 +27,5 @@ public class Transaction {
     public Object payByGiftCard(BigDecimal cashPaid, BigDecimal totalAmount) {
         return "Gift Card remining Balance: $" + cashPaid.subtract(totalAmount);
     }
+    
 }

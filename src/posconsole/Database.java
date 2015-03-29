@@ -135,10 +135,9 @@ public class Database {
             if (!isClockedIn(empId)) {
                 dbStatement.executeUpdate("INSERT INTO TimeCard (empId, ClockIn)\n"
                         + "VALUES (" + empId + ",\"" + time[3] + "\");");
-              
 
             } else {
-                
+
                 dbStatement.executeUpdate("UPDATE TimeCard "
                         + "SET ClockOut =\"" + time[3] + "\" WHERE empId in (" + empId + ")");
             }
@@ -206,11 +205,6 @@ public class Database {
         }
     }
 
-    public void insertOrdertoDB(ArrayList<Order> orderList) {
-        //Insert into OrderDB  where itemNameDB = orderList.getItemName
-        // and itemPriceDB = orderList.getItemPrice
-    }
-
     public Object[][] ViewAllOrders() {
 
         // ConnecttoDB();
@@ -248,36 +242,7 @@ public class Database {
         return AllOrders;
     }
 
-    public void InsertSales() {
-
-        ResultSet rs = null;
-        Statement dbStatement = null;
-
-        String Test = null;
-        try {
-            dbStatement = ConnecttoDB().createStatement();
-            /**
-             * We need to first finalize what the Database will look You may
-             * need to look this up online. We need a Column or row for TAX We
-             * need a Column or row for Total We need a Column or row for
-             * subTotal
-             */
-            rs = dbStatement.executeQuery("INSERT INTO SalesReport (  );");
-            //We might not need this either.
-            while (rs.next()) {
-
-                Test = rs.getString("Test");
-
-            }
-
-        } catch (Exception e) {
-
-            System.out.println(e);
-        }
-
-    }
-
-    public void saveRevenue(double Subtotal, double TaxAmount, double Total) {
+    public void saveRevenue(double Subtotal, double TaxAmount, double Total, String PaymentMethod, int OrderNumber) {
         ResultSet rs = null;
         Statement dbStatement = null;
 
@@ -285,8 +250,8 @@ public class Database {
 
             dbStatement = ConnecttoDB().createStatement();
 
-            dbStatement.executeUpdate("INSERT INTO Revenue (Subtotal, TaxAmount, Total)\n"
-                    + "VALUES (" + Subtotal + "," + TaxAmount + "," + Total + ");");
+            dbStatement.executeUpdate("INSERT INTO Revenue (Subtotal, TaxAmount, Total, PaymentMethod, OrderNumber)\n"
+                    + "VALUES (" + Subtotal + "," + TaxAmount + "," + Total + ",\"" + PaymentMethod + "\"," + OrderNumber + "););");
 
         } catch (Exception e) {
 
@@ -294,7 +259,7 @@ public class Database {
         }
     }
 
-    public void salesLog(String itemName, double itemPrice) {
+    public void salesLog(String itemName, double itemPrice, int OrderNumber) {
         ResultSet rs = null;
         Statement dbStatement = null;
         int itemIdFKfromMenu = -1;
@@ -307,32 +272,83 @@ public class Database {
 
                 itemIdFKfromMenu = rs.getInt("itemId");
             }
-            dbStatement.executeUpdate("INSERT INTO SalesLog (itemId,itemNameSold, itemPriceSold)\n"
-                    + "VALUES (" + itemIdFKfromMenu + ",\"" + itemName + "\"," + itemPrice + ");");
+            dbStatement.executeUpdate("INSERT INTO SalesLog (itemId,itemNameSold, itemPriceSold, OrderNumber)\n"
+                    + "VALUES (" + itemIdFKfromMenu + ",\"" + itemName + "\"," + itemPrice + "," + OrderNumber + ");");
 
         } catch (Exception e) {
 
             System.out.println(e);
         }
     }
-    public void typeOfPayment(Object paymentMethod){
+
+    /* METHOD NAME: retrieveOrderFromSalesLog()
+     *  Return type: ArrayList Object
+     *  Retrieves saved and paid orders/receipt to the POS' table model from the SalesLog and Revenue table from
+     *  the database using the OrderNumber as the foreign key. This method allows employee  
+     *  to edit an order in the table model. After the order has been modified in the POS table model, once the print or save button even from the 
+     *  the transaction panel, changes in the SalesLog and Revenue tables in the database will be updated.
+     *  Note that only one value of Order Number will appear on the Revenue table in the database.
+     */
+    public Object[][] retrieveOrderFromSalesLog(int OrderNumber) {
+        ResultSet rs = null;
+        Statement dbStatement = null;
+        Object[][] savedOrders = null;
+
+        String itemPrice = null;
         try {
 
-//            dbStatement = ConnecttoDB().createStatement();
-//            rs = dbStatement.executeQuery("SELECT itemId FROM Menu WHERE itemNameDB = \"" + itemName + "\";");
-//
-//            while (rs.next()) {
-//
-//                itemIdFKfromMenu = rs.getInt("itemId");
-//            }
-//            dbStatement.executeUpdate("INSERT INTO SalesLog (itemId,itemNameSold, itemPriceSold)\n"
-//                    + "VALUES (" + itemIdFKfromMenu + ",\"" + itemName + "\"," + itemPrice + ");");
+            dbStatement = ConnecttoDB().createStatement();
+            rs = dbStatement.executeQuery("SELECT COUNT(*) FROM SalesLog WHERE OrderNumber =" + OrderNumber + "; ");
+            //Columns in sql starts from 1
+            int numberOfRows = rs.getInt(1);
+
+            savedOrders = new Object[numberOfRows][2];
+
+            rs = dbStatement.executeQuery("SELECT itemNameSold, itemPriceSold FROM SalesLog WHERE OrderNumber = " + OrderNumber + ";");
+            int i = 0;
+
+            while (rs.next()) {
+
+                savedOrders[i][0] = rs.getString("itemNameSold");
+                savedOrders[i][1] = rs.getDouble("itemPriceSold");
+                // System.out.println(i+" "+savedOrders[i][0]+" "+ savedOrders[i][1]);
+                i++;
+            }
+            return savedOrders;
+        } catch (Exception e) {
+
+            System.out.println(e);
+        }
+
+        return savedOrders;
+
+    }
+    /*  Method Name: getOrderNumber()
+     *   Returns an integer value for the Order Number. 
+     *   Gets the last value from the order number column from the database (Revenue table). 
+     *   Last OrderNumber is incremented by 1 and stored as the newOrderNumber. 
+     *   First Order Number is 81234.
+     */
+
+    public int getOrderNumber() {
+        ResultSet rs = null;
+        Statement dbStatement = null;
+        int NewOrderNumber = 81234;
+        try {
+
+            dbStatement = ConnecttoDB().createStatement();
+
+            rs = dbStatement.executeQuery("SELECT Max (OrderNumber) FROM Revenue");
+            
+                NewOrderNumber = rs.getInt("OrderNumber");
+            
 
         } catch (Exception e) {
 
             System.out.println(e);
         }
-        
+        NewOrderNumber++;
+        return NewOrderNumber;
     }
 
 }

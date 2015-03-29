@@ -17,7 +17,7 @@ public class TestOrder {
 //            System.out.println("");
 //        }
 //        
-       Order myOrder1 = new Order(menu[0][0].toString(), BigDecimal.valueOf((double)menu[0][1]));
+       Order myOrder1 = new Order(menu[0][0].toString(), BigDecimal.valueOf((double)menu[0][1]),1);
         System.out.println(myOrder1);
     }   
 }

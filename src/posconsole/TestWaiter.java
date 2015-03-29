@@ -24,9 +24,9 @@ public class TestWaiter {
          * array or in the Database
          */
 
-        orderList.add(new Order(menu[0][0].toString(), BigDecimal.valueOf((double) menu[0][1])));
-        orderList.add(new Order(menu[4][0].toString(), BigDecimal.valueOf((double) menu[4][1])));
-        orderList.add(new Order(menu[9][0].toString(), BigDecimal.valueOf((double) menu[9][1])));
+//        orderList.add(new Order(menu[0][0].toString(), BigDecimal.valueOf((double) menu[0][1])));
+//        orderList.add(new Order(menu[4][0].toString(), BigDecimal.valueOf((double) menu[4][1])));
+//        orderList.add(new Order(menu[9][0].toString(), BigDecimal.valueOf((double) menu[9][1])));
         testWaiter.setWaiterId("2323");
         System.out.println("Hello my name is: " + testWaiter.getFirstName() + " and I'll be your waitress today.");
         System.out.println("Your Order:\n");
