@@ -16,7 +16,7 @@ public class Table extends Order {
 
     //  Order order;
     public Table(String tableId, String partyNumber, boolean occupied, String itemName, BigDecimal itemPrice, int OrderNumber) {
-        super(itemName, itemPrice, OrderNumber);
+        super(itemName, itemPrice);
         this.tableId = tableId;
         this.partyNumber = partyNumber;
         this.occupied = occupied;

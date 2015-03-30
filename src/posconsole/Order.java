@@ -15,10 +15,10 @@ public class Order {
     private int OrderNumber;
     
 
-    public Order(String itemName, BigDecimal itemPrice, int OrderNumber) {
+    public Order(String itemName, BigDecimal itemPrice) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
-        this.OrderNumber = OrderNumber;
+       
         
     }
  public Order() {

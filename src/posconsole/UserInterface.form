@@ -675,7 +675,7 @@
                                   <Component id="lblDrinks" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="PanelDrinks" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="397" max="32767" attributes="0"/>
+                                  <EmptySpace pref="436" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -846,7 +846,7 @@
                                   <Component id="lblAppetizers" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="PanelAppetizers" min="-2" pref="337" max="-2" attributes="0"/>
-                                  <EmptySpace pref="420" max="32767" attributes="0"/>
+                                  <EmptySpace pref="459" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1017,7 +1017,7 @@
                                   <Component id="lblBurgers" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="PanelBurgers" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="412" max="32767" attributes="0"/>
+                                  <EmptySpace pref="451" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1188,7 +1188,7 @@
                                   <Component id="lblWings" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="PanelWings" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="410" max="32767" attributes="0"/>
+                                  <EmptySpace pref="449" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1359,7 +1359,7 @@
                                   <Component id="lblSalads" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="PanelSalads" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="415" max="32767" attributes="0"/>
+                                  <EmptySpace pref="454" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1530,7 +1530,7 @@
                                   <Component id="lblExtras" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="PanelExtras" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="413" max="32767" attributes="0"/>
+                                  <EmptySpace pref="452" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1701,7 +1701,7 @@
                                   <Component id="lblDesserts" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="PanelDesserts" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="410" max="32767" attributes="0"/>
+                                  <EmptySpace pref="449" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1999,9 +1999,9 @@
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Component id="Panel_OrderLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" pref="568" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="535" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PanelAmount" min="-2" pref="139" max="-2" attributes="0"/>
+                              <Component id="PanelAmount" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -2064,7 +2064,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="lblOrderNumber" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblOrderNumberObtained" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -2095,7 +2095,7 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lblOrderNumber" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblOrderNumberObtained" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblTable" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblTableNum" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -2129,7 +2129,7 @@
                             <Property name="text" type="java.lang.String" value="Server: "/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel2">
+                        <Component class="javax.swing.JLabel" name="lblOrderNumberObtained">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="order number"/>
                           </Properties>
@@ -2188,24 +2188,31 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnRemove" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="btnPrintCheck" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                          <Component id="btnClearTable" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="btnRemove" pref="111" max="32767" attributes="0"/>
+                                      <Component id="btnSave" max="32767" attributes="0"/>
+                                  </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="lblTotal" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btnClearTable" min="-2" pref="89" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="lblTax" alignment="1" min="-2" max="-2" attributes="0"/>
                                               <Component id="lblSubtotal" alignment="1" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                          <Component id="lblTotal" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="lblSubtotalAmount" alignment="1" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblTaxAmount" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -2219,32 +2226,33 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="lblSubtotal" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblSubtotalAmount" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="lblTax" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblTaxAmount" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="lblTotal" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblTotalAmount" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="btnRemove" linkSize="1" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                                              <Component id="btnClearTable" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblSubtotal" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblSubtotalAmount" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblTax" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblTaxAmount" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblTotal" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblTotalAmount" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="140" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="btnPrintCheck" pref="71" max="32767" attributes="0"/>
+                                      <Component id="btnRemove" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="btnClearTable" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                                      <Component id="btnSave" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2252,27 +2260,27 @@
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="lblSubtotal">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Subtotal:"/>
+                            <Property name="text" type="java.lang.String" value="Subtotal:        $"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblTax">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Tax:"/>
+                            <Property name="text" type="java.lang.String" value="Tax:        $"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblTotal">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Total:"/>
+                            <Property name="text" type="java.lang.String" value="Total:        $"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblSubtotalAmount">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="subtotal amount"/>
+                            <Property name="text" type="java.lang.String" value="0.00"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblTaxAmount">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="tax amount"/>
+                            <Property name="text" type="java.lang.String" value="0.00"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblTotalAmount">
@@ -2280,7 +2288,7 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="16" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="grand total"/>
+                            <Property name="text" type="java.lang.String" value="0.00"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="btnRemove">
@@ -2297,6 +2305,18 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JButton" name="btnPrintCheck">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="16" style="1"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Print Check"/>
+                            <Property name="enabled" type="boolean" value="false"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPrintCheckActionPerformed"/>
+                          </Events>
+                        </Component>
                         <Component class="javax.swing.JButton" name="btnClearTable">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2309,6 +2329,18 @@
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearTableActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="btnSave">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="16" style="1"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Save"/>
+                            <Property name="enabled" type="boolean" value="false"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -2363,7 +2395,7 @@
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="PanelLogin" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="294" max="32767" attributes="0"/>
+                              <EmptySpace pref="333" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2482,7 +2514,7 @@
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="PanelHolderForClocking" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="298" max="32767" attributes="0"/>
+                              <EmptySpace pref="337" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2609,7 +2641,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="882" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="921" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -2634,7 +2666,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="882" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="921" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -2969,56 +3001,23 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnPrintCheck" min="-2" pref="138" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnSave" pref="118" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnPay" min="-2" pref="123" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnPay" min="-2" pref="149" max="-2" attributes="0"/>
+                          <EmptySpace pref="263" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnPrintCheck" linkSize="28" alignment="3" min="-2" pref="81" max="-2" attributes="0"/>
-                              <Component id="btnSave" linkSize="28" alignment="3" max="32767" attributes="0"/>
-                              <Component id="btnPay" linkSize="28" alignment="3" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="btnPay" min="-2" pref="94" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="btnPrintCheck">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="16" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Print Check"/>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPrintCheckActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnSave">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="16" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Save"/>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveActionPerformed"/>
-                  </Events>
-                </Component>
                 <Component class="javax.swing.JButton" name="btnPay">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">

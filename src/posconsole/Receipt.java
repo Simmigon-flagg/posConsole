@@ -27,7 +27,7 @@ public class Receipt extends Order {
     //Pre:
     //Pro:
     public Receipt(String itemName, BigDecimal itemPrice, String PaymentMethod, int OrderNumber) {
-        super(itemName, itemPrice, OrderNumber);
+        super(itemName, itemPrice);
         this.PaymentMethod = PaymentMethod;
         
     }
@@ -102,6 +102,13 @@ public class Receipt extends Order {
     //Pre:
     //Pro:
     public BigDecimal getSubtotal() {
+        subtotal = BigDecimal.valueOf(0.0);
+        for (int i = 0; i < orderList.size(); i++) {
+            subtotal = subtotal.add(orderList.get(i).getItemPrice());
+        }
+        return subtotal;
+    }
+    public BigDecimal getSubtotalLabel() {
         subtotal = BigDecimal.valueOf(0.0);
         for (int i = 0; i < orderList.size(); i++) {
             subtotal = subtotal.add(orderList.get(i).getItemPrice());

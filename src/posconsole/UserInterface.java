@@ -36,13 +36,13 @@ public class UserInterface extends javax.swing.JFrame {
     //receipt.setOrderList(r);
     public UserInterface() {
         initComponents();
-        
+
         Toolkit fillScreenSize = Toolkit.getDefaultToolkit();
         Dimension dim = new Dimension(fillScreenSize.getScreenSize());
         int h = (int) dim.getHeight();
         int w = (int) dim.getWidth();
         setSize(w, h);
-        
+
         new Thread() {
             public void run() {
                 while (true) {
@@ -50,7 +50,7 @@ public class UserInterface extends javax.swing.JFrame {
                     String[] time = date.toString().split(" ");
                     lblSystemClock.setText(time[3]);
                     lblSystemDate.setText(time[0] + " " + time[1] + " " + time[2] + " " + time[5]);
-                    
+
                 }
             }
         }.start();
@@ -180,7 +180,7 @@ public class UserInterface extends javax.swing.JFrame {
         Panel_OrderLabel = new javax.swing.JPanel();
         lblOrderNumber = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblOrderNumberObtained = new javax.swing.JLabel();
         lblTable = new javax.swing.JLabel();
         lblTableNum = new javax.swing.JLabel();
         lblParty = new javax.swing.JLabel();
@@ -194,7 +194,9 @@ public class UserInterface extends javax.swing.JFrame {
         lblTaxAmount = new javax.swing.JLabel();
         lblTotalAmount = new javax.swing.JLabel();
         btnRemove = new javax.swing.JButton();
+        btnPrintCheck = new javax.swing.JButton();
         btnClearTable = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
         ViewTimeCard = new javax.swing.JPanel();
         CardLogin = new javax.swing.JPanel();
         PanelLogin = new javax.swing.JPanel();
@@ -231,8 +233,6 @@ public class UserInterface extends javax.swing.JFrame {
         PanelTextEntry = new javax.swing.JPanel();
         txtKeypad = new javax.swing.JTextField();
         PanelOrderAction = new javax.swing.JPanel();
-        btnPrintCheck = new javax.swing.JButton();
-        btnSave = new javax.swing.JButton();
         btnPay = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -758,7 +758,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblDrinks)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelDrinks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(397, Short.MAX_VALUE))
+                .addContainerGap(436, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardDrinks, "card2");
@@ -878,7 +878,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblAppetizers)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelAppetizers, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(420, Short.MAX_VALUE))
+                .addContainerGap(459, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardAppetizers, "card3");
@@ -998,7 +998,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblBurgers)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelBurgers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(412, Short.MAX_VALUE))
+                .addContainerGap(451, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardBurgers, "card4");
@@ -1118,7 +1118,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblWings)
                 .addGap(18, 18, 18)
                 .addComponent(PanelWings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(410, Short.MAX_VALUE))
+                .addContainerGap(449, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardWings, "card5");
@@ -1238,7 +1238,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblSalads)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelSalads, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(415, Short.MAX_VALUE))
+                .addContainerGap(454, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardSalads, "card6");
@@ -1358,7 +1358,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblExtras)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelExtras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(413, Short.MAX_VALUE))
+                .addContainerGap(452, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardExtras, "card7");
@@ -1478,7 +1478,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblDesserts)
                 .addGap(18, 18, 18)
                 .addComponent(PanelDesserts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(410, Short.MAX_VALUE))
+                .addContainerGap(449, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardDesserts, "card8");
@@ -1624,7 +1624,7 @@ public class UserInterface extends javax.swing.JFrame {
 
         jLabel1.setText("Server: ");
 
-        jLabel2.setText("order number");
+        lblOrderNumberObtained.setText("order number");
 
         lblTable.setText("Table #:");
 
@@ -1646,7 +1646,7 @@ public class UserInterface extends javax.swing.JFrame {
                     .addGroup(Panel_OrderLabelLayout.createSequentialGroup()
                         .addComponent(lblOrderNumber)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel2))
+                        .addComponent(lblOrderNumberObtained))
                     .addGroup(Panel_OrderLabelLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
@@ -1669,7 +1669,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addGap(8, 8, 8)
                 .addGroup(Panel_OrderLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblOrderNumber)
-                    .addComponent(jLabel2)
+                    .addComponent(lblOrderNumberObtained)
                     .addComponent(lblTable)
                     .addComponent(lblTableNum))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1687,18 +1687,18 @@ public class UserInterface extends javax.swing.JFrame {
 
         PanelAmount.setBackground(new java.awt.Color(246, 244, 244));
 
-        lblSubtotal.setText("Subtotal:");
+        lblSubtotal.setText("Subtotal:        $");
 
-        lblTax.setText("Tax:");
+        lblTax.setText("Tax:        $");
 
-        lblTotal.setText("Total:");
+        lblTotal.setText("Total:        $");
 
-        lblSubtotalAmount.setText("subtotal amount");
+        lblSubtotalAmount.setText("0.00");
 
-        lblTaxAmount.setText("tax amount");
+        lblTaxAmount.setText("0.00");
 
         lblTotalAmount.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        lblTotalAmount.setText("grand total");
+        lblTotalAmount.setText("0.00");
 
         btnRemove.setBackground(new java.awt.Color(204, 255, 255));
         btnRemove.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -1706,6 +1706,15 @@ public class UserInterface extends javax.swing.JFrame {
         btnRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRemoveActionPerformed(evt);
+            }
+        });
+
+        btnPrintCheck.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnPrintCheck.setText("Print Check");
+        btnPrintCheck.setEnabled(false);
+        btnPrintCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrintCheckActionPerformed(evt);
             }
         });
 
@@ -1718,25 +1727,38 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
+        btnSave.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnSave.setText("Save");
+        btnSave.setEnabled(false);
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelAmountLayout = new javax.swing.GroupLayout(PanelAmount);
         PanelAmount.setLayout(PanelAmountLayout);
         PanelAmountLayout.setHorizontalGroup(
             PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAmountLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnRemove)
+                .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnPrintCheck)
+                    .addGroup(PanelAmountLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(btnClearTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnRemove, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                    .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelAmountLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblTotal))
-                    .addGroup(PanelAmountLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnClearTable, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
                         .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblTax, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblSubtotal, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addGap(72, 72, 72)
+                            .addComponent(lblSubtotal, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAmountLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(lblTotal)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblSubtotalAmount, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblTaxAmount, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1747,28 +1769,28 @@ public class UserInterface extends javax.swing.JFrame {
             PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAmountLayout.createSequentialGroup()
                 .addGap(7, 7, 7)
-                .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(PanelAmountLayout.createSequentialGroup()
-                        .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblSubtotal)
-                            .addComponent(lblSubtotalAmount))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblTax)
-                            .addComponent(lblTaxAmount))
-                        .addGap(15, 15, 15)
-                        .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblTotal)
-                            .addComponent(lblTotalAmount))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(PanelAmountLayout.createSequentialGroup()
-                        .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnClearTable))
-                        .addGap(98, 98, 98))))
+                .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSubtotal)
+                    .addComponent(lblSubtotalAmount))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTax)
+                    .addComponent(lblTaxAmount))
+                .addGap(15, 15, 15)
+                .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTotal)
+                    .addComponent(lblTotalAmount))
+                .addContainerGap(140, Short.MAX_VALUE))
+            .addGroup(PanelAmountLayout.createSequentialGroup()
+                .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnPrintCheck, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                    .addComponent(btnRemove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addGroup(PanelAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnClearTable, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-
-        PanelAmountLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnClearTable, btnRemove});
 
         javax.swing.GroupLayout PanelOrderLayout = new javax.swing.GroupLayout(PanelOrder);
         PanelOrder.setLayout(PanelOrderLayout);
@@ -1788,9 +1810,9 @@ public class UserInterface extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addComponent(Panel_OrderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1887,7 +1909,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addComponent(PanelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(294, Short.MAX_VALUE))
+                .addContainerGap(333, Short.MAX_VALUE))
         );
 
         ViewTimeCard.add(CardLogin, "card2");
@@ -1967,7 +1989,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelHolderForClocking, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(298, Short.MAX_VALUE))
+                .addContainerGap(337, Short.MAX_VALUE))
         );
 
         ViewTimeCard.add(CardClockInClockOut, "card6");
@@ -1984,7 +2006,7 @@ public class UserInterface extends javax.swing.JFrame {
         );
         ViewManagerLayout.setVerticalGroup(
             ViewManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 882, Short.MAX_VALUE)
+            .addGap(0, 921, Short.MAX_VALUE)
         );
 
         PanelCardView.add(ViewManager, "card4");
@@ -1999,7 +2021,7 @@ public class UserInterface extends javax.swing.JFrame {
         );
         ViewReceiptsLayout.setVerticalGroup(
             ViewReceiptsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 882, Short.MAX_VALUE)
+            .addGap(0, 921, Short.MAX_VALUE)
         );
 
         PanelCardView.add(ViewReceipts, "card5");
@@ -2217,24 +2239,6 @@ public class UserInterface extends javax.swing.JFrame {
 
         PanelOrderAction.setBackground(new java.awt.Color(153, 153, 255));
 
-        btnPrintCheck.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnPrintCheck.setText("Print Check");
-        btnPrintCheck.setEnabled(false);
-        btnPrintCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPrintCheckActionPerformed(evt);
-            }
-        });
-
-        btnSave.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnSave.setText("Save");
-        btnSave.setEnabled(false);
-        btnSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveActionPerformed(evt);
-            }
-        });
-
         btnPay.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnPay.setText("Pay");
         btnPay.setEnabled(false);
@@ -2243,27 +2247,17 @@ public class UserInterface extends javax.swing.JFrame {
         PanelOrderAction.setLayout(PanelOrderActionLayout);
         PanelOrderActionLayout.setHorizontalGroup(
             PanelOrderActionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelOrderActionLayout.createSequentialGroup()
+            .addGroup(PanelOrderActionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnPrintCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnPay, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(btnPay, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(263, Short.MAX_VALUE))
         );
         PanelOrderActionLayout.setVerticalGroup(
             PanelOrderActionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelOrderActionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelOrderActionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPrintCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelOrderActionLayout.createSequentialGroup()
+                .addComponent(btnPay, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-
-        PanelOrderActionLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnPay, btnPrintCheck, btnSave});
 
         javax.swing.GroupLayout PanelTransactionLayout = new javax.swing.GroupLayout(PanelTransaction);
         PanelTransaction.setLayout(PanelTransactionLayout);
@@ -2333,8 +2327,28 @@ public class UserInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
+    private void runningTotal() {
+        DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
+         for (int i = 0; i < model.getDataVector().size(); i++) {
+
+            orderLst.add(new Order(model.getValueAt(i, 0).toString(),
+                    BigDecimal.valueOf(Double.parseDouble(model.getValueAt(i, 1).toString()))));
+
+        }
+        
+        receipt.setOrderList(orderLst);
+        System.out.println(receipt.getSubtotal().toString());
+        for (int i = 0; i < orderLst.size(); i++) {
+            Order order = orderLst.get(i);
+            lblSubtotalAmount.setText(receipt.getSubtotal().toString());
+        lblTaxAmount.setText(receipt.getTaxAmount().toString());
+        lblTotalAmount.setText(receipt.getTotal().toString());
+            
+        }
+        
+        
+    }
+
     private void viewTables() {
         PanelCardView.removeAll();
         PanelCardView.add(ViewTables);
@@ -2356,9 +2370,12 @@ public class UserInterface extends javax.swing.JFrame {
         btnCash.setEnabled(true);
         txtKeypad.setVisible(true);
         receipt.setOrderNumber(dbconn.getOrderNumberFromDB());
-        lblOrderNumber.setText(String.valueOf(receipt.getOrderNumber()));
+        lblOrderNumberObtained.setText(String.valueOf(receipt.getOrderNumber()));
+        DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
+        model.setRowCount(0);
+
     }
-    
+
     private void getNumberOfGuests() {
         String numOfGuests = null;
         do {
@@ -2436,7 +2453,7 @@ public class UserInterface extends javax.swing.JFrame {
          */
         btnDecimalPoint.setEnabled(false);
         txtKeypad.setVisible(false);
-        
+
         btnCreditDebit.setVisible(false);
         btnGiftCard.setVisible(false);
         btnCash.setVisible(false);
@@ -2445,7 +2462,7 @@ public class UserInterface extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         if (dbconn.isEmployee(Integer.parseInt(txtEmpId.getText()))) {
-            
+
             lblEmpName.setText(dbconn.Login(Integer.parseInt(txtEmpId.getText())));
             PanelCardView.removeAll();
             PanelCardView.add(CardClockInClockOut);
@@ -2454,7 +2471,7 @@ public class UserInterface extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Login Failed");
         }
-        
+
 
     }//GEN-LAST:event_btnLoginActionPerformed
 
@@ -2471,10 +2488,10 @@ public class UserInterface extends javax.swing.JFrame {
          */
         btnDecimalPoint.setEnabled(true);
         txtKeypad.setEnabled(false);
-        
+
         btnPay.setEnabled(false);
         btnSave.setEnabled(false);
-        
+
         btnCreditDebit.setEnabled(false);
         btnGiftCard.setEnabled(false);
         btnCash.setEnabled(false);
@@ -2484,12 +2501,12 @@ public class UserInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         dbconn.Clockin(Integer.parseInt(txtEmpId.getText()));
-        
+
         viewTables();
         // Resets the Transaction Panel to normal state
         btnDecimalPoint.setEnabled(true);
         txtKeypad.setVisible(true);
-        
+
         btnCreditDebit.setVisible(true);
         btnGiftCard.setVisible(true);
         btnCash.setVisible(true);
@@ -2521,6 +2538,8 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[0][0], menu[0][1]};
         model.addRow(row);
+        runningTotal();
+
     }//GEN-LAST:event_btnCokeActionPerformed
 
     private void btnDietCokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDietCokeActionPerformed
@@ -2529,6 +2548,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[1][0], menu[1][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnDietCokeActionPerformed
 
     private void btnSpriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSpriteActionPerformed
@@ -2537,6 +2557,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[2][0], menu[2][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnSpriteActionPerformed
 
     private void btnLemonadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLemonadeActionPerformed
@@ -2545,6 +2566,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[3][0], menu[3][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnLemonadeActionPerformed
 
     private void btnSweetTeaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSweetTeaActionPerformed
@@ -2553,6 +2575,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[4][0], menu[4][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnSweetTeaActionPerformed
 
     private void btnCoffeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCoffeeActionPerformed
@@ -2561,6 +2584,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[5][0], menu[5][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnCoffeeActionPerformed
 
     private void btnChipsSalsaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChipsSalsaActionPerformed
@@ -2569,6 +2593,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[6][0], menu[6][1]};
         model.addRow(row);
+        runningTotal();
 
     }//GEN-LAST:event_btnChipsSalsaActionPerformed
 
@@ -2578,15 +2603,16 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[7][0], menu[7][1]};
         model.addRow(row);
-
+        runningTotal();
     }//GEN-LAST:event_btnCalamariActionPerformed
-    
+
     private void btnMozarellaSticksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMozarellaSticksActionPerformed
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
         // Item and price
         Object[] row = {menu[8][0], menu[8][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnMozarellaSticksActionPerformed
 
     private void btnFourWayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFourWayActionPerformed
@@ -2595,6 +2621,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[9][0], menu[9][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnFourWayActionPerformed
 
     private void btnSpinachArtiDipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSpinachArtiDipActionPerformed
@@ -2603,6 +2630,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[10][0], menu[10][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnSpinachArtiDipActionPerformed
 
     private void btnSantaFeChicQueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSantaFeChicQueActionPerformed
@@ -2611,6 +2639,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[11][0], menu[11][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnSantaFeChicQueActionPerformed
 
     private void btnSouthwestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSouthwestActionPerformed
@@ -2619,6 +2648,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[12][0], menu[12][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnSouthwestActionPerformed
 
     private void btnTheWorksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTheWorksActionPerformed
@@ -2856,9 +2886,11 @@ public class UserInterface extends javax.swing.JFrame {
     private void btnClearTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearTableActionPerformed
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
-        // Item and price
-
+        
         model.setRowCount(0);
+         lblSubtotalAmount.setText("0.00");
+        lblTaxAmount.setText("0.00");
+        lblTotalAmount.setText("0.00");
 
     }//GEN-LAST:event_btnClearTableActionPerformed
 
@@ -2870,10 +2902,10 @@ public class UserInterface extends javax.swing.JFrame {
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         // TODO add your handling code here:
-        
+
         txtKeypad.setText(keypadTransaction.append(btn1.getText()).toString());
         txtEmpId.setText(keypadLogin.append(btn1.getText()).toString());
-        
+
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
@@ -2943,17 +2975,18 @@ public class UserInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
-        
+
         JOptionPane.showMessageDialog(null, "Bill Printed!");
+
         for (int i = 0; i < model.getDataVector().size(); i++) {
-            
+
             orderLst.add(new Order(model.getValueAt(i, 0).toString(),
-                    BigDecimal.valueOf(Double.parseDouble(model.getValueAt(i, 1).toString())), 1));
-            
+                    BigDecimal.valueOf(Double.parseDouble(model.getValueAt(i, 1).toString()))));
+
         }
         for (int i = 0; i < orderLst.size(); i++) {
             Order order = orderLst.get(i);
-            dbconn.salesLog(orderLst.get(i).getItemName(), Double.parseDouble(orderLst.get(i).getItemPrice().toString()), orderLst.get(i).getOrderNumber());
+            dbconn.salesLog(orderLst.get(i).getItemName(), Double.parseDouble(orderLst.get(i).getItemPrice().toString()), Integer.parseInt(lblOrderNumberObtained.getText()));
             System.out.println(orderLst.get(i).getItemName() + " " + Double.parseDouble(orderLst.get(i).getItemPrice().toString()));
         }
         if (model.getRowCount() != 0) {
@@ -2969,7 +3002,7 @@ public class UserInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrintCheckActionPerformed
 
     private void btnCreditDebitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreditDebitActionPerformed
-        
+
         paymentType.append(transaction.payByCreditCard(BigDecimal.valueOf(Double.parseDouble(txtKeypad.getText()))));
         txtKeypad.setText(null);
         keypadTransaction.delete(0, keypadTransaction.length());
@@ -3023,7 +3056,7 @@ public class UserInterface extends javax.swing.JFrame {
     private void btnTable2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTable2ActionPerformed
         // TODO add your handling code here:
         getNumberOfGuests();
-        
+
         viewPOS();
         lblTableNum.setText("2");
     }//GEN-LAST:event_btnTable2ActionPerformed
@@ -3299,7 +3332,6 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -3319,6 +3351,7 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JLabel lblExtras;
     private javax.swing.JLabel lblLoggedInAs;
     private javax.swing.JLabel lblOrderNumber;
+    private javax.swing.JLabel lblOrderNumberObtained;
     private javax.swing.JLabel lblParty;
     private javax.swing.JLabel lblPartyNum;
     private javax.swing.JLabel lblPatio;
