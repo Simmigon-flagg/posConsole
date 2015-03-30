@@ -36,13 +36,13 @@ public class UserInterface extends javax.swing.JFrame {
     //receipt.setOrderList(r);
     public UserInterface() {
         initComponents();
-
+        
         Toolkit fillScreenSize = Toolkit.getDefaultToolkit();
         Dimension dim = new Dimension(fillScreenSize.getScreenSize());
         int h = (int) dim.getHeight();
         int w = (int) dim.getWidth();
         setSize(w, h);
-
+        
         new Thread() {
             public void run() {
                 while (true) {
@@ -50,11 +50,11 @@ public class UserInterface extends javax.swing.JFrame {
                     String[] time = date.toString().split(" ");
                     lblSystemClock.setText(time[3]);
                     lblSystemDate.setText(time[0] + " " + time[1] + " " + time[2] + " " + time[5]);
-
+                    
                 }
             }
         }.start();
-
+        txtKeypad.setVisible(false);
     }
 
     /**
@@ -69,7 +69,7 @@ public class UserInterface extends javax.swing.JFrame {
         PanelBackground = new javax.swing.JPanel();
         Panel_Navigation = new javax.swing.JPanel();
         PanelHeader = new javax.swing.JPanel();
-        btnPOS = new javax.swing.JButton();
+        btnTables = new javax.swing.JButton();
         btnTimeCard = new javax.swing.JButton();
         btnManager = new javax.swing.JButton();
         btnReceipts = new javax.swing.JButton();
@@ -241,10 +241,10 @@ public class UserInterface extends javax.swing.JFrame {
 
         PanelHeader.setBackground(new java.awt.Color(223, 223, 246));
 
-        btnPOS.setText("Tables");
-        btnPOS.addActionListener(new java.awt.event.ActionListener() {
+        btnTables.setText("Tables");
+        btnTables.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPOSActionPerformed(evt);
+                btnTablesActionPerformed(evt);
             }
         });
 
@@ -288,7 +288,7 @@ public class UserInterface extends javax.swing.JFrame {
                     .addGroup(PanelHeaderLayout.createSequentialGroup()
                         .addComponent(lblSystemDate)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPOS, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnTables, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnTimeCard)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -298,7 +298,7 @@ public class UserInterface extends javax.swing.JFrame {
                         .addGap(34, 34, 34))))
         );
 
-        PanelHeaderLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnManager, btnPOS, btnReceipts, btnTimeCard});
+        PanelHeaderLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnManager, btnReceipts, btnTables, btnTimeCard});
 
         PanelHeaderLayout.setVerticalGroup(
             PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,7 +309,7 @@ public class UserInterface extends javax.swing.JFrame {
                     .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnTimeCard)
-                            .addComponent(btnPOS, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnTables, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(btnManager)
                         .addComponent(btnReceipts)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -317,7 +317,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PanelHeaderLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnManager, btnPOS, btnReceipts, btnTimeCard});
+        PanelHeaderLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnManager, btnReceipts, btnTables, btnTimeCard});
 
         javax.swing.GroupLayout Panel_NavigationLayout = new javax.swing.GroupLayout(Panel_Navigation);
         Panel_Navigation.setLayout(Panel_NavigationLayout);
@@ -2098,6 +2098,7 @@ public class UserInterface extends javax.swing.JFrame {
         btnDecimalPoint.setBackground(new java.awt.Color(204, 204, 204));
         btnDecimalPoint.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
         btnDecimalPoint.setText(".");
+        btnDecimalPoint.setEnabled(false);
         btnDecimalPoint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDecimalPointActionPerformed(evt);
@@ -2107,6 +2108,7 @@ public class UserInterface extends javax.swing.JFrame {
         btnCreditDebit.setBackground(new java.awt.Color(0, 255, 0));
         btnCreditDebit.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnCreditDebit.setText("Credit/Debit");
+        btnCreditDebit.setEnabled(false);
         btnCreditDebit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreditDebitActionPerformed(evt);
@@ -2116,6 +2118,7 @@ public class UserInterface extends javax.swing.JFrame {
         btnGiftCard.setBackground(new java.awt.Color(255, 153, 102));
         btnGiftCard.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnGiftCard.setText("Gift Card");
+        btnGiftCard.setEnabled(false);
         btnGiftCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGiftCardActionPerformed(evt);
@@ -2124,6 +2127,7 @@ public class UserInterface extends javax.swing.JFrame {
 
         btnCash.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnCash.setText("Cash");
+        btnCash.setEnabled(false);
         btnCash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCashActionPerformed(evt);
@@ -2215,6 +2219,7 @@ public class UserInterface extends javax.swing.JFrame {
 
         btnPrintCheck.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnPrintCheck.setText("Print Check");
+        btnPrintCheck.setEnabled(false);
         btnPrintCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrintCheckActionPerformed(evt);
@@ -2223,6 +2228,7 @@ public class UserInterface extends javax.swing.JFrame {
 
         btnSave.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSave.setText("Save");
+        btnSave.setEnabled(false);
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
@@ -2231,6 +2237,7 @@ public class UserInterface extends javax.swing.JFrame {
 
         btnPay.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnPay.setText("Pay");
+        btnPay.setEnabled(false);
 
         javax.swing.GroupLayout PanelOrderActionLayout = new javax.swing.GroupLayout(PanelOrderAction);
         PanelOrderAction.setLayout(PanelOrderActionLayout);
@@ -2326,6 +2333,39 @@ public class UserInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
+    private void viewTables() {
+        PanelCardView.removeAll();
+        PanelCardView.add(ViewTables);
+        PanelCardView.repaint();
+        PanelCardView.revalidate();
+    }
+
+    private void viewPOS() {
+        PanelCardView.removeAll();
+        PanelCardView.add(ViewPOS);
+        PanelCardView.repaint();
+        PanelCardView.revalidate();
+        btnPrintCheck.setEnabled(true);
+        btnDecimalPoint.setEnabled(true);
+        btnSave.setEnabled(true);
+        btnPay.setEnabled(true);
+        btnCreditDebit.setEnabled(true);
+        btnGiftCard.setEnabled(true);
+        btnCash.setEnabled(true);
+        txtKeypad.setVisible(true);
+        receipt.setOrderNumber(dbconn.getOrderNumberFromDB());
+        lblOrderNumber.setText(String.valueOf(receipt.getOrderNumber()));
+    }
+    
+    private void getNumberOfGuests() {
+        String numOfGuests = null;
+        do {
+            numOfGuests = JOptionPane.showInputDialog("How many guests?");
+        } while ((Integer.parseInt(numOfGuests) < 1) || (numOfGuests == null));
+        lblPartyNum.setText(numOfGuests);
+    }
     private void btnDrinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDrinksActionPerformed
         // TODO add your handling code here:
         PanelMenu.removeAll();
@@ -2396,7 +2436,7 @@ public class UserInterface extends javax.swing.JFrame {
          */
         btnDecimalPoint.setEnabled(false);
         txtKeypad.setVisible(false);
-
+        
         btnCreditDebit.setVisible(false);
         btnGiftCard.setVisible(false);
         btnCash.setVisible(false);
@@ -2405,7 +2445,7 @@ public class UserInterface extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         if (dbconn.isEmployee(Integer.parseInt(txtEmpId.getText()))) {
-
+            
             lblEmpName.setText(dbconn.Login(Integer.parseInt(txtEmpId.getText())));
             PanelCardView.removeAll();
             PanelCardView.add(CardClockInClockOut);
@@ -2414,11 +2454,11 @@ public class UserInterface extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Login Failed");
         }
-
+        
 
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void btnPOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPOSActionPerformed
+    private void btnTablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTablesActionPerformed
         // TODO add your handling code here:
 
         PanelCardView.removeAll();
@@ -2430,26 +2470,26 @@ public class UserInterface extends javax.swing.JFrame {
          *from the transaction panel so that the employee do not see these buttons when clocking in
          */
         btnDecimalPoint.setEnabled(true);
-        txtKeypad.setVisible(true);
-
-        btnCreditDebit.setVisible(true);
-        btnGiftCard.setVisible(true);
-        btnCash.setVisible(true);
-    }//GEN-LAST:event_btnPOSActionPerformed
+        txtKeypad.setEnabled(false);
+        
+        btnPay.setEnabled(false);
+        btnSave.setEnabled(false);
+        
+        btnCreditDebit.setEnabled(false);
+        btnGiftCard.setEnabled(false);
+        btnCash.setEnabled(false);
+    }//GEN-LAST:event_btnTablesActionPerformed
 
     private void btnClockInClockOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClockInClockOutActionPerformed
         // TODO add your handling code here:
 
         dbconn.Clockin(Integer.parseInt(txtEmpId.getText()));
-
-        PanelCardView.removeAll();
-        PanelCardView.add(ViewPOS);
-        PanelCardView.repaint();
-        PanelCardView.revalidate();
+        
+        viewTables();
         // Resets the Transaction Panel to normal state
         btnDecimalPoint.setEnabled(true);
         txtKeypad.setVisible(true);
-
+        
         btnCreditDebit.setVisible(true);
         btnGiftCard.setVisible(true);
         btnCash.setVisible(true);
@@ -2540,20 +2580,7 @@ public class UserInterface extends javax.swing.JFrame {
         model.addRow(row);
 
     }//GEN-LAST:event_btnCalamariActionPerformed
-    private void viewPOS() {
-        PanelCardView.removeAll();
-        PanelCardView.add(ViewPOS);
-        PanelCardView.repaint();
-        PanelCardView.revalidate();
-    }
-
-    private void getNumberOfGuests() {
-        String numOfGuests = null;
-        do {
-            numOfGuests = JOptionPane.showInputDialog("How many guests?");
-        } while ((Integer.parseInt(numOfGuests) < 1) || (numOfGuests == null));
-        lblPartyNum.setText(numOfGuests);
-    }
+    
     private void btnMozarellaSticksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMozarellaSticksActionPerformed
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
@@ -2843,8 +2870,10 @@ public class UserInterface extends javax.swing.JFrame {
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         // TODO add your handling code here:
+        
         txtKeypad.setText(keypadTransaction.append(btn1.getText()).toString());
         txtEmpId.setText(keypadLogin.append(btn1.getText()).toString());
+        
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
@@ -2914,13 +2943,13 @@ public class UserInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
-
+        
         JOptionPane.showMessageDialog(null, "Bill Printed!");
         for (int i = 0; i < model.getDataVector().size(); i++) {
-
+            
             orderLst.add(new Order(model.getValueAt(i, 0).toString(),
                     BigDecimal.valueOf(Double.parseDouble(model.getValueAt(i, 1).toString())), 1));
-
+            
         }
         for (int i = 0; i < orderLst.size(); i++) {
             Order order = orderLst.get(i);
@@ -2940,7 +2969,7 @@ public class UserInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrintCheckActionPerformed
 
     private void btnCreditDebitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreditDebitActionPerformed
-
+        
         paymentType.append(transaction.payByCreditCard(BigDecimal.valueOf(Double.parseDouble(txtKeypad.getText()))));
         txtKeypad.setText(null);
         keypadTransaction.delete(0, keypadTransaction.length());
@@ -2987,7 +3016,6 @@ public class UserInterface extends javax.swing.JFrame {
     private void btnTable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTable1ActionPerformed
         // TODO add your handling code here:
         getNumberOfGuests();
-
         viewPOS();
         lblTableNum.setText("1");
     }//GEN-LAST:event_btnTable1ActionPerformed
@@ -2995,14 +3023,14 @@ public class UserInterface extends javax.swing.JFrame {
     private void btnTable2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTable2ActionPerformed
         // TODO add your handling code here:
         getNumberOfGuests();
-
+        
         viewPOS();
         lblTableNum.setText("2");
     }//GEN-LAST:event_btnTable2ActionPerformed
 
     private void btnTable3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTable3ActionPerformed
         // TODO add your handling code here:
-getNumberOfGuests();
+        getNumberOfGuests();
         viewPOS();
         lblTableNum.setText("3");
     }//GEN-LAST:event_btnTable3ActionPerformed
@@ -3222,7 +3250,6 @@ getNumberOfGuests();
     private javax.swing.JButton btnMilkshake;
     private javax.swing.JButton btnMozarellaSticks;
     private javax.swing.JButton btnOriginal;
-    private javax.swing.JButton btnPOS;
     private javax.swing.JButton btnPay;
     private javax.swing.JButton btnPotatoWedges;
     private javax.swing.JButton btnPrintCheck;
@@ -3257,6 +3284,7 @@ getNumberOfGuests();
     private javax.swing.JButton btnTable7;
     private javax.swing.JButton btnTable8;
     private javax.swing.JButton btnTable9;
+    private javax.swing.JButton btnTables;
     private javax.swing.JButton btnTeriyaki;
     private javax.swing.JButton btnTheWorks;
     private javax.swing.JButton btnThreeCheese;

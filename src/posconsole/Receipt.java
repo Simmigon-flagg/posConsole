@@ -61,14 +61,15 @@ public class Receipt extends Order {
     //Pre:
     //Pro:
     public int getOrderNumber() {
-        int OrderNumber = 86154;
+        
         return OrderNumber;
     }
 
     //Pre:
     //Pro:
     public void setOrderNumber(int OrderNumber) {
-        this.OrderNumber = OrderNumber;
+        this.OrderNumber =OrderNumber;
+        
     }
 
     //Pre:

@@ -330,24 +330,25 @@ public class Database {
      *   First Order Number is 81234.
      */
 
-    public int getOrderNumber() {
+    public int getOrderNumberFromDB() {
         ResultSet rs = null;
         Statement dbStatement = null;
-        int NewOrderNumber = 81234;
+        int NewOrderNumber = 0;
         try {
 
             dbStatement = ConnecttoDB().createStatement();
 
-            rs = dbStatement.executeQuery("SELECT Max (OrderNumber) FROM Revenue");
-            
+            rs = dbStatement.executeQuery("SELECT MAX (OrderNumber) AS OrderNumber FROM Revenue");
+            while(rs.next()){
                 NewOrderNumber = rs.getInt("OrderNumber");
-            
+                NewOrderNumber++;
+            }
 
         } catch (Exception e) {
 
             System.out.println(e);
         }
-        NewOrderNumber++;
+        
         return NewOrderNumber;
     }
 

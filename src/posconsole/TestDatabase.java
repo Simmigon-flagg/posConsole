@@ -24,9 +24,9 @@ public class TestDatabase {
 //            }
 //            System.out.println(" ");
 //        }
-        System.out.println(dbconn.isEmployee(1));
-        System.out.println(dbconn.isEmployee(9));
-        System.out.println(dbconn.getOrderNumber());
+//        System.out.println(dbconn.isEmployee(1));
+//        System.out.println(dbconn.isEmployee(9));
+        System.out.println(dbconn.getOrderNumberFromDB());
     }
 
     
