@@ -8,6 +8,7 @@ package posconsole;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -2327,26 +2328,22 @@ public class UserInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void runningTotal() {
+    private BigDecimal runningTotal() {
         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
-         for (int i = 0; i < model.getDataVector().size(); i++) {
+        BigDecimal subtotal = BigDecimal.valueOf(0.0);
+        for (int i = 0; i < model.getDataVector().size(); i++) {
 
-            orderLst.add(new Order(model.getValueAt(i, 0).toString(),
-                    BigDecimal.valueOf(Double.parseDouble(model.getValueAt(i, 1).toString()))));
+            //orderLst.add(new Order(model.getValueAt(i, 0).toString(),
+            //BigDecimal.valueOf;
+            // for (int i = 0; i < orderList.size(); i++) {
+            subtotal = subtotal.add(BigDecimal.valueOf(Double.parseDouble(model.getValueAt(i, 1).toString())));
 
         }
-        
-        receipt.setOrderList(orderLst);
-        System.out.println(receipt.getSubtotal().toString());
-        for (int i = 0; i < orderLst.size(); i++) {
-            Order order = orderLst.get(i);
-            lblSubtotalAmount.setText(receipt.getSubtotal().toString());
-        lblTaxAmount.setText(receipt.getTaxAmount().toString());
-        lblTotalAmount.setText(receipt.getTotal().toString());
-            
-        }
-        
-        
+
+        lblSubtotalAmount.setText(subtotal.toString());
+        lblTaxAmount.setText(subtotal.multiply(BigDecimal.valueOf(0.070)).setScale(2, RoundingMode.DOWN).toString());
+        lblTotalAmount.setText(subtotal.add(subtotal.multiply(BigDecimal.valueOf(0.070)).setScale(2, RoundingMode.DOWN)).toString());
+        return subtotal;
     }
 
     private void viewTables() {
@@ -2657,6 +2654,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[13][0], menu[13][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnTheWorksActionPerformed
 
     private void btnThreeCheeseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThreeCheeseActionPerformed
@@ -2665,6 +2663,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[14][0], menu[14][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnThreeCheeseActionPerformed
 
     private void btnSwissMeltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSwissMeltActionPerformed
@@ -2673,6 +2672,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[15][0], menu[15][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnSwissMeltActionPerformed
 
     private void btnBaconCheddarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaconCheddarActionPerformed
@@ -2681,6 +2681,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[16][0], menu[16][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnBaconCheddarActionPerformed
 
     private void btnCATCHBurgerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCATCHBurgerActionPerformed
@@ -2705,6 +2706,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[19][0], menu[19][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnHotWingsNakedActionPerformed
 
     private void btnLemonPepperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLemonPepperActionPerformed
@@ -2713,6 +2715,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[20][0], menu[20][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnLemonPepperActionPerformed
 
     private void btnTeriyakiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTeriyakiActionPerformed
@@ -2721,6 +2724,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[21][0], menu[21][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnTeriyakiActionPerformed
 
     private void btnHoneyBBQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHoneyBBQActionPerformed
@@ -2729,6 +2733,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[22][0], menu[22][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnHoneyBBQActionPerformed
 
     private void btnCATCHWingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCATCHWingsActionPerformed
@@ -2737,6 +2742,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[23][0], menu[23][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnCATCHWingsActionPerformed
 
     private void btnCaesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCaesarActionPerformed
@@ -2745,6 +2751,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[24][0], menu[24][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnCaesarActionPerformed
 
     private void btnAsianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsianActionPerformed
@@ -2753,6 +2760,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[25][0], menu[25][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnAsianActionPerformed
 
     private void btnGrilledSalmonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGrilledSalmonActionPerformed
@@ -2761,6 +2769,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[26][0], menu[26][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnGrilledSalmonActionPerformed
 
     private void btnChickenAvocadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChickenAvocadoActionPerformed
@@ -2769,6 +2778,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[27][0], menu[27][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnChickenAvocadoActionPerformed
 
     private void btnChipotleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChipotleActionPerformed
@@ -2777,6 +2787,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[28][0], menu[28][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnChipotleActionPerformed
 
     private void btnRefreshingCATCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshingCATCHActionPerformed
@@ -2785,6 +2796,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[29][0], menu[29][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnRefreshingCATCHActionPerformed
 
     private void btnFriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFriesActionPerformed
@@ -2793,6 +2805,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[30][0], menu[30][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnFriesActionPerformed
 
     private void btnColeslawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColeslawActionPerformed
@@ -2801,6 +2814,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[31][0], menu[31][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnColeslawActionPerformed
 
     private void btnMashedPotatoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMashedPotatoesActionPerformed
@@ -2809,6 +2823,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[32][0], menu[32][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnMashedPotatoesActionPerformed
 
     private void btnCornActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCornActionPerformed
@@ -2825,6 +2840,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[34][0], menu[34][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnQuesoDipActionPerformed
 
     private void btnPotatoWedgesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPotatoWedgesActionPerformed
@@ -2833,6 +2849,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[35][0], menu[35][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnPotatoWedgesActionPerformed
 
     private void btnChocolateMousseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChocolateMousseActionPerformed
@@ -2841,6 +2858,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[36][0], menu[36][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnChocolateMousseActionPerformed
 
     private void btnRedVelvetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRedVelvetActionPerformed
@@ -2849,6 +2867,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[37][0], menu[37][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnRedVelvetActionPerformed
 
     private void btnCannoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCannoliActionPerformed
@@ -2857,6 +2876,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[38][0], menu[38][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnCannoliActionPerformed
 
     private void btnTiramisuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiramisuActionPerformed
@@ -2865,6 +2885,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[39][0], menu[39][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnTiramisuActionPerformed
 
     private void btnMilkshakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMilkshakeActionPerformed
@@ -2873,6 +2894,7 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[40][0], menu[40][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnMilkshakeActionPerformed
 
     private void btnCATCHIceCreamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCATCHIceCreamActionPerformed
@@ -2881,14 +2903,15 @@ public class UserInterface extends javax.swing.JFrame {
         // Item and price
         Object[] row = {menu[41][0], menu[41][1]};
         model.addRow(row);
+        runningTotal();
     }//GEN-LAST:event_btnCATCHIceCreamActionPerformed
 
     private void btnClearTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearTableActionPerformed
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
-        
+
         model.setRowCount(0);
-         lblSubtotalAmount.setText("0.00");
+        lblSubtotalAmount.setText("0.00");
         lblTaxAmount.setText("0.00");
         lblTotalAmount.setText("0.00");
 
@@ -2898,6 +2921,7 @@ public class UserInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
         model.removeRow(tblOrder.getSelectedRow());
+        runningTotal();
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
