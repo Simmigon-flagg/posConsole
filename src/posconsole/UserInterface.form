@@ -65,7 +65,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="Panel_Navigation" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="PanelCardView" max="32767" attributes="0"/>
                       <Component id="PanelTransaction" max="32767" attributes="0"/>
@@ -93,7 +93,6 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="PanelHeader" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -109,46 +108,44 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lblSystemClock" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="864" pref="1863" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lblSystemDate" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnTables" linkSize="3" min="-2" pref="135" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnTimeCard" linkSize="3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnManager" linkSize="3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnReceipts" linkSize="3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="lblSystemClock" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblSystemDate" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace pref="1458" max="32767" attributes="0"/>
+                          <Component id="btnTables" linkSize="3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnTimeCard" linkSize="3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnManager" linkSize="3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnReceipts" linkSize="3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="lblSystemDate" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                      <Component id="btnTimeCard" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnTables" linkSize="4" alignment="3" min="-2" pref="66" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="lblSystemDate" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                                  <Component id="lblSystemClock" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                          <Component id="btnTimeCard" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnTables" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="btnManager" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnReceipts" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="btnManager" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnReceipts" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lblSystemClock" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -190,7 +187,7 @@
                 <Component class="javax.swing.JLabel" name="lblSystemClock">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial Unicode MS" size="50" style="1"/>
+                      <Font name="Arial Unicode MS" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="time"/>
                   </Properties>
@@ -198,7 +195,7 @@
                 <Component class="javax.swing.JLabel" name="lblSystemDate">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial Unicode MS" size="48" style="1"/>
+                      <Font name="Arial Unicode MS" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="date"/>
                   </Properties>
@@ -675,7 +672,7 @@
                                   <Component id="lblDrinks" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="PanelDrinks" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="436" max="32767" attributes="0"/>
+                                  <EmptySpace pref="483" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -846,7 +843,7 @@
                                   <Component id="lblAppetizers" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="PanelAppetizers" min="-2" pref="337" max="-2" attributes="0"/>
-                                  <EmptySpace pref="459" max="32767" attributes="0"/>
+                                  <EmptySpace pref="506" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1017,7 +1014,7 @@
                                   <Component id="lblBurgers" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="PanelBurgers" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="451" max="32767" attributes="0"/>
+                                  <EmptySpace pref="498" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1188,7 +1185,7 @@
                                   <Component id="lblWings" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="PanelWings" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="449" max="32767" attributes="0"/>
+                                  <EmptySpace pref="496" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1359,7 +1356,7 @@
                                   <Component id="lblSalads" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="PanelSalads" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="454" max="32767" attributes="0"/>
+                                  <EmptySpace pref="501" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1530,7 +1527,7 @@
                                   <Component id="lblExtras" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="PanelExtras" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="452" max="32767" attributes="0"/>
+                                  <EmptySpace pref="499" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1701,7 +1698,7 @@
                                   <Component id="lblDesserts" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="PanelDesserts" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="449" max="32767" attributes="0"/>
+                                  <EmptySpace pref="496" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2395,7 +2392,7 @@
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="PanelLogin" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="333" max="32767" attributes="0"/>
+                              <EmptySpace pref="380" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2514,7 +2511,7 @@
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="PanelHolderForClocking" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="337" max="32767" attributes="0"/>
+                              <EmptySpace pref="384" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2641,7 +2638,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="921" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="968" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -2666,7 +2663,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="921" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="968" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>

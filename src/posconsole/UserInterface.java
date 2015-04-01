@@ -270,10 +270,10 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        lblSystemClock.setFont(new java.awt.Font("Arial Unicode MS", 1, 50)); // NOI18N
+        lblSystemClock.setFont(new java.awt.Font("Arial Unicode MS", 1, 16)); // NOI18N
         lblSystemClock.setText("time");
 
-        lblSystemDate.setFont(new java.awt.Font("Arial Unicode MS", 1, 48)); // NOI18N
+        lblSystemDate.setFont(new java.awt.Font("Arial Unicode MS", 1, 16)); // NOI18N
         lblSystemDate.setText("date");
 
         javax.swing.GroupLayout PanelHeaderLayout = new javax.swing.GroupLayout(PanelHeader);
@@ -281,22 +281,18 @@ public class UserInterface extends javax.swing.JFrame {
         PanelHeaderLayout.setHorizontalGroup(
             PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelHeaderLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelHeaderLayout.createSequentialGroup()
-                        .addComponent(lblSystemClock)
-                        .addGap(864, 1863, Short.MAX_VALUE))
-                    .addGroup(PanelHeaderLayout.createSequentialGroup()
-                        .addComponent(lblSystemDate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnTables, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnTimeCard)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnManager)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnReceipts)
-                        .addGap(34, 34, 34))))
+                .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblSystemClock)
+                    .addComponent(lblSystemDate))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1458, Short.MAX_VALUE)
+                .addComponent(btnTables)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnTimeCard)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnManager)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnReceipts)
+                .addGap(37, 37, 37))
         );
 
         PanelHeaderLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnManager, btnReceipts, btnTables, btnTimeCard});
@@ -304,17 +300,19 @@ public class UserInterface extends javax.swing.JFrame {
         PanelHeaderLayout.setVerticalGroup(
             PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelHeaderLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblSystemDate)
-                    .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnTimeCard)
-                            .addComponent(btnTables, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(btnManager)
-                        .addComponent(btnReceipts)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblSystemClock)
+                .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelHeaderLayout.createSequentialGroup()
+                        .addComponent(lblSystemDate)
+                        .addGap(3, 3, 3)
+                        .addComponent(lblSystemClock))
+                    .addGroup(PanelHeaderLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnTimeCard)
+                                .addComponent(btnTables))
+                            .addComponent(btnManager)
+                            .addComponent(btnReceipts))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -333,8 +331,7 @@ public class UserInterface extends javax.swing.JFrame {
             Panel_NavigationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_NavigationLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(PanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PanelCardView.setBackground(new java.awt.Color(223, 223, 246));
@@ -759,7 +756,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblDrinks)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelDrinks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(436, Short.MAX_VALUE))
+                .addContainerGap(483, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardDrinks, "card2");
@@ -879,7 +876,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblAppetizers)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelAppetizers, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(459, Short.MAX_VALUE))
+                .addContainerGap(506, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardAppetizers, "card3");
@@ -999,7 +996,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblBurgers)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelBurgers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(451, Short.MAX_VALUE))
+                .addContainerGap(498, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardBurgers, "card4");
@@ -1119,7 +1116,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblWings)
                 .addGap(18, 18, 18)
                 .addComponent(PanelWings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(449, Short.MAX_VALUE))
+                .addContainerGap(496, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardWings, "card5");
@@ -1239,7 +1236,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblSalads)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelSalads, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(454, Short.MAX_VALUE))
+                .addContainerGap(501, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardSalads, "card6");
@@ -1359,7 +1356,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblExtras)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelExtras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(452, Short.MAX_VALUE))
+                .addContainerGap(499, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardExtras, "card7");
@@ -1479,7 +1476,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblDesserts)
                 .addGap(18, 18, 18)
                 .addComponent(PanelDesserts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(449, Short.MAX_VALUE))
+                .addContainerGap(496, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardDesserts, "card8");
@@ -1910,7 +1907,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addComponent(PanelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(333, Short.MAX_VALUE))
+                .addContainerGap(380, Short.MAX_VALUE))
         );
 
         ViewTimeCard.add(CardLogin, "card2");
@@ -1990,7 +1987,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelHolderForClocking, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(337, Short.MAX_VALUE))
+                .addContainerGap(384, Short.MAX_VALUE))
         );
 
         ViewTimeCard.add(CardClockInClockOut, "card6");
@@ -2007,7 +2004,7 @@ public class UserInterface extends javax.swing.JFrame {
         );
         ViewManagerLayout.setVerticalGroup(
             ViewManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 921, Short.MAX_VALUE)
+            .addGap(0, 968, Short.MAX_VALUE)
         );
 
         PanelCardView.add(ViewManager, "card4");
@@ -2022,7 +2019,7 @@ public class UserInterface extends javax.swing.JFrame {
         );
         ViewReceiptsLayout.setVerticalGroup(
             ViewReceiptsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 921, Short.MAX_VALUE)
+            .addGap(0, 968, Short.MAX_VALUE)
         );
 
         PanelCardView.add(ViewReceipts, "card5");
@@ -2305,7 +2302,7 @@ public class UserInterface extends javax.swing.JFrame {
             .addGroup(PanelBackgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Panel_Navigation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(25, 25, 25)
                 .addGroup(PanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelCardView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelTransaction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -3349,19 +3346,12 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JButton btnTiramisu;
     private javax.swing.JButton btnWings;
     private javax.swing.JComboBox cboxWaiter;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblAppetizers;
