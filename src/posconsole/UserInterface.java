@@ -284,7 +284,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblSystemClock)
                     .addComponent(lblSystemDate))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 951, Short.MAX_VALUE)
                 .addComponent(btnTables)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnTimeCard)
@@ -322,10 +322,10 @@ public class UserInterface extends javax.swing.JFrame {
         Panel_Navigation.setLayout(Panel_NavigationLayout);
         Panel_NavigationLayout.setHorizontalGroup(
             Panel_NavigationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_NavigationLayout.createSequentialGroup()
+            .addGroup(Panel_NavigationLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(PanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Panel_NavigationLayout.setVerticalGroup(
             Panel_NavigationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1191,21 +1191,20 @@ public class UserInterface extends javax.swing.JFrame {
         PanelCategoriesLayout.setHorizontalGroup(
             PanelCategoriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCategoriesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(PanelCategoriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDrinks)
-                    .addComponent(btnAppetizers)
-                    .addComponent(btnBurgers)
+                    .addComponent(btnDesserts)
+                    .addComponent(btnExtras)
+                    .addComponent(btnSalads)
                     .addComponent(btnWings)
-                    .addComponent(btnExtras))
+                    .addComponent(btnBurgers)
+                    .addComponent(btnAppetizers))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCategoriesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelCategoriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSalads, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnDesserts, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
         );
+
+        PanelCategoriesLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAppetizers, btnBurgers, btnDesserts, btnDrinks, btnExtras, btnSalads, btnWings});
+
         PanelCategoriesLayout.setVerticalGroup(
             PanelCategoriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCategoriesLayout.createSequentialGroup()

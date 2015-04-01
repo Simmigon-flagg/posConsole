@@ -81,10 +81,10 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="PanelHeader" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="PanelHeader" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -113,7 +113,7 @@
                               <Component id="lblSystemClock" min="-2" max="-2" attributes="0"/>
                               <Component id="lblSystemDate" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="951" max="32767" attributes="0"/>
                           <Component id="btnTables" linkSize="3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnTimeCard" linkSize="3" min="-2" max="-2" attributes="0"/>
@@ -1342,23 +1342,17 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnDrinks" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnAppetizers" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnBurgers" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnWings" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnExtras" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnDrinks" linkSize="36" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnDesserts" linkSize="36" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnExtras" linkSize="36" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnSalads" linkSize="36" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnWings" linkSize="36" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnBurgers" linkSize="36" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAppetizers" linkSize="36" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnSalads" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnDesserts" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
