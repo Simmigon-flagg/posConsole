@@ -24,14 +24,14 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="PanelBackground" max="32767" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="PanelBackground" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelBackground" alignment="1" max="32767" attributes="0"/>
+          <Component id="PanelBackground" alignment="1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -46,17 +46,18 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="Panel_Navigation" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="PanelCardView" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="PanelCardView" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Component id="PanelTransaction" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -65,10 +66,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="Panel_Navigation" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="PanelTransaction" min="-2" max="-2" attributes="0"/>
-                      <Component id="PanelCardView" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="PanelCardView" max="32767" attributes="0"/>
+                      <Component id="PanelTransaction" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -81,10 +82,10 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="PanelHeader" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="PanelHeader" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -93,6 +94,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="PanelHeader" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -113,7 +115,7 @@
                               <Component id="lblSystemClock" min="-2" max="-2" attributes="0"/>
                               <Component id="lblSystemDate" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="700" max="32767" attributes="0"/>
+                          <EmptySpace pref="685" max="32767" attributes="0"/>
                           <Component id="btnTables" linkSize="3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnTimeCard" linkSize="3" min="-2" max="-2" attributes="0"/>
@@ -128,25 +130,20 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <Component id="lblSystemDate" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                          <Component id="lblSystemClock" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="lblSystemDate" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                  <Component id="lblSystemClock" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="btnTimeCard" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnTables" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                          <Component id="btnTimeCard" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnTables" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="btnManager" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnReceipts" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="btnManager" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnReceipts" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -232,8 +229,8 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="PanelCategories" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="PanelMenu" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="PanelMenu" min="-2" pref="245" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                           <Component id="PanelOrder" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                       </Group>
@@ -279,12 +276,12 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="PanelAppetizers" min="-2" pref="310" max="-2" attributes="0"/>
                                       <Component id="lblAppetizers" min="-2" max="-2" attributes="0"/>
+                                      <Component id="PanelAppetizers" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="434" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -295,7 +292,7 @@
                                   <Component id="lblAppetizers" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="PanelAppetizers" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="464" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -311,44 +308,34 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="btnMozarellaSticks" alignment="0" pref="155" max="32767" attributes="0"/>
-                                          <Component id="btnChipsSalsa" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="btnSpinachArtiDip" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btnCalamari" alignment="1" min="-2" pref="137" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="btnSantaFeChicQue" pref="0" max="32767" attributes="0"/>
-                                              <Component id="btnFourWay" min="-2" pref="137" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="btnChipsSalsa" linkSize="37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnMozarellaSticks" linkSize="37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnSpinachArtiDip" linkSize="37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnSantaFeChicQue" linkSize="37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnFourWay" linkSize="37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnCalamari" linkSize="37" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="btnCalamari" linkSize="14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnChipsSalsa" linkSize="14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="2" attributes="0">
-                                          <Component id="btnMozarellaSticks" linkSize="14" alignment="2" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnFourWay" linkSize="14" alignment="2" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btnSantaFeChicQue" linkSize="14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnSpinachArtiDip" linkSize="14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                      <Component id="btnChipsSalsa" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                      <Component id="btnMozarellaSticks" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                      <Component id="btnSpinachArtiDip" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                      <Component id="btnSantaFeChicQue" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                      <Component id="btnFourWay" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                      <Component id="btnCalamari" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -435,7 +422,7 @@
                                       <Component id="lblBurgers" min="-2" max="-2" attributes="0"/>
                                       <Component id="PanelBurgers" min="-2" pref="287" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="457" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -583,7 +570,7 @@
                                       <Component id="PanelWings" min="-2" pref="293" max="-2" attributes="0"/>
                                       <Component id="lblWings" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="451" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -732,7 +719,7 @@
                                       <Component id="PanelSalads" min="-2" pref="385" max="-2" attributes="0"/>
                                       <Component id="lblSalads" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="359" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -883,7 +870,7 @@
                                       <Component id="PanelExtras" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblExtras" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="342" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1032,7 +1019,7 @@
                                       <Component id="PanelDesserts" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblDesserts" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="472" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1181,7 +1168,7 @@
                                       <Component id="lblDrinks" min="-2" max="-2" attributes="0"/>
                                       <Component id="PanelDrinks" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="424" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1469,7 +1456,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jScrollPane2" alignment="1" max="32767" attributes="0"/>
                                   <Component id="Panel_OrderLabel" alignment="0" max="32767" attributes="0"/>
@@ -2545,14 +2532,16 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="PanelTextEntry" alignment="1" max="32767" attributes="0"/>
-                          <Component id="PanelKeypad" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="PanelOrderAction" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="PanelTextEntry" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="PanelKeypad" min="-2" pref="243" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2564,8 +2553,8 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="PanelKeypad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="PanelOrderAction" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="44" max="32767" attributes="0"/>
+                      <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2577,32 +2566,38 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btn7" linkSize="6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnClear" linkSize="6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnCreditDebit" linkSize="27" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="btn1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btn4" linkSize="6" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="btnClear" linkSize="6" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn0" linkSize="6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnDecimalPoint" linkSize="6" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="btn7" linkSize="6" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn8" linkSize="6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn9" linkSize="6" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="btn4" linkSize="6" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn5" linkSize="6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn6" linkSize="6" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="btn1" linkSize="6" min="-2" pref="63" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn2" linkSize="6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btn3" linkSize="6" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="2" attributes="0">
-                              <Component id="btn2" linkSize="6" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn5" linkSize="6" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn8" linkSize="6" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn0" linkSize="6" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnGiftCard" linkSize="27" alignment="2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btn3" linkSize="6" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn6" linkSize="6" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn9" linkSize="6" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnDecimalPoint" linkSize="6" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnCash" linkSize="27" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2633,14 +2628,6 @@
                               <Component id="btn0" linkSize="5" alignment="2" min="-2" max="-2" attributes="0"/>
                               <Component id="btnDecimalPoint" linkSize="5" alignment="2" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnGiftCard" linkSize="26" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btnCreditDebit" linkSize="26" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnCash" linkSize="26" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -2650,7 +2637,7 @@
                 <Component class="javax.swing.JButton" name="btn1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="24" style="1"/>
+                      <Font name="Tahoma" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
@@ -2661,7 +2648,7 @@
                 <Component class="javax.swing.JButton" name="btn5">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="24" style="1"/>
+                      <Font name="Tahoma" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="5"/>
                   </Properties>
@@ -2672,7 +2659,7 @@
                 <Component class="javax.swing.JButton" name="btn6">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="24" style="1"/>
+                      <Font name="Tahoma" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="6"/>
                   </Properties>
@@ -2683,7 +2670,7 @@
                 <Component class="javax.swing.JButton" name="btn4">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="24" style="1"/>
+                      <Font name="Tahoma" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="4"/>
                   </Properties>
@@ -2694,7 +2681,7 @@
                 <Component class="javax.swing.JButton" name="btn8">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="24" style="1"/>
+                      <Font name="Tahoma" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="8"/>
                   </Properties>
@@ -2705,7 +2692,7 @@
                 <Component class="javax.swing.JButton" name="btn9">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="24" style="1"/>
+                      <Font name="Tahoma" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="9"/>
                   </Properties>
@@ -2716,7 +2703,7 @@
                 <Component class="javax.swing.JButton" name="btn0">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="24" style="1"/>
+                      <Font name="Tahoma" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
@@ -2727,7 +2714,7 @@
                 <Component class="javax.swing.JButton" name="btn7">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="24" style="1"/>
+                      <Font name="Tahoma" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="7"/>
                   </Properties>
@@ -2741,7 +2728,7 @@
                       <Color blue="33" green="33" red="ff" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="24" style="0"/>
+                      <Font name="Tahoma" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Clear"/>
                   </Properties>
@@ -2752,7 +2739,7 @@
                 <Component class="javax.swing.JButton" name="btn3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="24" style="1"/>
+                      <Font name="Tahoma" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="3"/>
                   </Properties>
@@ -2763,7 +2750,7 @@
                 <Component class="javax.swing.JButton" name="btn2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="24" style="1"/>
+                      <Font name="Tahoma" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="2"/>
                   </Properties>
@@ -2777,7 +2764,7 @@
                       <Color blue="cc" green="cc" red="cc" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Times New Roman" size="48" style="1"/>
+                      <Font name="Tahoma" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="."/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -2786,6 +2773,60 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDecimalPointActionPerformed"/>
                   </Events>
                 </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="PanelTextEntry">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtKeypad" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtKeypad" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JTextField" name="txtKeypad">
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel3">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnGiftCard" linkSize="38" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
+                              <Component id="btnCash" linkSize="38" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCreditDebit" linkSize="38" alignment="0" min="-2" pref="243" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="btnCreditDebit" linkSize="26" min="-2" pref="56" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnGiftCard" linkSize="26" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnCash" linkSize="26" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
                 <Component class="javax.swing.JButton" name="btnCreditDebit">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2819,7 +2860,7 @@
                 <Component class="javax.swing.JButton" name="btnCash">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="18" style="1"/>
+                      <Font name="Tahoma" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cash"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -2827,67 +2868,6 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCashActionPerformed"/>
                   </Events>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="PanelTextEntry">
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtKeypad" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtKeypad" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JTextField" name="txtKeypad">
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="PanelOrderAction">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="99" red="99" type="rgb"/>
-                </Property>
-              </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnPay" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="263" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="btnPay" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JButton" name="btnPay">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="16" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Pay"/>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
                 </Component>
               </SubComponents>
             </Container>

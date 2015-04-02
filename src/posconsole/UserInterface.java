@@ -228,13 +228,12 @@ public class UserInterface extends javax.swing.JFrame {
         btn3 = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
         btnDecimalPoint = new javax.swing.JButton();
+        PanelTextEntry = new javax.swing.JPanel();
+        txtKeypad = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
         btnCreditDebit = new javax.swing.JButton();
         btnGiftCard = new javax.swing.JButton();
         btnCash = new javax.swing.JButton();
-        PanelTextEntry = new javax.swing.JPanel();
-        txtKeypad = new javax.swing.JTextField();
-        PanelOrderAction = new javax.swing.JPanel();
-        btnPay = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -284,7 +283,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblSystemClock)
                     .addComponent(lblSystemDate))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 700, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 685, Short.MAX_VALUE)
                 .addComponent(btnTables)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnTimeCard)
@@ -300,20 +299,17 @@ public class UserInterface extends javax.swing.JFrame {
         PanelHeaderLayout.setVerticalGroup(
             PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelHeaderLayout.createSequentialGroup()
+                .addComponent(lblSystemDate)
+                .addGap(3, 3, 3)
+                .addComponent(lblSystemClock))
+            .addGroup(PanelHeaderLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
                 .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelHeaderLayout.createSequentialGroup()
-                        .addComponent(lblSystemDate)
-                        .addGap(3, 3, 3)
-                        .addComponent(lblSystemClock))
-                    .addGroup(PanelHeaderLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btnTimeCard)
-                                .addComponent(btnTables))
-                            .addComponent(btnManager)
-                            .addComponent(btnReceipts))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnTimeCard)
+                        .addComponent(btnTables))
+                    .addComponent(btnManager)
+                    .addComponent(btnReceipts)))
         );
 
         PanelHeaderLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnManager, btnReceipts, btnTables, btnTimeCard});
@@ -322,16 +318,17 @@ public class UserInterface extends javax.swing.JFrame {
         Panel_Navigation.setLayout(Panel_NavigationLayout);
         Panel_NavigationLayout.setHorizontalGroup(
             Panel_NavigationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_NavigationLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_NavigationLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(PanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         Panel_NavigationLayout.setVerticalGroup(
             Panel_NavigationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_NavigationLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(PanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         PanelCardView.setBackground(new java.awt.Color(223, 223, 246));
@@ -393,38 +390,34 @@ public class UserInterface extends javax.swing.JFrame {
         PanelAppetizersLayout.setHorizontalGroup(
             PanelAppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAppetizersLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(PanelAppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnMozarellaSticks, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                    .addComponent(btnChipsSalsa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSpinachArtiDip, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addGroup(PanelAppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCalamari, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(PanelAppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnSantaFeChicQue, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(btnFourWay, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                    .addComponent(btnChipsSalsa)
+                    .addComponent(btnMozarellaSticks)
+                    .addComponent(btnSpinachArtiDip)
+                    .addComponent(btnSantaFeChicQue)
+                    .addComponent(btnFourWay)
+                    .addComponent(btnCalamari)))
         );
+
+        PanelAppetizersLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCalamari, btnChipsSalsa, btnFourWay, btnMozarellaSticks, btnSantaFeChicQue, btnSpinachArtiDip});
+
         PanelAppetizersLayout.setVerticalGroup(
             PanelAppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAppetizersLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(PanelAppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCalamari)
-                    .addComponent(btnChipsSalsa))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelAppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btnMozarellaSticks)
-                    .addComponent(btnFourWay))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelAppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSantaFeChicQue)
-                    .addComponent(btnSpinachArtiDip))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(5, 5, 5)
+                .addComponent(btnChipsSalsa)
+                .addGap(5, 5, 5)
+                .addComponent(btnMozarellaSticks)
+                .addGap(5, 5, 5)
+                .addComponent(btnSpinachArtiDip)
+                .addGap(5, 5, 5)
+                .addComponent(btnSantaFeChicQue)
+                .addGap(5, 5, 5)
+                .addComponent(btnFourWay)
+                .addGap(5, 5, 5)
+                .addComponent(btnCalamari))
         );
-
-        PanelAppetizersLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCalamari, btnChipsSalsa, btnFourWay, btnMozarellaSticks, btnSantaFeChicQue, btnSpinachArtiDip});
 
         lblAppetizers.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblAppetizers.setText("Appetizers");
@@ -434,11 +427,11 @@ public class UserInterface extends javax.swing.JFrame {
         CardAppetizersLayout.setHorizontalGroup(
             CardAppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CardAppetizersLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addGroup(CardAppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelAppetizers, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAppetizers))
-                .addContainerGap(434, Short.MAX_VALUE))
+                    .addComponent(lblAppetizers)
+                    .addComponent(PanelAppetizers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CardAppetizersLayout.setVerticalGroup(
             CardAppetizersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -447,7 +440,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(lblAppetizers)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelAppetizers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(464, Short.MAX_VALUE))
         );
 
         PanelMenu.add(CardAppetizers, "card3");
@@ -549,7 +542,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addGroup(CardBurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblBurgers)
                     .addComponent(PanelBurgers, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(457, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CardBurgersLayout.setVerticalGroup(
             CardBurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -661,7 +654,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addGroup(CardWingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelWings, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblWings))
-                .addContainerGap(451, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CardWingsLayout.setVerticalGroup(
             CardWingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -774,7 +767,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addGroup(CardSaladsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelSalads, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSalads))
-                .addContainerGap(359, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CardSaladsLayout.setVerticalGroup(
             CardSaladsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -886,7 +879,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addGroup(CardExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelExtras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblExtras))
-                .addContainerGap(342, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CardExtrasLayout.setVerticalGroup(
             CardExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -995,7 +988,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addGroup(CardDessertsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelDesserts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDesserts))
-                .addContainerGap(472, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CardDessertsLayout.setVerticalGroup(
             CardDessertsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1114,7 +1107,7 @@ public class UserInterface extends javax.swing.JFrame {
                 .addGroup(CardDrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblDrinks)
                     .addComponent(PanelDrinks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(424, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CardDrinksLayout.setVerticalGroup(
             CardDrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1441,7 +1434,7 @@ public class UserInterface extends javax.swing.JFrame {
         PanelOrderLayout.setHorizontalGroup(
             PanelOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelOrderLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addGroup(PanelOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Panel_OrderLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1468,8 +1461,8 @@ public class UserInterface extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(PanelCategories, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(PanelOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
@@ -1970,7 +1963,7 @@ public class UserInterface extends javax.swing.JFrame {
 
         PanelTransaction.setBackground(new java.awt.Color(255, 204, 204));
 
-        btn1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btn1.setText("1");
         btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1978,7 +1971,7 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        btn5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn5.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btn5.setText("5");
         btn5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1986,7 +1979,7 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        btn6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn6.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btn6.setText("6");
         btn6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1994,7 +1987,7 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        btn4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn4.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btn4.setText("4");
         btn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2002,7 +1995,7 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        btn8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn8.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btn8.setText("8");
         btn8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2010,7 +2003,7 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        btn9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn9.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btn9.setText("9");
         btn9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2018,7 +2011,7 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        btn0.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn0.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btn0.setText("0");
         btn0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2026,7 +2019,7 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        btn7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn7.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btn7.setText("7");
         btn7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2035,7 +2028,7 @@ public class UserInterface extends javax.swing.JFrame {
         });
 
         btnClear.setBackground(new java.awt.Color(255, 51, 51));
-        btnClear.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnClear.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnClear.setText("Clear");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2043,7 +2036,7 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        btn3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btn3.setText("3");
         btn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2051,7 +2044,7 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        btn2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btn2.setText("2");
         btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2060,7 +2053,7 @@ public class UserInterface extends javax.swing.JFrame {
         });
 
         btnDecimalPoint.setBackground(new java.awt.Color(204, 204, 204));
-        btnDecimalPoint.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        btnDecimalPoint.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnDecimalPoint.setText(".");
         btnDecimalPoint.setEnabled(false);
         btnDecimalPoint.addActionListener(new java.awt.event.ActionListener() {
@@ -2069,67 +2062,41 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        btnCreditDebit.setBackground(new java.awt.Color(0, 255, 0));
-        btnCreditDebit.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnCreditDebit.setText("Credit/Debit");
-        btnCreditDebit.setEnabled(false);
-        btnCreditDebit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreditDebitActionPerformed(evt);
-            }
-        });
-
-        btnGiftCard.setBackground(new java.awt.Color(255, 153, 102));
-        btnGiftCard.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnGiftCard.setText("Gift Card");
-        btnGiftCard.setEnabled(false);
-        btnGiftCard.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGiftCardActionPerformed(evt);
-            }
-        });
-
-        btnCash.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnCash.setText("Cash");
-        btnCash.setEnabled(false);
-        btnCash.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCashActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout PanelKeypadLayout = new javax.swing.GroupLayout(PanelKeypad);
         PanelKeypad.setLayout(PanelKeypadLayout);
         PanelKeypadLayout.setHorizontalGroup(
             PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelKeypadLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn7)
-                    .addComponent(btnClear)
-                    .addComponent(btnCreditDebit)
-                    .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btn1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btn2)
-                    .addComponent(btn5)
-                    .addComponent(btn8)
-                    .addComponent(btn0)
-                    .addComponent(btnGiftCard))
-                .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn9, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnDecimalPoint, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnCash, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                    .addGroup(PanelKeypadLayout.createSequentialGroup()
+                        .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn0)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDecimalPoint))
+                    .addGroup(PanelKeypadLayout.createSequentialGroup()
+                        .addComponent(btn7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn9))
+                    .addGroup(PanelKeypadLayout.createSequentialGroup()
+                        .addComponent(btn4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn6))
+                    .addGroup(PanelKeypadLayout.createSequentialGroup()
+                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn0, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnClear, btnDecimalPoint});
-
-        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCash, btnCreditDebit, btnGiftCard});
+        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnClear, btnDecimalPoint});
 
         PanelKeypadLayout.setVerticalGroup(
             PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2154,18 +2121,10 @@ public class UserInterface extends javax.swing.JFrame {
                     .addComponent(btnClear)
                     .addComponent(btn0)
                     .addComponent(btnDecimalPoint))
-                .addGap(0, 0, 0)
-                .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGiftCard)
-                    .addGroup(PanelKeypadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnCreditDebit)
-                        .addComponent(btnCash)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PanelKeypadLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnClear, btnDecimalPoint});
-
-        PanelKeypadLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCash, btnCreditDebit, btnGiftCard});
 
         javax.swing.GroupLayout PanelTextEntryLayout = new javax.swing.GroupLayout(PanelTextEntry);
         PanelTextEntry.setLayout(PanelTextEntryLayout);
@@ -2181,27 +2140,61 @@ public class UserInterface extends javax.swing.JFrame {
             .addComponent(txtKeypad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        PanelOrderAction.setBackground(new java.awt.Color(153, 153, 255));
+        btnCreditDebit.setBackground(new java.awt.Color(0, 255, 0));
+        btnCreditDebit.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnCreditDebit.setText("Credit/Debit");
+        btnCreditDebit.setEnabled(false);
+        btnCreditDebit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreditDebitActionPerformed(evt);
+            }
+        });
 
-        btnPay.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnPay.setText("Pay");
-        btnPay.setEnabled(false);
+        btnGiftCard.setBackground(new java.awt.Color(255, 153, 102));
+        btnGiftCard.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnGiftCard.setText("Gift Card");
+        btnGiftCard.setEnabled(false);
+        btnGiftCard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGiftCardActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout PanelOrderActionLayout = new javax.swing.GroupLayout(PanelOrderAction);
-        PanelOrderAction.setLayout(PanelOrderActionLayout);
-        PanelOrderActionLayout.setHorizontalGroup(
-            PanelOrderActionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelOrderActionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnPay)
-                .addContainerGap(263, Short.MAX_VALUE))
+        btnCash.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnCash.setText("Cash");
+        btnCash.setEnabled(false);
+        btnCash.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCashActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnGiftCard, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCash)
+                    .addComponent(btnCreditDebit, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0))
         );
-        PanelOrderActionLayout.setVerticalGroup(
-            PanelOrderActionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelOrderActionLayout.createSequentialGroup()
-                .addComponent(btnPay)
-                .addGap(0, 0, Short.MAX_VALUE))
+
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCash, btnCreditDebit, btnGiftCard});
+
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(btnCreditDebit, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnGiftCard)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCash))
         );
+
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCash, btnCreditDebit, btnGiftCard});
 
         javax.swing.GroupLayout PanelTransactionLayout = new javax.swing.GroupLayout(PanelTransaction);
         PanelTransaction.setLayout(PanelTransactionLayout);
@@ -2210,12 +2203,13 @@ public class UserInterface extends javax.swing.JFrame {
             .addGroup(PanelTransactionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelTransactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelTextEntry, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelKeypad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelTransactionLayout.createSequentialGroup()
-                        .addComponent(PanelOrderAction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(PanelTransactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(PanelTextEntry, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PanelKeypad, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
         PanelTransactionLayout.setVerticalGroup(
             PanelTransactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2225,8 +2219,8 @@ public class UserInterface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(PanelKeypad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelOrderAction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PanelBackgroundLayout = new javax.swing.GroupLayout(PanelBackground);
@@ -2238,9 +2232,10 @@ public class UserInterface extends javax.swing.JFrame {
                 .addGroup(PanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Panel_Navigation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelBackgroundLayout.createSequentialGroup()
-                        .addComponent(PanelCardView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(PanelCardView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PanelTransaction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(PanelTransaction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         PanelBackgroundLayout.setVerticalGroup(
@@ -2248,10 +2243,10 @@ public class UserInterface extends javax.swing.JFrame {
             .addGroup(PanelBackgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Panel_Navigation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addGroup(PanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelTransaction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelCardView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PanelCardView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelTransaction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2260,12 +2255,12 @@ public class UserInterface extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(PanelBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBackground, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelBackground, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -2304,7 +2299,7 @@ public class UserInterface extends javax.swing.JFrame {
         btnPrintCheck.setEnabled(true);
         btnDecimalPoint.setEnabled(true);
         btnSave.setEnabled(true);
-        btnPay.setEnabled(true);
+        
         btnCreditDebit.setEnabled(true);
         btnGiftCard.setEnabled(true);
         btnCash.setEnabled(true);
@@ -2429,7 +2424,7 @@ public class UserInterface extends javax.swing.JFrame {
         btnDecimalPoint.setEnabled(true);
         txtKeypad.setEnabled(false);
 
-        btnPay.setEnabled(false);
+        
         btnSave.setEnabled(false);
 
         btnCreditDebit.setEnabled(false);
@@ -3186,7 +3181,6 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JPanel PanelLogin;
     private javax.swing.JPanel PanelMenu;
     private javax.swing.JPanel PanelOrder;
-    private javax.swing.JPanel PanelOrderAction;
     private javax.swing.JPanel PanelSalads;
     private javax.swing.JPanel PanelTextEntry;
     private javax.swing.JPanel PanelTransaction;
@@ -3250,7 +3244,6 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JButton btnMilkshake;
     private javax.swing.JButton btnMozarellaSticks;
     private javax.swing.JButton btnOriginal;
-    private javax.swing.JButton btnPay;
     private javax.swing.JButton btnPotatoWedges;
     private javax.swing.JButton btnPrintCheck;
     private javax.swing.JButton btnQuesoDip;
@@ -3298,6 +3291,7 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblAppetizers;
