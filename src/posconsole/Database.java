@@ -294,7 +294,6 @@ public class Database {
         Statement dbStatement = null;
         Object[] savedOrders = null;
 
-        
         try {
 
             dbStatement = ConnecttoDB().createStatement();
@@ -309,13 +308,11 @@ public class Database {
 
             while (rs.next()) {
 
-                
                 savedOrders[i] = rs.getDouble("itemPriceSold");
                 // System.out.println(i+" "+savedOrders[i][0]+" "+ savedOrders[i][1]);
                 i++;
             }
-            
-           
+
         } catch (Exception e) {
 
             System.out.println(e);
@@ -324,12 +321,12 @@ public class Database {
         return savedOrders;
 
     }
-      public Object[] retrieveItemNameFromSalesLog(int OrderNumber) {
+
+    public Object[] retrieveItemNameFromSalesLog(int OrderNumber) {
         ResultSet rs = null;
         Statement dbStatement = null;
         Object[] savedOrders = null;
 
-       
         try {
 
             dbStatement = ConnecttoDB().createStatement();
@@ -345,12 +342,11 @@ public class Database {
             while (rs.next()) {
 
                 savedOrders[i] = rs.getString("itemNameSold");
-               
+
                 // System.out.println(i+" "+savedOrders[i][0]+" "+ savedOrders[i][1]);
                 i++;
             }
-            
-           
+
         } catch (Exception e) {
 
             System.out.println(e);
@@ -359,7 +355,7 @@ public class Database {
         return savedOrders;
 
     }
-    /*  Method Name: getOrderNumber()
+    /*  Method Name: getOrderNumberFromDB()
      *   Returns an integer value for the Order Number. 
      *   Gets the last value from the order number column from the database (Revenue table). 
      *   Last OrderNumber is incremented by 1 and stored as the newOrderNumber. 
@@ -375,7 +371,7 @@ public class Database {
             dbStatement = ConnecttoDB().createStatement();
 
             rs = dbStatement.executeQuery("SELECT MAX (OrderNumber) AS OrderNumber FROM Revenue");
-            while(rs.next()){
+            while (rs.next()) {
                 NewOrderNumber = rs.getInt("OrderNumber");
                 NewOrderNumber++;
             }
@@ -384,10 +380,11 @@ public class Database {
 
             System.out.println(e);
         }
-        
+
         return NewOrderNumber;
     }
-     public int getSavedOrderNumberFromDB(int OrderNumber) {
+
+    public int getSavedOrderNumberFromDB(int OrderNumber) {
         ResultSet rs = null;
         Statement dbStatement = null;
         int SavedOrderNumber = 0;
@@ -395,19 +392,60 @@ public class Database {
 
             dbStatement = ConnecttoDB().createStatement();
 
-            rs = dbStatement.executeQuery("SELECT (OrderNumber) FROM SalesLog WHERE OrderNumber="+OrderNumber+"");
-            while(rs.next()){
+            rs = dbStatement.executeQuery("SELECT (OrderNumber) FROM SalesLog WHERE OrderNumber=" + OrderNumber + "");
+            while (rs.next()) {
                 SavedOrderNumber = rs.getInt("OrderNumber");
-            
+
             }
 
         } catch (Exception e) {
 
             System.out.println(e);
         }
-        
+
         return SavedOrderNumber;
     }
 
+    public void updateRevenue(double Subtotal, double TaxAmount, double Total, String PaymentMethod, int OrderNumber) {
+        ResultSet rs = null;
+        Statement dbStatement = null;
 
+        try {
+
+            dbStatement = ConnecttoDB().createStatement();
+
+            dbStatement.executeUpdate("UPDATE Revenue SET Subtotal = " + Subtotal + ", TaxAmount = " + TaxAmount + ", Total = " + Total + ", PaymentMethod = " + PaymentMethod + ", OrderNumber = " + OrderNumber + " WHERE OrderNumber = " + OrderNumber + "););");
+
+        } catch (Exception e) {
+
+            System.out.println(e);
+        }
+    }
+
+    //SELECT OrderNumber FROM Revenue WHERE PaymentMethod = "null";
+
+    public int[] viewSavedOrderNumberFromDB() {
+        ResultSet rs = null;
+        Statement dbStatement = null;
+      
+        
+        try {
+
+            dbStatement = ConnecttoDB().createStatement();
+              rs = dbStatement.executeQuery("SELECT COUNT(*) FROM Revenue WHERE PaymentMethod = \"null\";");
+int[] SavedOrderNumber = new int[5];
+            rs = dbStatement.executeQuery("SELECT OrderNumber FROM Revenue WHERE PaymentMethod = \"null\";");
+            int i = 0;
+            while (rs.next()) {
+                SavedOrderNumber[i] = rs.getInt("OrderNumber");
+                i++;
+            }
+
+        } catch (Exception e) {
+
+            System.out.println(e);
+        }
+
+        return SavedOrderNumber;
+    }
 }
