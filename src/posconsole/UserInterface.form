@@ -57,7 +57,7 @@
                       <Group type="102" attributes="0">
                           <Component id="PanelCardView" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="PanelTransaction" max="32767" attributes="0"/>
+                          <Component id="PanelTransaction" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
