@@ -262,7 +262,7 @@ public class Database {
     public void salesLog(String itemName, double itemPrice, int OrderNumber) {
         ResultSet rs = null;
         Statement dbStatement = null;
-        int itemIdFKfromMenu = -1;
+        int itemIdFKfromMenu = 0;
         try {
 
             dbStatement = ConnecttoDB().createStatement();
@@ -289,12 +289,12 @@ public class Database {
      *  the transaction panel, changes in the SalesLog and Revenue tables in the database will be updated.
      *  Note that only one value of Order Number will appear on the Revenue table in the database.
      */
-    public Object[][] retrieveOrderFromSalesLog(int OrderNumber) {
+    public Object[] retrieveItemPriceFromSalesLog(int OrderNumber) {
         ResultSet rs = null;
         Statement dbStatement = null;
-        Object[][] savedOrders = null;
+        Object[] savedOrders = null;
 
-        String itemPrice = null;
+        
         try {
 
             dbStatement = ConnecttoDB().createStatement();
@@ -302,19 +302,55 @@ public class Database {
             //Columns in sql starts from 1
             int numberOfRows = rs.getInt(1);
 
-            savedOrders = new Object[numberOfRows][2];
+            savedOrders = new Object[numberOfRows];
 
-            rs = dbStatement.executeQuery("SELECT itemNameSold, itemPriceSold FROM SalesLog WHERE OrderNumber = " + OrderNumber + ";");
+            rs = dbStatement.executeQuery("SELECT itemPriceSold FROM SalesLog WHERE OrderNumber = " + OrderNumber + ";");
             int i = 0;
 
             while (rs.next()) {
 
-                savedOrders[i][0] = rs.getString("itemNameSold");
-                savedOrders[i][1] = rs.getDouble("itemPriceSold");
+                
+                savedOrders[i] = rs.getDouble("itemPriceSold");
                 // System.out.println(i+" "+savedOrders[i][0]+" "+ savedOrders[i][1]);
                 i++;
             }
-            return savedOrders;
+            
+           
+        } catch (Exception e) {
+
+            System.out.println(e);
+        }
+
+        return savedOrders;
+
+    }
+      public Object[] retrieveItemNameFromSalesLog(int OrderNumber) {
+        ResultSet rs = null;
+        Statement dbStatement = null;
+        Object[] savedOrders = null;
+
+       
+        try {
+
+            dbStatement = ConnecttoDB().createStatement();
+            rs = dbStatement.executeQuery("SELECT COUNT(*) FROM SalesLog WHERE OrderNumber =" + OrderNumber + "; ");
+            //Columns in sql starts from 1
+            int numberOfRows = rs.getInt(1);
+
+            savedOrders = new Object[numberOfRows];
+
+            rs = dbStatement.executeQuery("SELECT itemNameSold FROM SalesLog WHERE OrderNumber = " + OrderNumber + ";");
+            int i = 0;
+
+            while (rs.next()) {
+
+                savedOrders[i] = rs.getString("itemNameSold");
+               
+                // System.out.println(i+" "+savedOrders[i][0]+" "+ savedOrders[i][1]);
+                i++;
+            }
+            
+           
         } catch (Exception e) {
 
             System.out.println(e);
@@ -351,5 +387,27 @@ public class Database {
         
         return NewOrderNumber;
     }
+     public int getSavedOrderNumberFromDB(int OrderNumber) {
+        ResultSet rs = null;
+        Statement dbStatement = null;
+        int SavedOrderNumber = 0;
+        try {
+
+            dbStatement = ConnecttoDB().createStatement();
+
+            rs = dbStatement.executeQuery("SELECT (OrderNumber) FROM SalesLog WHERE OrderNumber="+OrderNumber+"");
+            while(rs.next()){
+                SavedOrderNumber = rs.getInt("OrderNumber");
+            
+            }
+
+        } catch (Exception e) {
+
+            System.out.println(e);
+        }
+        
+        return SavedOrderNumber;
+    }
+
 
 }
