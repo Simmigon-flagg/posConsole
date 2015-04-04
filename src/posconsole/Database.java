@@ -423,17 +423,17 @@ public class Database {
     }
 
     //SELECT OrderNumber FROM Revenue WHERE PaymentMethod = "null";
-
     public int[] viewSavedOrderNumberFromDB() {
         ResultSet rs = null;
         Statement dbStatement = null;
-      
-        
+        int[] SavedOrderNumber = null;
         try {
 
             dbStatement = ConnecttoDB().createStatement();
-              rs = dbStatement.executeQuery("SELECT COUNT(*) FROM Revenue WHERE PaymentMethod = \"null\";");
-int[] SavedOrderNumber = new int[5];
+            rs = dbStatement.executeQuery("SELECT COUNT(*) FROM Revenue WHERE PaymentMethod = \"null\";");
+            int numberOfRows = rs.getInt(1);
+            SavedOrderNumber = new int[numberOfRows];
+
             rs = dbStatement.executeQuery("SELECT OrderNumber FROM Revenue WHERE PaymentMethod = \"null\";");
             int i = 0;
             while (rs.next()) {
